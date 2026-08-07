@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Elysium</title>
+<meta name="description" content="Site structure and editing notes for the Elysium website.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0908'/%3E%3Cpath d='M16 4 L26 16 L16 28 L6 16 Z' fill='none' stroke='%23c9a86a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23c9a86a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Page-specific tweaks: this is a plain documentation page, so it skips
+     the cinematic hero/loading treatment used on index.html. */
+  body { padding-top: 88px; }
+  .doc-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 0 6rem; }
+  .doc-wrap h1 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); color: var(--gold-bright); margin-bottom: 0.5rem; }
+  .doc-wrap p { color: var(--bone-dim); }
+  .doc-wrap h2 { font-family: var(--font-heading); color: var(--bone); margin-top: 2.5rem; font-size: 1.4rem; }
+  .doc-wrap code, .doc-wrap pre {
+    font-family: var(--font-mono);
+    background: var(--stone);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--gold-bright);
+  }
+  .doc-wrap code { padding: 0.1em 0.4em; font-size: 0.9em; }
+  .doc-wrap pre { padding: 1rem 1.25rem; overflow-x: auto; line-height: 1.5; }
+  .doc-wrap ul { list-style: disc; padding-left: 1.4rem; color: var(--bone-dim); }
+  .doc-wrap li { margin-bottom: 0.4rem; }
+  .back-link { display: inline-block; margin-bottom: 2rem; color: var(--gold); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<header id="site-nav">
+  <a href="../index.html" class="nav-brand">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 3 L29 16 L16 29 L3 16 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
+    Elysium
+  </a>
+  <nav class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#development">Development</a>
+  </nav>
+</header>
+
+<main class="container doc-wrap">
+  <a class="back-link" href="../index.html">&larr; Back to Elysium</a>
+  <h1>Site Documentation</h1>
+  <p>Notes for whoever edits this site next — including future you.</p>
+
+  <h2>Folder structure</h2>
+  <pre>/index.html        Main entry point (required by GitHub Pages)
+/pages/            Secondary static pages (this file lives here)
+/css/style.css     Design tokens, layout, and all component styling
+/css/animations.css  Keyframes and motion-only effects
+/js/main.js        All page interactions (nav, reveals, map, gallery, easter eggs)
+/js/particles.js   Canvas particle field used behind the hero
+/assets/           Reserved for audio or downloadable files
+/images/           Reserved for real screenshots and art once available</pre>
+
+  <h2>Replacing placeholder art</h2>
+  <p>Every image on the site is currently an inline SVG gradient so the project has zero binary dependencies. To swap in real screenshots or concept art:</p>
+  <ul>
+    <li>Drop files into <code>/images/</code> using descriptive names, e.g. <code>images/screenshots/aurelia-dawn.jpg</code>.</li>
+    <li>In <code>js/main.js</code>, the <code>gallery()</code> block builds each tile from the <code>items</code> array — replace the generated SVG with an <code>&lt;img&gt;</code> tag pointing at your file.</li>
+    <li>For the world map and continent cards, swap the inline <code>&lt;svg&gt;</code> blocks in <code>index.html</code> for background images or <code>&lt;img&gt;</code> elements using the same relative paths.</li>
+  </ul>
+
+  <h2>Adding ambient audio</h2>
+  <p>The audio control in the bottom-left corner is wired up but silent by default. Add a licensed track to <code>/assets/audio/</code>, then uncomment the <code>&lt;source&gt;</code> tag inside the <code>#ambient-audio</code> element in <code>index.html</code>.</p>
+
+  <h2>Deploying to GitHub Pages</h2>
+  <p>Push this folder to a repository, then enable Pages in the repository settings pointing at the root of the default branch. Because every path in the project is relative, no build step or base-path configuration is required.</p>
+</main>
+
+</body>
+</html>

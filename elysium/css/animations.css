@@ -1,0 +1,127 @@
+/* ==========================================================================
+   ELYSIUM — Animation Layer
+   Keyframes and motion-only classes, kept separate from structural CSS
+   so effects can be tuned or stripped independently.
+   ========================================================================== */
+
+/* Letter-by-letter title reveal (driven by main.js adding .is-revealed) */
+.letters.is-revealed span {
+  animation: letter-rise 0.7s var(--ease-fantasy) forwards;
+}
+@keyframes letter-rise {
+  from { opacity: 0; transform: translateY(0.5em) rotateX(-40deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+/* Typewriter effect for important descriptions */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--gold-bright);
+  width: 0;
+}
+.typewriter.is-typing {
+  animation: typewriter-reveal 2.4s steps(40, end) forwards,
+             typewriter-caret 0.75s step-end infinite;
+}
+@keyframes typewriter-reveal { to { width: 100%; } }
+@keyframes typewriter-caret { 50% { border-color: transparent; } }
+
+/* Card flip (character / faction style cards, used on click) */
+.flip-card { perspective: 1200px; }
+.flip-card-inner {
+  position: relative;
+  transition: transform 0.7s var(--ease-fantasy);
+  transform-style: preserve-3d;
+}
+.flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+}
+.flip-card-back { position: absolute; inset: 0; transform: rotateY(180deg); }
+
+/* Page/section transition sweep, triggered briefly on nav click */
+#transition-sweep {
+  position: fixed;
+  inset: 0;
+  z-index: 850;
+  background: linear-gradient(100deg, transparent, rgba(201,168,106,0.14), transparent);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+#transition-sweep.is-active { animation: sweep-pass 0.7s var(--ease-fantasy); }
+@keyframes sweep-pass {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+
+/* Konami code full-screen flash */
+@keyframes konami-flash {
+  0% { box-shadow: inset 0 0 0px rgba(201,168,106,0); }
+  30% { box-shadow: inset 0 0 160px rgba(201,168,106,0.55); }
+  100% { box-shadow: inset 0 0 0px rgba(201,168,106,0); }
+}
+body.konami-active::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  pointer-events: none;
+  animation: konami-flash 1.4s ease-out;
+}
+
+/* Loading dust motes rising behind loading rune */
+.loading-mote {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: mote-rise 4.5s ease-in infinite;
+}
+@keyframes mote-rise {
+  0% { opacity: 0; transform: translateY(0) translateX(0); }
+  10% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-220px) translateX(var(--drift, 20px)); }
+}
+
+/* Shimmer sweep across the hero title */
+.hero-title { position: relative; }
+.hero-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer-sweep 7s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+@keyframes shimmer-sweep {
+  0%, 60% { background-position: 140% 0; }
+  85% { background-position: -40% 0; }
+  100% { background-position: -40% 0; }
+}
+
+/* Gentle rotation for rune iconography on hover */
+.spin-slow { transition: transform 1s var(--ease-fantasy); }
+.spin-slow:hover { transform: rotate(35deg); }
+
+/* Lightbox image entrance */
+@keyframes lightbox-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+.modal-box.lightbox-box { animation: lightbox-in 0.4s var(--ease-fantasy); }
+
+/* Reduced motion overrides specific to this file */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter { width: 100%; border-right: none; }
+  .hero-title::after { display: none; }
+  .loading-mote { display: none; }
+}
