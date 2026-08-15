@@ -16,6 +16,7 @@
    10. Interactive world map
    11. Gallery + lightbox
    12. Development progress bars + roadmap
+   12.5 Development stages (data/dev-stages.json driven)
    13. Typewriter text
    14. Back to top
    15. Ambient audio controls
@@ -359,7 +360,7 @@
       { label: "Aurelia at Dawn", type: "screenshot", grad: ["#16273f", "#131217"] },
       { label: "The Forgotten King — Concept", type: "concept", grad: ["#7d2b2b", "#131217"] },
       { label: "Continental Map, Pre-Sundering", type: "map", grad: ["#0d1b2e", "#1c1a20"] },
-      { label: "Ranger — Character Study", type: "character", grad: ["#26232b", "#16273f"] },
+      { label: "Wayfarer — Character Study", type: "character", grad: ["#26232b", "#16273f"] },
       { label: "Vethmoor Ridgeline", type: "environment", grad: ["#131217", "#7d2b2b"] },
       { label: "Sylvaneth Canopy — Concept", type: "concept", grad: ["#1c1a20", "#4c6a4a"] },
       { label: "Kharzul Ruins", type: "environment", grad: ["#131217", "#8a7038"] },
@@ -461,6 +462,192 @@
     } else {
       trigger();
     }
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 12.5 Development stages (data/dev-stages.json driven)
+   * ------------------------------------------------------------------ */
+  (function devStages() {
+    var root = $("#dev-stages");
+    if (!root) return;
+
+    var listEl = $("#stage-list");
+    var pctEl = $("#dev-stages-pct");
+    var countEl = $("#dev-stages-count");
+    var tooltipEl = $("#docs-tooltip");
+    var caretSvg =
+      '<svg class="stage-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>';
+
+    function stats(items) {
+      var done = items.filter(function (it) { return it.done === true; }).length;
+      return { done: done, total: items.length };
+    }
+
+    function animateNumber(el, from, to, suffix, duration) {
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var t = clamp((ts - start) / duration, 0, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(from + (to - from) * eased) + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function showTooltip(e, stageLabel, item) {
+      tooltipEl.innerHTML =
+        '<span class="t-cat">' + stageLabel + '</span>' +
+        item.title +
+        '<span class="t-status ' + (item.done ? "is-done" : "is-pending") + '">' +
+        (item.done ? "\u2713 Done" : "\u25CB Queued") +
+        '</span>';
+      tooltipEl.classList.add("is-visible");
+      positionTooltip(e);
+    }
+    function positionTooltip(e) {
+      if (!e || typeof e.clientX !== "number") return;
+      var pad = 14;
+      var x = e.clientX + pad;
+      var y = e.clientY + pad;
+      var maxX = window.innerWidth - 240;
+      if (x > maxX) x = e.clientX - 234;
+      tooltipEl.style.left = x + "px";
+      tooltipEl.style.top = y + "px";
+    }
+    function hideTooltip() { tooltipEl.classList.remove("is-visible"); }
+
+    function buildSegments(container, stageLabel, items) {
+      items.forEach(function (item, i) {
+        var seg = document.createElement("button");
+        seg.type = "button";
+        seg.className = "doc-segment" + (item.done ? " is-filled" : "");
+        seg.setAttribute("data-done", item.done ? "true" : "false");
+        seg.setAttribute("aria-label", stageLabel + ": " + item.title + " — " + (item.done ? "done" : "queued"));
+        seg.style.transitionDelay = Math.min(i * 4, 400) + "ms";
+
+        seg.addEventListener("mouseenter", function (e) { showTooltip(e, stageLabel, item); });
+        seg.addEventListener("mousemove", positionTooltip);
+        seg.addEventListener("mouseleave", hideTooltip);
+        seg.addEventListener("focus", function (e) { showTooltip(e, stageLabel, item); });
+        seg.addEventListener("blur", hideTooltip);
+
+        container.appendChild(seg);
+      });
+    }
+
+    function buildStageCard(stage, index) {
+      var s = stats(stage.items);
+      var pct = s.total ? Math.round((s.done / s.total) * 100) : 0;
+
+      var card = document.createElement("div");
+      card.className = "stage-card";
+
+      var header = document.createElement("button");
+      header.type = "button";
+      header.className = "stage-card-header";
+      header.setAttribute("aria-expanded", "false");
+      header.innerHTML =
+        '<span class="stage-index">' + String(index + 1).padStart(2, "0") + '</span>' +
+        '<span class="stage-title-wrap">' +
+          '<span class="stage-title">' + stage.label + '</span>' +
+          '<span class="stage-blurb">' + stage.blurb + '</span>' +
+        '</span>' +
+        '<span class="stage-meter">' +
+          '<span class="stage-track"><span class="stage-fill" data-target="' + pct + '"></span></span>' +
+          '<span class="stage-pct">' + pct + '%</span>' +
+          '<span class="stage-count">' + s.done + '/' + s.total + '</span>' +
+        '</span>' +
+        caretSvg;
+
+      var body = document.createElement("div");
+      body.className = "stage-body";
+      var segWrap = document.createElement("div");
+      segWrap.className = "stage-segments";
+      body.appendChild(segWrap);
+
+      var built = false;
+      var revealed = false;
+
+      header.addEventListener("click", function () {
+        var isOpen = card.classList.toggle("is-open");
+        header.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+        if (!built) {
+          buildSegments(segWrap, stage.label, stage.items);
+          built = true;
+        }
+        if (isOpen) {
+          body.style.maxHeight = body.scrollHeight + "px";
+          if (!revealed) {
+            requestAnimationFrame(function () {
+              $all(".doc-segment", segWrap).forEach(function (seg) { seg.classList.add("is-visible"); });
+            });
+            revealed = true;
+          }
+        } else {
+          body.style.maxHeight = "0px";
+        }
+      });
+
+      card.appendChild(header);
+      card.appendChild(body);
+      listEl.appendChild(card);
+
+      // animate the inline stage bar once it scrolls into view
+      var fillEl = $(".stage-fill", header);
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              fillEl.style.width = pct + "%";
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        io.observe(card);
+      } else {
+        fillEl.style.width = pct + "%";
+      }
+    }
+
+    fetch("data/dev-stages.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("Manifest request failed: " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        data.stages.forEach(buildStageCard);
+
+        var allItems = data.stages.reduce(function (acc, s) { return acc.concat(s.items); }, []);
+        var overall = stats(allItems);
+        var pct = overall.total ? Math.round((overall.done / overall.total) * 100) : 0;
+        countEl.textContent = overall.done + " / " + overall.total + " pieces";
+
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                animateNumber(pctEl, 0, pct, "%", 900);
+                io.disconnect();
+              }
+            });
+          }, { threshold: 0.2 });
+          io.observe(root);
+        } else {
+          pctEl.textContent = pct + "%";
+        }
+      })
+      .catch(function (err) {
+        listEl.innerHTML = "";
+        countEl.textContent = "Manifest unavailable";
+        pctEl.textContent = "—";
+        var note = document.createElement("p");
+        note.style.cssText = "font-family:var(--font-mono); font-size:0.72rem; color:var(--muted);";
+        note.textContent = "Couldn't load data/dev-stages.json (" + err.message + "). Serve this page over http(s) — a local server or GitHub Pages — rather than opening it as a local file.";
+        listEl.appendChild(note);
+      });
   })();
 
   /* ------------------------------------------------------------------ *
@@ -587,7 +774,7 @@
     // Random rune clicks on stone dividers → hidden lore snippets
     var loreSnippets = [
       "Some say the Sundering was no accident at all.",
-      "The Shadow Covenant was born from a broken promise.",
+      "The Duskward Pact was born from a broken promise.",
       "Not every ruin in Vethmoor predates the Sundering.",
       "Sylvaneth's oldest trees remember the Ancient Age.",
       "The Void Herald has been seen more than once."

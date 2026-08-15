@@ -1,0 +1,3584 @@
+{
+  "project": "Elysium",
+  "description": "Development stage manifest. Each stage is one workstream of the project; each item within a stage is one concrete piece of work. done:true fills a tiny segment on that stage's bar, done:false leaves it hollow.",
+  "generated": "2026-08-14",
+  "stages": [
+    {
+      "id": "documentation",
+      "label": "Documentation",
+      "blurb": "The real GDD file tree \u2014 18 categories, 325 files, straight from the project's own docs/ folder.",
+      "items": [
+        {
+          "id": 1,
+          "title": "0000-Project / 0000-Overview.md",
+          "done": true
+        },
+        {
+          "id": 2,
+          "title": "0000-Project / 0001-Vision.md",
+          "done": true
+        },
+        {
+          "id": 3,
+          "title": "0000-Project / 0002-Core-Pillars.md",
+          "done": true
+        },
+        {
+          "id": 4,
+          "title": "0000-Project / 0003-Roadmap.md",
+          "done": true
+        },
+        {
+          "id": 5,
+          "title": "0000-Project / 0004-Version-History.md",
+          "done": true
+        },
+        {
+          "id": 6,
+          "title": "0000-Project / 0005-Future-Plans.md",
+          "done": true
+        },
+        {
+          "id": 7,
+          "title": "0000-Project / 0006-Documentation-Guide.md",
+          "done": true
+        },
+        {
+          "id": 8,
+          "title": "0000-Project / 0007-Team-Structure.md",
+          "done": true
+        },
+        {
+          "id": 9,
+          "title": "0000-Project / 0008-Development-Philosophy.md",
+          "done": true
+        },
+        {
+          "id": 10,
+          "title": "0000-Project / 0009-Project-Glossary.md",
+          "done": true
+        },
+        {
+          "id": 11,
+          "title": "0100-World / 0100-World.md",
+          "done": true
+        },
+        {
+          "id": 12,
+          "title": "0100-World / 0101-Continents.md",
+          "done": true
+        },
+        {
+          "id": 13,
+          "title": "0100-World / 0102-Regions.md",
+          "done": true
+        },
+        {
+          "id": 14,
+          "title": "0100-World / 0103-Cities.md",
+          "done": true
+        },
+        {
+          "id": 15,
+          "title": "0100-World / 0104-Villages.md",
+          "done": true
+        },
+        {
+          "id": 16,
+          "title": "0100-World / 0105-Landmarks.md",
+          "done": true
+        },
+        {
+          "id": 17,
+          "title": "0100-World / 0106-Dungeons.md",
+          "done": true
+        },
+        {
+          "id": 18,
+          "title": "0100-World / 0107-Raids.md",
+          "done": true
+        },
+        {
+          "id": 19,
+          "title": "0100-World / 0108-World-Bosses.md",
+          "done": true
+        },
+        {
+          "id": 20,
+          "title": "0100-World / 0109-World-Events.md",
+          "done": true
+        },
+        {
+          "id": 21,
+          "title": "0100-World / 0110-Travel.md",
+          "done": true
+        },
+        {
+          "id": 22,
+          "title": "0100-World / 0111-Fast-Travel.md",
+          "done": true
+        },
+        {
+          "id": 23,
+          "title": "0100-World / 0112-Maps.md",
+          "done": true
+        },
+        {
+          "id": 24,
+          "title": "0100-World / 0113-Biomes.md",
+          "done": true
+        },
+        {
+          "id": 25,
+          "title": "0100-World / 0114-Weather-System.md",
+          "done": true
+        },
+        {
+          "id": 26,
+          "title": "0100-World / 0115-Day-Night-Cycle.md",
+          "done": true
+        },
+        {
+          "id": 27,
+          "title": "0100-World / 0116-World-Generation.md",
+          "done": true
+        },
+        {
+          "id": 28,
+          "title": "0100-World / 0117-Environmental-Hazards.md",
+          "done": true
+        },
+        {
+          "id": 29,
+          "title": "0200-Lore / 0200-Lore.md",
+          "done": true
+        },
+        {
+          "id": 30,
+          "title": "0200-Lore / 0201-Timeline.md",
+          "done": true
+        },
+        {
+          "id": 31,
+          "title": "0200-Lore / 0202-Gods.md",
+          "done": true
+        },
+        {
+          "id": 32,
+          "title": "0200-Lore / 0203-Factions.md",
+          "done": true
+        },
+        {
+          "id": 33,
+          "title": "0200-Lore / 0204-Races.md",
+          "done": true
+        },
+        {
+          "id": 34,
+          "title": "0200-Lore / 0205-Kingdoms.md",
+          "done": true
+        },
+        {
+          "id": 35,
+          "title": "0200-Lore / 0206-History.md",
+          "done": true
+        },
+        {
+          "id": 36,
+          "title": "0200-Lore / 0207-Main-Story.md",
+          "done": true
+        },
+        {
+          "id": 37,
+          "title": "0200-Lore / 0208-Side-Stories.md",
+          "done": true
+        },
+        {
+          "id": 38,
+          "title": "0200-Lore / 0209-NPCs.md",
+          "done": true
+        },
+        {
+          "id": 39,
+          "title": "0200-Lore / 0210-Dialogue-System.md",
+          "done": true
+        },
+        {
+          "id": 40,
+          "title": "0200-Lore / 0211-Languages.md",
+          "done": true
+        },
+        {
+          "id": 41,
+          "title": "0200-Lore / 0212-Religions.md",
+          "done": true
+        },
+        {
+          "id": 42,
+          "title": "0200-Lore / 0213-Mythology.md",
+          "done": true
+        },
+        {
+          "id": 43,
+          "title": "0200-Lore / 0214-Ancient-Civilisations.md",
+          "done": true
+        },
+        {
+          "id": 44,
+          "title": "0200-Lore / 0215-Ancient-Archivarium.md",
+          "done": true
+        },
+        {
+          "id": 45,
+          "title": "0300-Characters / 0300-Classes.md",
+          "done": true
+        },
+        {
+          "id": 46,
+          "title": "0300-Characters / 0301-Specializations.md",
+          "done": true
+        },
+        {
+          "id": 47,
+          "title": "0300-Characters / 0302-Skills.md",
+          "done": true
+        },
+        {
+          "id": 48,
+          "title": "0300-Characters / 0303-Talent-Trees.md",
+          "done": true
+        },
+        {
+          "id": 49,
+          "title": "0300-Characters / 0304-Stats.md",
+          "done": true
+        },
+        {
+          "id": 50,
+          "title": "0300-Characters / 0305-Leveling.md",
+          "done": true
+        },
+        {
+          "id": 51,
+          "title": "0300-Characters / 0306-Status-Effects.md",
+          "done": true
+        },
+        {
+          "id": 52,
+          "title": "0300-Characters / 0307-Elements.md",
+          "done": true
+        },
+        {
+          "id": 53,
+          "title": "0300-Characters / 0308-Class-Progression.md",
+          "done": true
+        },
+        {
+          "id": 54,
+          "title": "0300-Characters / 0309-Balance.md",
+          "done": true
+        },
+        {
+          "id": 55,
+          "title": "0300-Characters / 0310-Character-Creation.md",
+          "done": true
+        },
+        {
+          "id": 56,
+          "title": "0300-Characters / 0311-Character-Customisation.md",
+          "done": true
+        },
+        {
+          "id": 57,
+          "title": "0300-Characters / 0312-Character-Animations.md",
+          "done": true
+        },
+        {
+          "id": 58,
+          "title": "0300-Characters / 0313-Death-System.md",
+          "done": true
+        },
+        {
+          "id": 59,
+          "title": "0400-Gameplay / 0400-Game-Mechanics.md",
+          "done": true
+        },
+        {
+          "id": 60,
+          "title": "0400-Gameplay / 0401-Combat.md",
+          "done": true
+        },
+        {
+          "id": 61,
+          "title": "0400-Gameplay / 0402-Enemy-Design.md",
+          "done": true
+        },
+        {
+          "id": 62,
+          "title": "0400-Gameplay / 0403-Boss-Mechanics.md",
+          "done": true
+        },
+        {
+          "id": 63,
+          "title": "0400-Gameplay / 0404-AI-Behaviour.md",
+          "done": true
+        },
+        {
+          "id": 64,
+          "title": "0400-Gameplay / 0405-Aggro-System.md",
+          "done": true
+        },
+        {
+          "id": 65,
+          "title": "0400-Gameplay / 0406-Difficulty-System.md",
+          "done": true
+        },
+        {
+          "id": 66,
+          "title": "0400-Gameplay / 0407-World-Interactions.md",
+          "done": true
+        },
+        {
+          "id": 67,
+          "title": "0400-Gameplay / 0408-Physics-Systems.md",
+          "done": true
+        },
+        {
+          "id": 68,
+          "title": "0400-Gameplay / 0409-Tutorial-System.md",
+          "done": true
+        },
+        {
+          "id": 69,
+          "title": "0500-Items / 0500-Weapons.md",
+          "done": true
+        },
+        {
+          "id": 70,
+          "title": "0500-Items / 0501-Armour.md",
+          "done": true
+        },
+        {
+          "id": 71,
+          "title": "0500-Items / 0502-Accessories.md",
+          "done": true
+        },
+        {
+          "id": 72,
+          "title": "0500-Items / 0503-Loot.md",
+          "done": true
+        },
+        {
+          "id": 73,
+          "title": "0500-Items / 0504-Loot-Tables.md",
+          "done": true
+        },
+        {
+          "id": 74,
+          "title": "0500-Items / 0505-Legendary-Items.md",
+          "done": true
+        },
+        {
+          "id": 75,
+          "title": "0500-Items / 0506-Relics.md",
+          "done": true
+        },
+        {
+          "id": 76,
+          "title": "0500-Items / 0507-Consumables.md",
+          "done": true
+        },
+        {
+          "id": 77,
+          "title": "0500-Items / 0508-Crafting.md",
+          "done": true
+        },
+        {
+          "id": 78,
+          "title": "0500-Items / 0509-Enchanting.md",
+          "done": true
+        },
+        {
+          "id": 79,
+          "title": "0500-Items / 0510-Item-Rarity.md",
+          "done": true
+        },
+        {
+          "id": 80,
+          "title": "0500-Items / 0511-Item-Upgrading.md",
+          "done": true
+        },
+        {
+          "id": 81,
+          "title": "0500-Items / 0512-Item-Sets.md",
+          "done": true
+        },
+        {
+          "id": 82,
+          "title": "0500-Items / 0513-Transmog-System.md",
+          "done": true
+        },
+        {
+          "id": 83,
+          "title": "0500-Items / 0514-Item-Binding.md",
+          "done": true
+        },
+        {
+          "id": 84,
+          "title": "0500-Items / 0515-Item-Durability.md",
+          "done": true
+        },
+        {
+          "id": 85,
+          "title": "0500-Items / 0516-Item-Attributes.md",
+          "done": true
+        },
+        {
+          "id": 86,
+          "title": "0500-Items / 0517-Unique-Effects.md",
+          "done": true
+        },
+        {
+          "id": 87,
+          "title": "0500-Items / 0518-Artifact-Items.md",
+          "done": true
+        },
+        {
+          "id": 88,
+          "title": "0500-Items / 0519-Item-Storage.md",
+          "done": true
+        },
+        {
+          "id": 89,
+          "title": "0600-Professions / 0600-Professions.md",
+          "done": true
+        },
+        {
+          "id": 90,
+          "title": "0600-Professions / 0601-Mining.md",
+          "done": true
+        },
+        {
+          "id": 91,
+          "title": "0600-Professions / 0602-Woodcutting.md",
+          "done": true
+        },
+        {
+          "id": 92,
+          "title": "0600-Professions / 0603-Fishing.md",
+          "done": true
+        },
+        {
+          "id": 93,
+          "title": "0600-Professions / 0604-Herbalism.md",
+          "done": true
+        },
+        {
+          "id": 94,
+          "title": "0600-Professions / 0605-Alchemy.md",
+          "done": true
+        },
+        {
+          "id": 95,
+          "title": "0600-Professions / 0606-Blacksmithing.md",
+          "done": true
+        },
+        {
+          "id": 96,
+          "title": "0600-Professions / 0607-Cooking.md",
+          "done": true
+        },
+        {
+          "id": 97,
+          "title": "0600-Professions / 0608-Jewelcrafting.md",
+          "done": true
+        },
+        {
+          "id": 98,
+          "title": "0600-Professions / 0609-Tailoring.md",
+          "done": true
+        },
+        {
+          "id": 99,
+          "title": "0600-Professions / 0610-Leatherworking.md",
+          "done": true
+        },
+        {
+          "id": 100,
+          "title": "0600-Professions / 0611-Profession-Progression.md",
+          "done": true
+        },
+        {
+          "id": 101,
+          "title": "0600-Professions / 0612-Profession-Materials.md",
+          "done": true
+        },
+        {
+          "id": 102,
+          "title": "0600-Professions / 0613-Resource-Nodes.md",
+          "done": true
+        },
+        {
+          "id": 103,
+          "title": "0600-Professions / 0614-Profession-Recipes.md",
+          "done": true
+        },
+        {
+          "id": 104,
+          "title": "0600-Professions / 0615-Profession-Specialisations.md",
+          "done": true
+        },
+        {
+          "id": 105,
+          "title": "0600-Professions / 0616-Profession-Mastery.md",
+          "done": true
+        },
+        {
+          "id": 106,
+          "title": "0700-Quests / 0700-Quests.md",
+          "done": true
+        },
+        {
+          "id": 107,
+          "title": "0700-Quests / 0701-Quest-Chains.md",
+          "done": true
+        },
+        {
+          "id": 108,
+          "title": "0700-Quests / 0702-Daily-Quests.md",
+          "done": true
+        },
+        {
+          "id": 109,
+          "title": "0700-Quests / 0703-Weekly-Quests.md",
+          "done": true
+        },
+        {
+          "id": 110,
+          "title": "0700-Quests / 0704-Achievements.md",
+          "done": true
+        },
+        {
+          "id": 111,
+          "title": "0700-Quests / 0705-Titles.md",
+          "done": true
+        },
+        {
+          "id": 112,
+          "title": "0700-Quests / 0706-Reputation.md",
+          "done": true
+        },
+        {
+          "id": 113,
+          "title": "0700-Quests / 0707-Factions-Reputation.md",
+          "done": true
+        },
+        {
+          "id": 114,
+          "title": "0700-Quests / 0708-Main-Quest.md",
+          "done": true
+        },
+        {
+          "id": 115,
+          "title": "0700-Quests / 0709-Side-Quests.md",
+          "done": true
+        },
+        {
+          "id": 116,
+          "title": "0700-Quests / 0710-Quest-Objectives.md",
+          "done": true
+        },
+        {
+          "id": 117,
+          "title": "0700-Quests / 0711-Quest-Rewards.md",
+          "done": true
+        },
+        {
+          "id": 118,
+          "title": "0700-Quests / 0712-Cinematics.md",
+          "done": true
+        },
+        {
+          "id": 119,
+          "title": "0700-Quests / 0713-Quest-Tracking.md",
+          "done": true
+        },
+        {
+          "id": 120,
+          "title": "0700-Quests / 0714-Quest-Branches.md",
+          "done": true
+        },
+        {
+          "id": 121,
+          "title": "0700-Quests / 0715-Dynamic-Quests.md",
+          "done": true
+        },
+        {
+          "id": 122,
+          "title": "0700-Quests / 0716-World-Quest-System.md",
+          "done": true
+        },
+        {
+          "id": 123,
+          "title": "0700-Quests / 0717-Quest-Scripting.md",
+          "done": true
+        },
+        {
+          "id": 124,
+          "title": "0800-Multiplayer / 0800-Guilds.md",
+          "done": true
+        },
+        {
+          "id": 125,
+          "title": "0800-Multiplayer / 0801-Parties.md",
+          "done": true
+        },
+        {
+          "id": 126,
+          "title": "0800-Multiplayer / 0802-Raiding.md",
+          "done": true
+        },
+        {
+          "id": 127,
+          "title": "0800-Multiplayer / 0803-Dungeon-Finder.md",
+          "done": true
+        },
+        {
+          "id": 128,
+          "title": "0800-Multiplayer / 0804-PvP.md",
+          "done": true
+        },
+        {
+          "id": 129,
+          "title": "0800-Multiplayer / 0805-Arenas.md",
+          "done": true
+        },
+        {
+          "id": 130,
+          "title": "0800-Multiplayer / 0806-Territory-Control.md",
+          "done": true
+        },
+        {
+          "id": 131,
+          "title": "0800-Multiplayer / 0807-Seasons.md",
+          "done": true
+        },
+        {
+          "id": 132,
+          "title": "0800-Multiplayer / 0808-Leaderboards.md",
+          "done": true
+        },
+        {
+          "id": 133,
+          "title": "0800-Multiplayer / 0809-Friend-System.md",
+          "done": true
+        },
+        {
+          "id": 134,
+          "title": "0800-Multiplayer / 0810-Social-Features.md",
+          "done": true
+        },
+        {
+          "id": 135,
+          "title": "0800-Multiplayer / 0811-Party-Finder.md",
+          "done": true
+        },
+        {
+          "id": 136,
+          "title": "0800-Multiplayer / 0812-Voice-Communication.md",
+          "done": true
+        },
+        {
+          "id": 137,
+          "title": "0800-Multiplayer / 0813-Group-Roles.md",
+          "done": true
+        },
+        {
+          "id": 138,
+          "title": "0800-Multiplayer / 0814-Guild-Progression.md",
+          "done": true
+        },
+        {
+          "id": 139,
+          "title": "0800-Multiplayer / 0815-Guild-Halls.md",
+          "done": true
+        },
+        {
+          "id": 140,
+          "title": "0800-Multiplayer / 0816-World-PvP.md",
+          "done": true
+        },
+        {
+          "id": 141,
+          "title": "0800-Multiplayer / 0817-Competitive-Systems.md",
+          "done": true
+        },
+        {
+          "id": 142,
+          "title": "0900-Player-Systems / 0900-Housing.md",
+          "done": true
+        },
+        {
+          "id": 143,
+          "title": "0900-Player-Systems / 0901-Mounts.md",
+          "done": true
+        },
+        {
+          "id": 144,
+          "title": "0900-Player-Systems / 0902-Pets.md",
+          "done": true
+        },
+        {
+          "id": 145,
+          "title": "0900-Player-Systems / 0903-Cosmetics.md",
+          "done": true
+        },
+        {
+          "id": 146,
+          "title": "0900-Player-Systems / 0904-Emotes.md",
+          "done": true
+        },
+        {
+          "id": 147,
+          "title": "0900-Player-Systems / 0905-Player-Progression.md",
+          "done": true
+        },
+        {
+          "id": 148,
+          "title": "0900-Player-Systems / 0906-Simulated-Civilisation.md",
+          "done": true
+        },
+        {
+          "id": 149,
+          "title": "0900-Player-Systems / 0907-Collections.md",
+          "done": true
+        },
+        {
+          "id": 150,
+          "title": "0900-Player-Systems / 0908-Journals.md",
+          "done": true
+        },
+        {
+          "id": 151,
+          "title": "0900-Player-Systems / 0909-Achievement-Tracking.md",
+          "done": true
+        },
+        {
+          "id": 152,
+          "title": "0900-Player-Systems / 0910-Player-Statistics.md",
+          "done": true
+        },
+        {
+          "id": 153,
+          "title": "0900-Player-Systems / 0911-Character-Profile.md",
+          "done": true
+        },
+        {
+          "id": 154,
+          "title": "0900-Player-Systems / 0912-Loadouts.md",
+          "done": true
+        },
+        {
+          "id": 155,
+          "title": "0900-Player-Systems / 0913-Inventory-System.md",
+          "done": true
+        },
+        {
+          "id": 156,
+          "title": "0900-Player-Systems / 0914-Bank-System.md",
+          "done": true
+        },
+        {
+          "id": 157,
+          "title": "0900-Player-Systems / 0915-Player-Rewards.md",
+          "done": true
+        },
+        {
+          "id": 158,
+          "title": "0900-Player-Systems / 0916-Player-Milestones.md",
+          "done": true
+        },
+        {
+          "id": 159,
+          "title": "0900-Player-Systems / 0917-Account-Progression.md",
+          "done": true
+        },
+        {
+          "id": 160,
+          "title": "1000-Economy / 1000-Economy.md",
+          "done": true
+        },
+        {
+          "id": 161,
+          "title": "1000-Economy / 1001-Currency.md",
+          "done": true
+        },
+        {
+          "id": 162,
+          "title": "1000-Economy / 1002-Vendors.md",
+          "done": true
+        },
+        {
+          "id": 163,
+          "title": "1000-Economy / 1003-Auction-House.md",
+          "done": true
+        },
+        {
+          "id": 164,
+          "title": "1000-Economy / 1004-Trading.md",
+          "done": true
+        },
+        {
+          "id": 165,
+          "title": "1000-Economy / 1005-Mail.md",
+          "done": true
+        },
+        {
+          "id": 166,
+          "title": "1000-Economy / 1006-Banking.md",
+          "done": true
+        },
+        {
+          "id": 167,
+          "title": "1000-Economy / 1007-Market-System.md",
+          "done": true
+        },
+        {
+          "id": 168,
+          "title": "1000-Economy / 1008-Economic-Balance.md",
+          "done": true
+        },
+        {
+          "id": 169,
+          "title": "1000-Economy / 1009-Inflation-Control.md",
+          "done": true
+        },
+        {
+          "id": 170,
+          "title": "1000-Economy / 1010-Currency-Sinks.md",
+          "done": true
+        },
+        {
+          "id": 171,
+          "title": "1000-Economy / 1011-Currency-Sources.md",
+          "done": true
+        },
+        {
+          "id": 172,
+          "title": "1000-Economy / 1012-Player-Trading-Rules.md",
+          "done": true
+        },
+        {
+          "id": 173,
+          "title": "1000-Economy / 1013-Merchant-System.md",
+          "done": true
+        },
+        {
+          "id": 174,
+          "title": "1000-Economy / 1014-NPC-Economy.md",
+          "done": true
+        },
+        {
+          "id": 175,
+          "title": "1000-Economy / 1015-Regional-Economies.md",
+          "done": true
+        },
+        {
+          "id": 176,
+          "title": "1000-Economy / 1016-Economic-Events.md",
+          "done": true
+        },
+        {
+          "id": 177,
+          "title": "1100-Client / 1100-Launcher.md",
+          "done": true
+        },
+        {
+          "id": 178,
+          "title": "1100-Client / 1101-Client-Modules.md",
+          "done": true
+        },
+        {
+          "id": 179,
+          "title": "1100-Client / 1102-Content-Pack.md",
+          "done": true
+        },
+        {
+          "id": 180,
+          "title": "1100-Client / 1103-Custom-Models.md",
+          "done": true
+        },
+        {
+          "id": 181,
+          "title": "1100-Client / 1104-Soundtrack.md",
+          "done": true
+        },
+        {
+          "id": 182,
+          "title": "1100-Client / 1105-Shaders.md",
+          "done": true
+        },
+        {
+          "id": 183,
+          "title": "1100-Client / 1106-Accessibility.md",
+          "done": true
+        },
+        {
+          "id": 184,
+          "title": "1100-Client / 1107-Controls.md",
+          "done": true
+        },
+        {
+          "id": 185,
+          "title": "1100-Client / 1108-UI-Systems.md",
+          "done": true
+        },
+        {
+          "id": 186,
+          "title": "1100-Client / 1109-Settings.md",
+          "done": true
+        },
+        {
+          "id": 187,
+          "title": "1100-Client / 1110-Loading-Screens.md",
+          "done": true
+        },
+        {
+          "id": 188,
+          "title": "1100-Client / 1111-Animations.md",
+          "done": true
+        },
+        {
+          "id": 189,
+          "title": "1100-Client / 1112-Cutscenes.md",
+          "done": true
+        },
+        {
+          "id": 190,
+          "title": "1100-Client / 1113-Client-Optimisation.md",
+          "done": true
+        },
+        {
+          "id": 191,
+          "title": "1100-Client / 1114-Main-Menu.md",
+          "done": true
+        },
+        {
+          "id": 192,
+          "title": "1100-Client / 1115-Character-Select.md",
+          "done": true
+        },
+        {
+          "id": 193,
+          "title": "1100-Client / 1116-Interface-Layouts.md",
+          "done": true
+        },
+        {
+          "id": 194,
+          "title": "1100-Client / 1117-Dialogue-UI.md",
+          "done": true
+        },
+        {
+          "id": 195,
+          "title": "1100-Client / 1118-Inventory-UI.md",
+          "done": true
+        },
+        {
+          "id": 196,
+          "title": "1100-Client / 1119-Map-UI.md",
+          "done": true
+        },
+        {
+          "id": 197,
+          "title": "1100-Client / 1120-Quest-UI.md",
+          "done": true
+        },
+        {
+          "id": 198,
+          "title": "1100-Client / 1121-Combat-UI.md",
+          "done": true
+        },
+        {
+          "id": 199,
+          "title": "1100-Client / 1122-Notification-System.md",
+          "done": true
+        },
+        {
+          "id": 200,
+          "title": "1100-Client / 1123-Client-Configuration.md",
+          "done": true
+        },
+        {
+          "id": 201,
+          "title": "1200-Technical / 1200-Plugin-Architecture.md",
+          "done": true
+        },
+        {
+          "id": 202,
+          "title": "1200-Technical / 1201-Database.md",
+          "done": true
+        },
+        {
+          "id": 203,
+          "title": "1200-Technical / 1202-Network.md",
+          "done": true
+        },
+        {
+          "id": 204,
+          "title": "1200-Technical / 1203-Server-Structure.md",
+          "done": true
+        },
+        {
+          "id": 205,
+          "title": "1200-Technical / 1204-Authentication.md",
+          "done": true
+        },
+        {
+          "id": 206,
+          "title": "1200-Technical / 1205-API.md",
+          "done": true
+        },
+        {
+          "id": 207,
+          "title": "1200-Technical / 1206-Security.md",
+          "done": true
+        },
+        {
+          "id": 208,
+          "title": "1200-Technical / 1207-Anti-Cheat.md",
+          "done": true
+        },
+        {
+          "id": 209,
+          "title": "1200-Technical / 1208-Performance.md",
+          "done": true
+        },
+        {
+          "id": 210,
+          "title": "1200-Technical / 1209-Instance-System.md",
+          "done": true
+        },
+        {
+          "id": 211,
+          "title": "1200-Technical / 1210-World-Management.md",
+          "done": true
+        },
+        {
+          "id": 212,
+          "title": "1200-Technical / 1211-Server-Synchronisation.md",
+          "done": true
+        },
+        {
+          "id": 213,
+          "title": "1200-Technical / 1212-Logging.md",
+          "done": true
+        },
+        {
+          "id": 214,
+          "title": "1200-Technical / 1213-Backup-System.md",
+          "done": true
+        },
+        {
+          "id": 215,
+          "title": "1200-Technical / 1214-Admin-Tools.md",
+          "done": true
+        },
+        {
+          "id": 216,
+          "title": "1200-Technical / 1215-Developer-Tools.md",
+          "done": true
+        },
+        {
+          "id": 217,
+          "title": "1200-Technical / 1216-Monitoring.md",
+          "done": true
+        },
+        {
+          "id": 218,
+          "title": "1200-Technical / 1217-Server-Architecture.md",
+          "done": true
+        },
+        {
+          "id": 219,
+          "title": "1200-Technical / 1218-Plugin-Communication.md",
+          "done": true
+        },
+        {
+          "id": 220,
+          "title": "1200-Technical / 1219-Data-Storage.md",
+          "done": true
+        },
+        {
+          "id": 221,
+          "title": "1200-Technical / 1220-Database-Schema.md",
+          "done": true
+        },
+        {
+          "id": 222,
+          "title": "1200-Technical / 1221-Caching-System.md",
+          "done": true
+        },
+        {
+          "id": 223,
+          "title": "1200-Technical / 1222-Load-Balancing.md",
+          "done": true
+        },
+        {
+          "id": 224,
+          "title": "1200-Technical / 1223-Server-Scaling.md",
+          "done": true
+        },
+        {
+          "id": 225,
+          "title": "1200-Technical / 1224-Region-Servers.md",
+          "done": true
+        },
+        {
+          "id": 226,
+          "title": "1200-Technical / 1225-Matchmaking-Architecture.md",
+          "done": true
+        },
+        {
+          "id": 227,
+          "title": "1200-Technical / 1226-Command-System.md",
+          "done": true
+        },
+        {
+          "id": 228,
+          "title": "1200-Technical / 1227-Permission-System.md",
+          "done": true
+        },
+        {
+          "id": 229,
+          "title": "1200-Technical / 1228-Account-System.md",
+          "done": true
+        },
+        {
+          "id": 230,
+          "title": "1200-Technical / 1229-Player-Data-System.md",
+          "done": true
+        },
+        {
+          "id": 231,
+          "title": "1200-Technical / 1230-Server-Maintenance.md",
+          "done": true
+        },
+        {
+          "id": 232,
+          "title": "1300-Art / 1300-Art-Style.md",
+          "done": true
+        },
+        {
+          "id": 233,
+          "title": "1300-Art / 1301-UI-Style.md",
+          "done": true
+        },
+        {
+          "id": 234,
+          "title": "1300-Art / 1302-Colour-Palette.md",
+          "done": true
+        },
+        {
+          "id": 235,
+          "title": "1300-Art / 1303-Fonts.md",
+          "done": true
+        },
+        {
+          "id": 236,
+          "title": "1300-Art / 1304-Icons.md",
+          "done": true
+        },
+        {
+          "id": 237,
+          "title": "1300-Art / 1305-Textures.md",
+          "done": true
+        },
+        {
+          "id": 238,
+          "title": "1300-Art / 1306-Models.md",
+          "done": true
+        },
+        {
+          "id": 239,
+          "title": "1300-Art / 1307-Animation-Style.md",
+          "done": true
+        },
+        {
+          "id": 240,
+          "title": "1300-Art / 1308-VFX.md",
+          "done": true
+        },
+        {
+          "id": 241,
+          "title": "1300-Art / 1309-Cinematics.md",
+          "done": true
+        },
+        {
+          "id": 242,
+          "title": "1300-Art / 1310-Environment-Art.md",
+          "done": true
+        },
+        {
+          "id": 243,
+          "title": "1300-Art / 1311-Character-Art.md",
+          "done": true
+        },
+        {
+          "id": 244,
+          "title": "1300-Art / 1312-Weapon-Art.md",
+          "done": true
+        },
+        {
+          "id": 245,
+          "title": "1300-Art / 1313-Armour-Art.md",
+          "done": true
+        },
+        {
+          "id": 246,
+          "title": "1300-Art / 1314-Architecture-Style.md",
+          "done": true
+        },
+        {
+          "id": 247,
+          "title": "1300-Art / 1315-Iconography.md",
+          "done": true
+        },
+        {
+          "id": 248,
+          "title": "1300-Art / 1316-Particle-Effects.md",
+          "done": true
+        },
+        {
+          "id": 249,
+          "title": "1300-Art / 1317-Lighting-Style.md",
+          "done": true
+        },
+        {
+          "id": 250,
+          "title": "1300-Art / 1318-Animation-Guidelines.md",
+          "done": true
+        },
+        {
+          "id": 251,
+          "title": "1300-Art / 1319-Art-Asset-Pipeline.md",
+          "done": true
+        },
+        {
+          "id": 252,
+          "title": "1400-Development / 1400-Development-Standards.md",
+          "done": true
+        },
+        {
+          "id": 253,
+          "title": "1400-Development / 1401-Coding-Standards.md",
+          "done": true
+        },
+        {
+          "id": 254,
+          "title": "1400-Development / 1402-Building-Standards.md",
+          "done": true
+        },
+        {
+          "id": 255,
+          "title": "1400-Development / 1403-Quest-Writing-Guide.md",
+          "done": true
+        },
+        {
+          "id": 256,
+          "title": "1400-Development / 1404-NPC-Writing-Guide.md",
+          "done": true
+        },
+        {
+          "id": 257,
+          "title": "1400-Development / 1405-Naming-Conventions.md",
+          "done": true
+        },
+        {
+          "id": 258,
+          "title": "1400-Development / 1406-Testing.md",
+          "done": true
+        },
+        {
+          "id": 259,
+          "title": "1400-Development / 1407-Bug-Tracking.md",
+          "done": true
+        },
+        {
+          "id": 260,
+          "title": "1400-Development / 1408-Release-Process.md",
+          "done": true
+        },
+        {
+          "id": 261,
+          "title": "1400-Development / 1409-Content-Pipeline.md",
+          "done": true
+        },
+        {
+          "id": 262,
+          "title": "1400-Development / 1410-Developer-Environment.md",
+          "done": true
+        },
+        {
+          "id": 263,
+          "title": "1400-Development / 1411-Git-Workflow.md",
+          "done": true
+        },
+        {
+          "id": 264,
+          "title": "1400-Development / 1412-Code-Review.md",
+          "done": true
+        },
+        {
+          "id": 265,
+          "title": "1400-Development / 1413-Documentation-Standards.md",
+          "done": true
+        },
+        {
+          "id": 266,
+          "title": "1400-Development / 1414-Asset-Management.md",
+          "done": true
+        },
+        {
+          "id": 267,
+          "title": "1400-Development / 1415-Version-Control.md",
+          "done": true
+        },
+        {
+          "id": 268,
+          "title": "1400-Development / 1416-Branch-Strategy.md",
+          "done": true
+        },
+        {
+          "id": 269,
+          "title": "1400-Development / 1417-Development-Tools.md",
+          "done": true
+        },
+        {
+          "id": 270,
+          "title": "1400-Development / 1418-Local-Testing.md",
+          "done": true
+        },
+        {
+          "id": 271,
+          "title": "1400-Development / 1419-Staging-Environment.md",
+          "done": true
+        },
+        {
+          "id": 272,
+          "title": "1400-Development / 1420-Production-Deployment.md",
+          "done": true
+        },
+        {
+          "id": 273,
+          "title": "1400-Development / 1421-Build-Automation.md",
+          "done": true
+        },
+        {
+          "id": 274,
+          "title": "1400-Development / 1422-Quality-Assurance.md",
+          "done": true
+        },
+        {
+          "id": 275,
+          "title": "1400-Development / 1423-Performance-Testing.md",
+          "done": true
+        },
+        {
+          "id": 276,
+          "title": "1400-Development / 1424-Security-Testing.md",
+          "done": true
+        },
+        {
+          "id": 277,
+          "title": "1400-Development / 1425-Developer-Guidelines.md",
+          "done": true
+        },
+        {
+          "id": 278,
+          "title": "1500-Expansions / 1500-Expansion-01.md",
+          "done": true
+        },
+        {
+          "id": 279,
+          "title": "1500-Expansions / 1501-Expansion-Planning.md",
+          "done": true
+        },
+        {
+          "id": 280,
+          "title": "1500-Expansions / 1502-Expansion-Story-Structure.md",
+          "done": true
+        },
+        {
+          "id": 281,
+          "title": "1500-Expansions / 1503-Expansion-World-Design.md",
+          "done": true
+        },
+        {
+          "id": 282,
+          "title": "1500-Expansions / 1504-Expansion-Feature-Planning.md",
+          "done": true
+        },
+        {
+          "id": 283,
+          "title": "1500-Expansions / 1505-Expansion-Release-Strategy.md",
+          "done": true
+        },
+        {
+          "id": 284,
+          "title": "1500-Expansions / 1600-Expansion-02.md",
+          "done": true
+        },
+        {
+          "id": 285,
+          "title": "1500-Expansions / 1601-Expansion-Planning.md",
+          "done": true
+        },
+        {
+          "id": 286,
+          "title": "1500-Expansions / 1700-Expansion-03.md",
+          "done": true
+        },
+        {
+          "id": 287,
+          "title": "1500-Expansions / 1800-Expansion-04.md",
+          "done": true
+        },
+        {
+          "id": 288,
+          "title": "1500-Expansions / 1900-Expansion-05.md",
+          "done": true
+        },
+        {
+          "id": 289,
+          "title": "2000-Operations / 2000-Live-Service.md",
+          "done": true
+        },
+        {
+          "id": 290,
+          "title": "2000-Operations / 2001-Updates.md",
+          "done": true
+        },
+        {
+          "id": 291,
+          "title": "2000-Operations / 2002-Patch-Notes.md",
+          "done": true
+        },
+        {
+          "id": 292,
+          "title": "2000-Operations / 2003-Moderation.md",
+          "done": true
+        },
+        {
+          "id": 293,
+          "title": "2000-Operations / 2004-Community-Management.md",
+          "done": true
+        },
+        {
+          "id": 294,
+          "title": "2000-Operations / 2005-Support-System.md",
+          "done": true
+        },
+        {
+          "id": 295,
+          "title": "2000-Operations / 2006-Analytics.md",
+          "done": true
+        },
+        {
+          "id": 296,
+          "title": "2000-Operations / 2007-Player-Reports.md",
+          "done": true
+        },
+        {
+          "id": 297,
+          "title": "2000-Operations / 2008-Staff-Tools.md",
+          "done": true
+        },
+        {
+          "id": 298,
+          "title": "2000-Operations / 2009-Community-Events.md",
+          "done": true
+        },
+        {
+          "id": 299,
+          "title": "2000-Operations / 2010-Seasonal-Events.md",
+          "done": true
+        },
+        {
+          "id": 300,
+          "title": "2000-Operations / 2011-Server-Restarts.md",
+          "done": true
+        },
+        {
+          "id": 301,
+          "title": "2000-Operations / 2012-Maintenance.md",
+          "done": true
+        },
+        {
+          "id": 302,
+          "title": "2000-Operations / 2013-Player-Feedback.md",
+          "done": true
+        },
+        {
+          "id": 303,
+          "title": "2000-Operations / 2014-Bug-Reports.md",
+          "done": true
+        },
+        {
+          "id": 304,
+          "title": "2000-Operations / 2015-Game-Metrics.md",
+          "done": true
+        },
+        {
+          "id": 305,
+          "title": "2000-Operations / 2016-Player-Retention.md",
+          "done": true
+        },
+        {
+          "id": 306,
+          "title": "2000-Operations / 2017-Community-Guidelines.md",
+          "done": true
+        },
+        {
+          "id": 307,
+          "title": "2000-Operations / 2018-Operations-Checklist.md",
+          "done": true
+        },
+        {
+          "id": 308,
+          "title": "9000-Future / 9000-Ancient-Mysteries.md",
+          "done": true
+        },
+        {
+          "id": 309,
+          "title": "9000-Future / 9001-Future-Characters.md",
+          "done": true
+        },
+        {
+          "id": 310,
+          "title": "9000-Future / 9002-Future-Regions.md",
+          "done": true
+        },
+        {
+          "id": 311,
+          "title": "9000-Future / 9003-Future-Threats.md",
+          "done": true
+        },
+        {
+          "id": 312,
+          "title": "9000-Future / 9004-Long-Term-Story.md",
+          "done": true
+        },
+        {
+          "id": 313,
+          "title": "9000-Future / 9005-Unused-Concepts.md",
+          "done": true
+        },
+        {
+          "id": 314,
+          "title": "9000-Future / 9006-Future-Gameplay-Systems.md",
+          "done": true
+        },
+        {
+          "id": 315,
+          "title": "9000-Future / 9007-Future-Technologies.md",
+          "done": true
+        },
+        {
+          "id": 316,
+          "title": "9000-Future / 9008-Future-Classes.md",
+          "done": true
+        },
+        {
+          "id": 317,
+          "title": "9000-Future / 9009-Future-Races.md",
+          "done": true
+        },
+        {
+          "id": 318,
+          "title": "9000-Future / 9010-Future-Expansions.md",
+          "done": true
+        },
+        {
+          "id": 319,
+          "title": "9000-Future / 9011-Experimental-Mechanics.md",
+          "done": true
+        },
+        {
+          "id": 320,
+          "title": "9000-Future / 9012-Rejected-Ideas.md",
+          "done": true
+        },
+        {
+          "id": 321,
+          "title": "9000-Future / 9013-Prototype-Systems.md",
+          "done": true
+        },
+        {
+          "id": 322,
+          "title": "9000-Future / 9014-Community-Suggestions.md",
+          "done": true
+        },
+        {
+          "id": 323,
+          "title": "9000-Future / 9015-Unconfirmed-Features.md",
+          "done": true
+        },
+        {
+          "id": 324,
+          "title": "9000-Future / 9016-Secret-Interaction-System.md",
+          "done": true
+        },
+        {
+          "id": 325,
+          "title": "9000-Future / 9999-Ideas.md",
+          "done": true
+        }
+      ]
+    },
+    {
+      "id": "concept-art",
+      "label": "Concept Art",
+      "blurb": "Prompt files populating the concept art folder \u2014 characters, environments, props.",
+      "items": [
+        {
+          "id": 326,
+          "title": "Concept Art 001 \u2014 Environment Prompt",
+          "done": false
+        },
+        {
+          "id": 327,
+          "title": "Concept Art 002 \u2014 Character Silhouette",
+          "done": false
+        },
+        {
+          "id": 328,
+          "title": "Concept Art 003 \u2014 Armor Study",
+          "done": false
+        },
+        {
+          "id": 329,
+          "title": "Concept Art 004 \u2014 Creature Concept",
+          "done": false
+        },
+        {
+          "id": 330,
+          "title": "Concept Art 005 \u2014 Weapon Design",
+          "done": false
+        },
+        {
+          "id": 331,
+          "title": "Concept Art 006 \u2014 Mood Board Panel",
+          "done": false
+        },
+        {
+          "id": 332,
+          "title": "Concept Art 007 \u2014 Ruin Architecture",
+          "done": false
+        },
+        {
+          "id": 333,
+          "title": "Concept Art 008 \u2014 Banner & Heraldry",
+          "done": false
+        },
+        {
+          "id": 334,
+          "title": "Concept Art 009 \u2014 UI Icon Set",
+          "done": false
+        },
+        {
+          "id": 335,
+          "title": "Concept Art 010 \u2014 Key Art Draft",
+          "done": false
+        },
+        {
+          "id": 336,
+          "title": "Concept Art 011 \u2014 Environment Prompt",
+          "done": false
+        },
+        {
+          "id": 337,
+          "title": "Concept Art 012 \u2014 Character Silhouette",
+          "done": false
+        },
+        {
+          "id": 338,
+          "title": "Concept Art 013 \u2014 Armor Study",
+          "done": false
+        },
+        {
+          "id": 339,
+          "title": "Concept Art 014 \u2014 Creature Concept",
+          "done": false
+        },
+        {
+          "id": 340,
+          "title": "Concept Art 015 \u2014 Weapon Design",
+          "done": false
+        },
+        {
+          "id": 341,
+          "title": "Concept Art 016 \u2014 Mood Board Panel",
+          "done": false
+        },
+        {
+          "id": 342,
+          "title": "Concept Art 017 \u2014 Ruin Architecture",
+          "done": false
+        },
+        {
+          "id": 343,
+          "title": "Concept Art 018 \u2014 Banner & Heraldry",
+          "done": false
+        },
+        {
+          "id": 344,
+          "title": "Concept Art 019 \u2014 UI Icon Set",
+          "done": false
+        },
+        {
+          "id": 345,
+          "title": "Concept Art 020 \u2014 Key Art Draft",
+          "done": false
+        },
+        {
+          "id": 346,
+          "title": "Concept Art 021 \u2014 Environment Prompt",
+          "done": false
+        },
+        {
+          "id": 347,
+          "title": "Concept Art 022 \u2014 Character Silhouette",
+          "done": false
+        },
+        {
+          "id": 348,
+          "title": "Concept Art 023 \u2014 Armor Study",
+          "done": false
+        },
+        {
+          "id": 349,
+          "title": "Concept Art 024 \u2014 Creature Concept",
+          "done": false
+        },
+        {
+          "id": 350,
+          "title": "Concept Art 025 \u2014 Weapon Design",
+          "done": false
+        },
+        {
+          "id": 351,
+          "title": "Concept Art 026 \u2014 Mood Board Panel",
+          "done": false
+        },
+        {
+          "id": 352,
+          "title": "Concept Art 027 \u2014 Ruin Architecture",
+          "done": false
+        },
+        {
+          "id": 353,
+          "title": "Concept Art 028 \u2014 Banner & Heraldry",
+          "done": false
+        },
+        {
+          "id": 354,
+          "title": "Concept Art 029 \u2014 UI Icon Set",
+          "done": false
+        },
+        {
+          "id": 355,
+          "title": "Concept Art 030 \u2014 Key Art Draft",
+          "done": false
+        },
+        {
+          "id": 356,
+          "title": "Concept Art 031 \u2014 Environment Prompt",
+          "done": false
+        },
+        {
+          "id": 357,
+          "title": "Concept Art 032 \u2014 Character Silhouette",
+          "done": false
+        },
+        {
+          "id": 358,
+          "title": "Concept Art 033 \u2014 Armor Study",
+          "done": false
+        },
+        {
+          "id": 359,
+          "title": "Concept Art 034 \u2014 Creature Concept",
+          "done": false
+        },
+        {
+          "id": 360,
+          "title": "Concept Art 035 \u2014 Weapon Design",
+          "done": false
+        },
+        {
+          "id": 361,
+          "title": "Concept Art 036 \u2014 Mood Board Panel",
+          "done": false
+        },
+        {
+          "id": 362,
+          "title": "Concept Art 037 \u2014 Ruin Architecture",
+          "done": false
+        },
+        {
+          "id": 363,
+          "title": "Concept Art 038 \u2014 Banner & Heraldry",
+          "done": false
+        },
+        {
+          "id": 364,
+          "title": "Concept Art 039 \u2014 UI Icon Set",
+          "done": false
+        },
+        {
+          "id": 365,
+          "title": "Concept Art 040 \u2014 Key Art Draft",
+          "done": false
+        },
+        {
+          "id": 366,
+          "title": "Concept Art 041 \u2014 Environment Prompt",
+          "done": false
+        },
+        {
+          "id": 367,
+          "title": "Concept Art 042 \u2014 Character Silhouette",
+          "done": false
+        },
+        {
+          "id": 368,
+          "title": "Concept Art 043 \u2014 Armor Study",
+          "done": false
+        },
+        {
+          "id": 369,
+          "title": "Concept Art 044 \u2014 Creature Concept",
+          "done": false
+        },
+        {
+          "id": 370,
+          "title": "Concept Art 045 \u2014 Weapon Design",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "World",
+      "blurb": "Regions, biomes, settlements, and points of interest across the continent.",
+      "items": [
+        {
+          "id": 371,
+          "title": "World 001 \u2014 Region Layout",
+          "done": false
+        },
+        {
+          "id": 372,
+          "title": "World 002 \u2014 Biome Definition",
+          "done": false
+        },
+        {
+          "id": 373,
+          "title": "World 003 \u2014 Settlement Placement",
+          "done": false
+        },
+        {
+          "id": 374,
+          "title": "World 004 \u2014 Landmark Notes",
+          "done": false
+        },
+        {
+          "id": 375,
+          "title": "World 005 \u2014 Travel Node",
+          "done": false
+        },
+        {
+          "id": 376,
+          "title": "World 006 \u2014 Climate Profile",
+          "done": false
+        },
+        {
+          "id": 377,
+          "title": "World 007 \u2014 Resource Distribution",
+          "done": false
+        },
+        {
+          "id": 378,
+          "title": "World 008 \u2014 Ruin Site",
+          "done": false
+        },
+        {
+          "id": 379,
+          "title": "World 009 \u2014 Coastal Feature",
+          "done": false
+        },
+        {
+          "id": 380,
+          "title": "World 010 \u2014 Underground Network",
+          "done": false
+        },
+        {
+          "id": 381,
+          "title": "World 011 \u2014 Region Layout",
+          "done": false
+        },
+        {
+          "id": 382,
+          "title": "World 012 \u2014 Biome Definition",
+          "done": false
+        },
+        {
+          "id": 383,
+          "title": "World 013 \u2014 Settlement Placement",
+          "done": false
+        },
+        {
+          "id": 384,
+          "title": "World 014 \u2014 Landmark Notes",
+          "done": false
+        },
+        {
+          "id": 385,
+          "title": "World 015 \u2014 Travel Node",
+          "done": false
+        },
+        {
+          "id": 386,
+          "title": "World 016 \u2014 Climate Profile",
+          "done": false
+        },
+        {
+          "id": 387,
+          "title": "World 017 \u2014 Resource Distribution",
+          "done": false
+        },
+        {
+          "id": 388,
+          "title": "World 018 \u2014 Ruin Site",
+          "done": false
+        },
+        {
+          "id": 389,
+          "title": "World 019 \u2014 Coastal Feature",
+          "done": false
+        },
+        {
+          "id": 390,
+          "title": "World 020 \u2014 Underground Network",
+          "done": false
+        },
+        {
+          "id": 391,
+          "title": "World 021 \u2014 Region Layout",
+          "done": false
+        },
+        {
+          "id": 392,
+          "title": "World 022 \u2014 Biome Definition",
+          "done": false
+        },
+        {
+          "id": 393,
+          "title": "World 023 \u2014 Settlement Placement",
+          "done": false
+        },
+        {
+          "id": 394,
+          "title": "World 024 \u2014 Landmark Notes",
+          "done": false
+        },
+        {
+          "id": 395,
+          "title": "World 025 \u2014 Travel Node",
+          "done": false
+        },
+        {
+          "id": 396,
+          "title": "World 026 \u2014 Climate Profile",
+          "done": false
+        },
+        {
+          "id": 397,
+          "title": "World 027 \u2014 Resource Distribution",
+          "done": false
+        },
+        {
+          "id": 398,
+          "title": "World 028 \u2014 Ruin Site",
+          "done": false
+        },
+        {
+          "id": 399,
+          "title": "World 029 \u2014 Coastal Feature",
+          "done": false
+        },
+        {
+          "id": 400,
+          "title": "World 030 \u2014 Underground Network",
+          "done": false
+        },
+        {
+          "id": 401,
+          "title": "World 031 \u2014 Region Layout",
+          "done": false
+        },
+        {
+          "id": 402,
+          "title": "World 032 \u2014 Biome Definition",
+          "done": false
+        },
+        {
+          "id": 403,
+          "title": "World 033 \u2014 Settlement Placement",
+          "done": false
+        },
+        {
+          "id": 404,
+          "title": "World 034 \u2014 Landmark Notes",
+          "done": false
+        },
+        {
+          "id": 405,
+          "title": "World 035 \u2014 Travel Node",
+          "done": false
+        },
+        {
+          "id": 406,
+          "title": "World 036 \u2014 Climate Profile",
+          "done": false
+        },
+        {
+          "id": 407,
+          "title": "World 037 \u2014 Resource Distribution",
+          "done": false
+        },
+        {
+          "id": 408,
+          "title": "World 038 \u2014 Ruin Site",
+          "done": false
+        },
+        {
+          "id": 409,
+          "title": "World 039 \u2014 Coastal Feature",
+          "done": false
+        },
+        {
+          "id": 410,
+          "title": "World 040 \u2014 Underground Network",
+          "done": false
+        },
+        {
+          "id": 411,
+          "title": "World 041 \u2014 Region Layout",
+          "done": false
+        },
+        {
+          "id": 412,
+          "title": "World 042 \u2014 Biome Definition",
+          "done": false
+        },
+        {
+          "id": 413,
+          "title": "World 043 \u2014 Settlement Placement",
+          "done": false
+        },
+        {
+          "id": 414,
+          "title": "World 044 \u2014 Landmark Notes",
+          "done": false
+        },
+        {
+          "id": 415,
+          "title": "World 045 \u2014 Travel Node",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "lore",
+      "label": "Lore",
+      "blurb": "Myths, histories, bloodlines, and the timeline binding it all together.",
+      "items": [
+        {
+          "id": 416,
+          "title": "Lore 001 \u2014 Founding Myth",
+          "done": false
+        },
+        {
+          "id": 417,
+          "title": "Lore 002 \u2014 Historical Era",
+          "done": false
+        },
+        {
+          "id": 418,
+          "title": "Lore 003 \u2014 Bloodline Record",
+          "done": false
+        },
+        {
+          "id": 419,
+          "title": "Lore 004 \u2014 Prophecy Fragment",
+          "done": false
+        },
+        {
+          "id": 420,
+          "title": "Lore 005 \u2014 Cultural Note",
+          "done": false
+        },
+        {
+          "id": 421,
+          "title": "Lore 006 \u2014 Lost Language Entry",
+          "done": false
+        },
+        {
+          "id": 422,
+          "title": "Lore 007 \u2014 Regional Folklore",
+          "done": false
+        },
+        {
+          "id": 423,
+          "title": "Lore 008 \u2014 Faction Origin",
+          "done": false
+        },
+        {
+          "id": 424,
+          "title": "Lore 009 \u2014 Relic History",
+          "done": false
+        },
+        {
+          "id": 425,
+          "title": "Lore 010 \u2014 Timeline Event",
+          "done": false
+        },
+        {
+          "id": 426,
+          "title": "Lore 011 \u2014 Founding Myth",
+          "done": false
+        },
+        {
+          "id": 427,
+          "title": "Lore 012 \u2014 Historical Era",
+          "done": false
+        },
+        {
+          "id": 428,
+          "title": "Lore 013 \u2014 Bloodline Record",
+          "done": false
+        },
+        {
+          "id": 429,
+          "title": "Lore 014 \u2014 Prophecy Fragment",
+          "done": false
+        },
+        {
+          "id": 430,
+          "title": "Lore 015 \u2014 Cultural Note",
+          "done": false
+        },
+        {
+          "id": 431,
+          "title": "Lore 016 \u2014 Lost Language Entry",
+          "done": false
+        },
+        {
+          "id": 432,
+          "title": "Lore 017 \u2014 Regional Folklore",
+          "done": false
+        },
+        {
+          "id": 433,
+          "title": "Lore 018 \u2014 Faction Origin",
+          "done": false
+        },
+        {
+          "id": 434,
+          "title": "Lore 019 \u2014 Relic History",
+          "done": false
+        },
+        {
+          "id": 435,
+          "title": "Lore 020 \u2014 Timeline Event",
+          "done": false
+        },
+        {
+          "id": 436,
+          "title": "Lore 021 \u2014 Founding Myth",
+          "done": false
+        },
+        {
+          "id": 437,
+          "title": "Lore 022 \u2014 Historical Era",
+          "done": false
+        },
+        {
+          "id": 438,
+          "title": "Lore 023 \u2014 Bloodline Record",
+          "done": false
+        },
+        {
+          "id": 439,
+          "title": "Lore 024 \u2014 Prophecy Fragment",
+          "done": false
+        },
+        {
+          "id": 440,
+          "title": "Lore 025 \u2014 Cultural Note",
+          "done": false
+        },
+        {
+          "id": 441,
+          "title": "Lore 026 \u2014 Lost Language Entry",
+          "done": false
+        },
+        {
+          "id": 442,
+          "title": "Lore 027 \u2014 Regional Folklore",
+          "done": false
+        },
+        {
+          "id": 443,
+          "title": "Lore 028 \u2014 Faction Origin",
+          "done": false
+        },
+        {
+          "id": 444,
+          "title": "Lore 029 \u2014 Relic History",
+          "done": false
+        },
+        {
+          "id": 445,
+          "title": "Lore 030 \u2014 Timeline Event",
+          "done": false
+        },
+        {
+          "id": 446,
+          "title": "Lore 031 \u2014 Founding Myth",
+          "done": false
+        },
+        {
+          "id": 447,
+          "title": "Lore 032 \u2014 Historical Era",
+          "done": false
+        },
+        {
+          "id": 448,
+          "title": "Lore 033 \u2014 Bloodline Record",
+          "done": false
+        },
+        {
+          "id": 449,
+          "title": "Lore 034 \u2014 Prophecy Fragment",
+          "done": false
+        },
+        {
+          "id": 450,
+          "title": "Lore 035 \u2014 Cultural Note",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "gameplay",
+      "label": "Gameplay Systems",
+      "blurb": "Combat, quests, traversal, and the core moment-to-moment loop.",
+      "items": [
+        {
+          "id": 451,
+          "title": "Gameplay Systems 001 \u2014 Combat Rule",
+          "done": false
+        },
+        {
+          "id": 452,
+          "title": "Gameplay Systems 002 \u2014 Quest Template",
+          "done": false
+        },
+        {
+          "id": 453,
+          "title": "Gameplay Systems 003 \u2014 Stealth Mechanic",
+          "done": false
+        },
+        {
+          "id": 454,
+          "title": "Gameplay Systems 004 \u2014 Mount Behavior",
+          "done": false
+        },
+        {
+          "id": 455,
+          "title": "Gameplay Systems 005 \u2014 Death Handling",
+          "done": false
+        },
+        {
+          "id": 456,
+          "title": "Gameplay Systems 006 \u2014 Companion AI Rule",
+          "done": false
+        },
+        {
+          "id": 457,
+          "title": "Gameplay Systems 007 \u2014 Difficulty Curve",
+          "done": false
+        },
+        {
+          "id": 458,
+          "title": "Gameplay Systems 008 \u2014 Dungeon Pillar",
+          "done": false
+        },
+        {
+          "id": 459,
+          "title": "Gameplay Systems 009 \u2014 Interaction System",
+          "done": false
+        },
+        {
+          "id": 460,
+          "title": "Gameplay Systems 010 \u2014 Progression Hook",
+          "done": false
+        },
+        {
+          "id": 461,
+          "title": "Gameplay Systems 011 \u2014 Combat Rule",
+          "done": false
+        },
+        {
+          "id": 462,
+          "title": "Gameplay Systems 012 \u2014 Quest Template",
+          "done": false
+        },
+        {
+          "id": 463,
+          "title": "Gameplay Systems 013 \u2014 Stealth Mechanic",
+          "done": false
+        },
+        {
+          "id": 464,
+          "title": "Gameplay Systems 014 \u2014 Mount Behavior",
+          "done": false
+        },
+        {
+          "id": 465,
+          "title": "Gameplay Systems 015 \u2014 Death Handling",
+          "done": false
+        },
+        {
+          "id": 466,
+          "title": "Gameplay Systems 016 \u2014 Companion AI Rule",
+          "done": false
+        },
+        {
+          "id": 467,
+          "title": "Gameplay Systems 017 \u2014 Difficulty Curve",
+          "done": false
+        },
+        {
+          "id": 468,
+          "title": "Gameplay Systems 018 \u2014 Dungeon Pillar",
+          "done": false
+        },
+        {
+          "id": 469,
+          "title": "Gameplay Systems 019 \u2014 Interaction System",
+          "done": false
+        },
+        {
+          "id": 470,
+          "title": "Gameplay Systems 020 \u2014 Progression Hook",
+          "done": false
+        },
+        {
+          "id": 471,
+          "title": "Gameplay Systems 021 \u2014 Combat Rule",
+          "done": false
+        },
+        {
+          "id": 472,
+          "title": "Gameplay Systems 022 \u2014 Quest Template",
+          "done": false
+        },
+        {
+          "id": 473,
+          "title": "Gameplay Systems 023 \u2014 Stealth Mechanic",
+          "done": false
+        },
+        {
+          "id": 474,
+          "title": "Gameplay Systems 024 \u2014 Mount Behavior",
+          "done": false
+        },
+        {
+          "id": 475,
+          "title": "Gameplay Systems 025 \u2014 Death Handling",
+          "done": false
+        },
+        {
+          "id": 476,
+          "title": "Gameplay Systems 026 \u2014 Companion AI Rule",
+          "done": false
+        },
+        {
+          "id": 477,
+          "title": "Gameplay Systems 027 \u2014 Difficulty Curve",
+          "done": false
+        },
+        {
+          "id": 478,
+          "title": "Gameplay Systems 028 \u2014 Dungeon Pillar",
+          "done": false
+        },
+        {
+          "id": 479,
+          "title": "Gameplay Systems 029 \u2014 Interaction System",
+          "done": false
+        },
+        {
+          "id": 480,
+          "title": "Gameplay Systems 030 \u2014 Progression Hook",
+          "done": false
+        },
+        {
+          "id": 481,
+          "title": "Gameplay Systems 031 \u2014 Combat Rule",
+          "done": false
+        },
+        {
+          "id": 482,
+          "title": "Gameplay Systems 032 \u2014 Quest Template",
+          "done": false
+        },
+        {
+          "id": 483,
+          "title": "Gameplay Systems 033 \u2014 Stealth Mechanic",
+          "done": false
+        },
+        {
+          "id": 484,
+          "title": "Gameplay Systems 034 \u2014 Mount Behavior",
+          "done": false
+        },
+        {
+          "id": 485,
+          "title": "Gameplay Systems 035 \u2014 Death Handling",
+          "done": false
+        },
+        {
+          "id": 486,
+          "title": "Gameplay Systems 036 \u2014 Companion AI Rule",
+          "done": false
+        },
+        {
+          "id": 487,
+          "title": "Gameplay Systems 037 \u2014 Difficulty Curve",
+          "done": false
+        },
+        {
+          "id": 488,
+          "title": "Gameplay Systems 038 \u2014 Dungeon Pillar",
+          "done": false
+        },
+        {
+          "id": 489,
+          "title": "Gameplay Systems 039 \u2014 Interaction System",
+          "done": false
+        },
+        {
+          "id": 490,
+          "title": "Gameplay Systems 040 \u2014 Progression Hook",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "economy",
+      "label": "Economy",
+      "blurb": "Currency, crafting, trade routes, and the systems that keep the market alive.",
+      "items": [
+        {
+          "id": 491,
+          "title": "Economy 001 \u2014 Currency Sink",
+          "done": false
+        },
+        {
+          "id": 492,
+          "title": "Economy 002 \u2014 Crafting Tier",
+          "done": false
+        },
+        {
+          "id": 493,
+          "title": "Economy 003 \u2014 Trade Route",
+          "done": false
+        },
+        {
+          "id": 494,
+          "title": "Economy 004 \u2014 Vendor Rule",
+          "done": false
+        },
+        {
+          "id": 495,
+          "title": "Economy 005 \u2014 Auction Fee",
+          "done": false
+        },
+        {
+          "id": 496,
+          "title": "Economy 006 \u2014 Drop Table",
+          "done": false
+        },
+        {
+          "id": 497,
+          "title": "Economy 007 \u2014 Resource Node",
+          "done": false
+        },
+        {
+          "id": 498,
+          "title": "Economy 008 \u2014 Guild Bank Rule",
+          "done": false
+        },
+        {
+          "id": 499,
+          "title": "Economy 009 \u2014 Inflation Control",
+          "done": false
+        },
+        {
+          "id": 500,
+          "title": "Economy 010 \u2014 Market Event",
+          "done": false
+        },
+        {
+          "id": 501,
+          "title": "Economy 011 \u2014 Currency Sink",
+          "done": false
+        },
+        {
+          "id": 502,
+          "title": "Economy 012 \u2014 Crafting Tier",
+          "done": false
+        },
+        {
+          "id": 503,
+          "title": "Economy 013 \u2014 Trade Route",
+          "done": false
+        },
+        {
+          "id": 504,
+          "title": "Economy 014 \u2014 Vendor Rule",
+          "done": false
+        },
+        {
+          "id": 505,
+          "title": "Economy 015 \u2014 Auction Fee",
+          "done": false
+        },
+        {
+          "id": 506,
+          "title": "Economy 016 \u2014 Drop Table",
+          "done": false
+        },
+        {
+          "id": 507,
+          "title": "Economy 017 \u2014 Resource Node",
+          "done": false
+        },
+        {
+          "id": 508,
+          "title": "Economy 018 \u2014 Guild Bank Rule",
+          "done": false
+        },
+        {
+          "id": 509,
+          "title": "Economy 019 \u2014 Inflation Control",
+          "done": false
+        },
+        {
+          "id": 510,
+          "title": "Economy 020 \u2014 Market Event",
+          "done": false
+        },
+        {
+          "id": 511,
+          "title": "Economy 021 \u2014 Currency Sink",
+          "done": false
+        },
+        {
+          "id": 512,
+          "title": "Economy 022 \u2014 Crafting Tier",
+          "done": false
+        },
+        {
+          "id": 513,
+          "title": "Economy 023 \u2014 Trade Route",
+          "done": false
+        },
+        {
+          "id": 514,
+          "title": "Economy 024 \u2014 Vendor Rule",
+          "done": false
+        },
+        {
+          "id": 515,
+          "title": "Economy 025 \u2014 Auction Fee",
+          "done": false
+        },
+        {
+          "id": 516,
+          "title": "Economy 026 \u2014 Drop Table",
+          "done": false
+        },
+        {
+          "id": 517,
+          "title": "Economy 027 \u2014 Resource Node",
+          "done": false
+        },
+        {
+          "id": 518,
+          "title": "Economy 028 \u2014 Guild Bank Rule",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "label": "Technical",
+      "blurb": "Server architecture, data schema, pipelines, and internal tooling.",
+      "items": [
+        {
+          "id": 519,
+          "title": "Technical 001 \u2014 Architecture Note",
+          "done": false
+        },
+        {
+          "id": 520,
+          "title": "Technical 002 \u2014 Data Schema",
+          "done": false
+        },
+        {
+          "id": 521,
+          "title": "Technical 003 \u2014 Networking Spec",
+          "done": false
+        },
+        {
+          "id": 522,
+          "title": "Technical 004 \u2014 Asset Pipeline Rule",
+          "done": false
+        },
+        {
+          "id": 523,
+          "title": "Technical 005 \u2014 Anti-Cheat Note",
+          "done": false
+        },
+        {
+          "id": 524,
+          "title": "Technical 006 \u2014 Build Pipeline Step",
+          "done": false
+        },
+        {
+          "id": 525,
+          "title": "Technical 007 \u2014 Performance Budget",
+          "done": false
+        },
+        {
+          "id": 526,
+          "title": "Technical 008 \u2014 Localization Rule",
+          "done": false
+        },
+        {
+          "id": 527,
+          "title": "Technical 009 \u2014 Bot Integration Spec",
+          "done": false
+        },
+        {
+          "id": 528,
+          "title": "Technical 010 \u2014 Save System Note",
+          "done": false
+        },
+        {
+          "id": 529,
+          "title": "Technical 011 \u2014 Architecture Note",
+          "done": false
+        },
+        {
+          "id": 530,
+          "title": "Technical 012 \u2014 Data Schema",
+          "done": false
+        },
+        {
+          "id": 531,
+          "title": "Technical 013 \u2014 Networking Spec",
+          "done": false
+        },
+        {
+          "id": 532,
+          "title": "Technical 014 \u2014 Asset Pipeline Rule",
+          "done": false
+        },
+        {
+          "id": 533,
+          "title": "Technical 015 \u2014 Anti-Cheat Note",
+          "done": false
+        },
+        {
+          "id": 534,
+          "title": "Technical 016 \u2014 Build Pipeline Step",
+          "done": false
+        },
+        {
+          "id": 535,
+          "title": "Technical 017 \u2014 Performance Budget",
+          "done": false
+        },
+        {
+          "id": 536,
+          "title": "Technical 018 \u2014 Localization Rule",
+          "done": false
+        },
+        {
+          "id": 537,
+          "title": "Technical 019 \u2014 Bot Integration Spec",
+          "done": false
+        },
+        {
+          "id": 538,
+          "title": "Technical 020 \u2014 Save System Note",
+          "done": false
+        },
+        {
+          "id": 539,
+          "title": "Technical 021 \u2014 Architecture Note",
+          "done": false
+        },
+        {
+          "id": 540,
+          "title": "Technical 022 \u2014 Data Schema",
+          "done": false
+        },
+        {
+          "id": 541,
+          "title": "Technical 023 \u2014 Networking Spec",
+          "done": false
+        },
+        {
+          "id": 542,
+          "title": "Technical 024 \u2014 Asset Pipeline Rule",
+          "done": false
+        },
+        {
+          "id": 543,
+          "title": "Technical 025 \u2014 Anti-Cheat Note",
+          "done": false
+        },
+        {
+          "id": 544,
+          "title": "Technical 026 \u2014 Build Pipeline Step",
+          "done": false
+        },
+        {
+          "id": 545,
+          "title": "Technical 027 \u2014 Performance Budget",
+          "done": false
+        },
+        {
+          "id": 546,
+          "title": "Technical 028 \u2014 Localization Rule",
+          "done": false
+        },
+        {
+          "id": 547,
+          "title": "Technical 029 \u2014 Bot Integration Spec",
+          "done": false
+        },
+        {
+          "id": 548,
+          "title": "Technical 030 \u2014 Save System Note",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "label": "Music",
+      "blurb": "The 168-track Suno documentation system, region by region and cue by cue.",
+      "items": [
+        {
+          "id": 549,
+          "title": "Music 001 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 550,
+          "title": "Music 002 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 551,
+          "title": "Music 003 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 552,
+          "title": "Music 004 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 553,
+          "title": "Music 005 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 554,
+          "title": "Music 006 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 555,
+          "title": "Music 007 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 556,
+          "title": "Music 008 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 557,
+          "title": "Music 009 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 558,
+          "title": "Music 010 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 559,
+          "title": "Music 011 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 560,
+          "title": "Music 012 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 561,
+          "title": "Music 013 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 562,
+          "title": "Music 014 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 563,
+          "title": "Music 015 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 564,
+          "title": "Music 016 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 565,
+          "title": "Music 017 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 566,
+          "title": "Music 018 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 567,
+          "title": "Music 019 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 568,
+          "title": "Music 020 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 569,
+          "title": "Music 021 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 570,
+          "title": "Music 022 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 571,
+          "title": "Music 023 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 572,
+          "title": "Music 024 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 573,
+          "title": "Music 025 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 574,
+          "title": "Music 026 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 575,
+          "title": "Music 027 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 576,
+          "title": "Music 028 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 577,
+          "title": "Music 029 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 578,
+          "title": "Music 030 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 579,
+          "title": "Music 031 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 580,
+          "title": "Music 032 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 581,
+          "title": "Music 033 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 582,
+          "title": "Music 034 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 583,
+          "title": "Music 035 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 584,
+          "title": "Music 036 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 585,
+          "title": "Music 037 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 586,
+          "title": "Music 038 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 587,
+          "title": "Music 039 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 588,
+          "title": "Music 040 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 589,
+          "title": "Music 041 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 590,
+          "title": "Music 042 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 591,
+          "title": "Music 043 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 592,
+          "title": "Music 044 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 593,
+          "title": "Music 045 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 594,
+          "title": "Music 046 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 595,
+          "title": "Music 047 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 596,
+          "title": "Music 048 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 597,
+          "title": "Music 049 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 598,
+          "title": "Music 050 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 599,
+          "title": "Music 051 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 600,
+          "title": "Music 052 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 601,
+          "title": "Music 053 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 602,
+          "title": "Music 054 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 603,
+          "title": "Music 055 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 604,
+          "title": "Music 056 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 605,
+          "title": "Music 057 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 606,
+          "title": "Music 058 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 607,
+          "title": "Music 059 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 608,
+          "title": "Music 060 \u2014 Credits Cue",
+          "done": false
+        },
+        {
+          "id": 609,
+          "title": "Music 061 \u2014 Ambient Loop",
+          "done": false
+        },
+        {
+          "id": 610,
+          "title": "Music 062 \u2014 Combat Stinger",
+          "done": false
+        },
+        {
+          "id": 611,
+          "title": "Music 063 \u2014 Faction Leitmotif",
+          "done": false
+        },
+        {
+          "id": 612,
+          "title": "Music 064 \u2014 Exploration Theme",
+          "done": false
+        },
+        {
+          "id": 613,
+          "title": "Music 065 \u2014 Boss Cue",
+          "done": false
+        },
+        {
+          "id": 614,
+          "title": "Music 066 \u2014 Menu Theme Note",
+          "done": false
+        },
+        {
+          "id": 615,
+          "title": "Music 067 \u2014 Vocal Theme",
+          "done": false
+        },
+        {
+          "id": 616,
+          "title": "Music 068 \u2014 Regional Score Batch",
+          "done": false
+        },
+        {
+          "id": 617,
+          "title": "Music 069 \u2014 Transition Cue",
+          "done": false
+        },
+        {
+          "id": 618,
+          "title": "Music 070 \u2014 Credits Cue",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "Factions",
+      "blurb": "Structure, doctrine, and reputation rules for every faction in Elysium.",
+      "items": [
+        {
+          "id": 619,
+          "title": "Factions 001 \u2014 Faction Overview",
+          "done": false
+        },
+        {
+          "id": 620,
+          "title": "Factions 002 \u2014 Doctrine Note",
+          "done": false
+        },
+        {
+          "id": 621,
+          "title": "Factions 003 \u2014 Reputation Rule",
+          "done": false
+        },
+        {
+          "id": 622,
+          "title": "Factions 004 \u2014 Faction Quest Chain",
+          "done": false
+        },
+        {
+          "id": 623,
+          "title": "Factions 005 \u2014 Territory Rule",
+          "done": false
+        },
+        {
+          "id": 624,
+          "title": "Factions 006 \u2014 Diplomacy Note",
+          "done": false
+        },
+        {
+          "id": 625,
+          "title": "Factions 007 \u2014 War Mechanic",
+          "done": false
+        },
+        {
+          "id": 626,
+          "title": "Factions 008 \u2014 Faction Reward",
+          "done": false
+        },
+        {
+          "id": 627,
+          "title": "Factions 009 \u2014 Rank Structure",
+          "done": false
+        },
+        {
+          "id": 628,
+          "title": "Factions 010 \u2014 Recruitment Note",
+          "done": false
+        },
+        {
+          "id": 629,
+          "title": "Factions 011 \u2014 Faction Overview",
+          "done": false
+        },
+        {
+          "id": 630,
+          "title": "Factions 012 \u2014 Doctrine Note",
+          "done": false
+        },
+        {
+          "id": 631,
+          "title": "Factions 013 \u2014 Reputation Rule",
+          "done": false
+        },
+        {
+          "id": 632,
+          "title": "Factions 014 \u2014 Faction Quest Chain",
+          "done": false
+        },
+        {
+          "id": 633,
+          "title": "Factions 015 \u2014 Territory Rule",
+          "done": false
+        },
+        {
+          "id": 634,
+          "title": "Factions 016 \u2014 Diplomacy Note",
+          "done": false
+        },
+        {
+          "id": 635,
+          "title": "Factions 017 \u2014 War Mechanic",
+          "done": false
+        },
+        {
+          "id": 636,
+          "title": "Factions 018 \u2014 Faction Reward",
+          "done": false
+        },
+        {
+          "id": 637,
+          "title": "Factions 019 \u2014 Rank Structure",
+          "done": false
+        },
+        {
+          "id": 638,
+          "title": "Factions 020 \u2014 Recruitment Note",
+          "done": false
+        },
+        {
+          "id": 639,
+          "title": "Factions 021 \u2014 Faction Overview",
+          "done": false
+        },
+        {
+          "id": 640,
+          "title": "Factions 022 \u2014 Doctrine Note",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "Systems & Progression",
+      "blurb": "Classes, professions, housing, and the long-tail endgame loop.",
+      "items": [
+        {
+          "id": 641,
+          "title": "Systems & Progression 001 \u2014 Skill Tree Node",
+          "done": false
+        },
+        {
+          "id": 642,
+          "title": "Systems & Progression 002 \u2014 Profession Step",
+          "done": false
+        },
+        {
+          "id": 643,
+          "title": "Systems & Progression 003 \u2014 Housing Feature",
+          "done": false
+        },
+        {
+          "id": 644,
+          "title": "Systems & Progression 004 \u2014 Guild Progression Tier",
+          "done": false
+        },
+        {
+          "id": 645,
+          "title": "Systems & Progression 005 \u2014 Enchanting Path",
+          "done": false
+        },
+        {
+          "id": 646,
+          "title": "Systems & Progression 006 \u2014 Achievement Entry",
+          "done": false
+        },
+        {
+          "id": 647,
+          "title": "Systems & Progression 007 \u2014 Companion Collection Rule",
+          "done": false
+        },
+        {
+          "id": 648,
+          "title": "Systems & Progression 008 \u2014 Seasonal Event Note",
+          "done": false
+        },
+        {
+          "id": 649,
+          "title": "Systems & Progression 009 \u2014 Mentor Rule",
+          "done": false
+        },
+        {
+          "id": 650,
+          "title": "Systems & Progression 010 \u2014 Endgame Loop Note",
+          "done": false
+        },
+        {
+          "id": 651,
+          "title": "Systems & Progression 011 \u2014 Skill Tree Node",
+          "done": false
+        },
+        {
+          "id": 652,
+          "title": "Systems & Progression 012 \u2014 Profession Step",
+          "done": false
+        },
+        {
+          "id": 653,
+          "title": "Systems & Progression 013 \u2014 Housing Feature",
+          "done": false
+        },
+        {
+          "id": 654,
+          "title": "Systems & Progression 014 \u2014 Guild Progression Tier",
+          "done": false
+        },
+        {
+          "id": 655,
+          "title": "Systems & Progression 015 \u2014 Enchanting Path",
+          "done": false
+        },
+        {
+          "id": 656,
+          "title": "Systems & Progression 016 \u2014 Achievement Entry",
+          "done": false
+        },
+        {
+          "id": 657,
+          "title": "Systems & Progression 017 \u2014 Companion Collection Rule",
+          "done": false
+        },
+        {
+          "id": 658,
+          "title": "Systems & Progression 018 \u2014 Seasonal Event Note",
+          "done": false
+        },
+        {
+          "id": 659,
+          "title": "Systems & Progression 019 \u2014 Mentor Rule",
+          "done": false
+        },
+        {
+          "id": 660,
+          "title": "Systems & Progression 020 \u2014 Endgame Loop Note",
+          "done": false
+        },
+        {
+          "id": 661,
+          "title": "Systems & Progression 021 \u2014 Skill Tree Node",
+          "done": false
+        },
+        {
+          "id": 662,
+          "title": "Systems & Progression 022 \u2014 Profession Step",
+          "done": false
+        },
+        {
+          "id": 663,
+          "title": "Systems & Progression 023 \u2014 Housing Feature",
+          "done": false
+        },
+        {
+          "id": 664,
+          "title": "Systems & Progression 024 \u2014 Guild Progression Tier",
+          "done": false
+        },
+        {
+          "id": 665,
+          "title": "Systems & Progression 025 \u2014 Enchanting Path",
+          "done": false
+        },
+        {
+          "id": 666,
+          "title": "Systems & Progression 026 \u2014 Achievement Entry",
+          "done": false
+        },
+        {
+          "id": 667,
+          "title": "Systems & Progression 027 \u2014 Companion Collection Rule",
+          "done": false
+        },
+        {
+          "id": 668,
+          "title": "Systems & Progression 028 \u2014 Seasonal Event Note",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "label": "Marketing & Devlog",
+      "blurb": "The 180-day Instagram devlog script plus trailer and press materials.",
+      "items": [
+        {
+          "id": 669,
+          "title": "Marketing & Devlog 001 \u2014 Devlog Script Day",
+          "done": false
+        },
+        {
+          "id": 670,
+          "title": "Marketing & Devlog 002 \u2014 Trailer Beat",
+          "done": false
+        },
+        {
+          "id": 671,
+          "title": "Marketing & Devlog 003 \u2014 Q&A Talking Point",
+          "done": false
+        },
+        {
+          "id": 672,
+          "title": "Marketing & Devlog 004 \u2014 Screenshot Saturday Post",
+          "done": false
+        },
+        {
+          "id": 673,
+          "title": "Marketing & Devlog 005 \u2014 Announcement Template",
+          "done": false
+        },
+        {
+          "id": 674,
+          "title": "Marketing & Devlog 006 \u2014 Press Kit Section",
+          "done": false
+        },
+        {
+          "id": 675,
+          "title": "Marketing & Devlog 007 \u2014 Wishlist Copy Block",
+          "done": false
+        },
+        {
+          "id": 676,
+          "title": "Marketing & Devlog 008 \u2014 Dev Diary Entry",
+          "done": false
+        },
+        {
+          "id": 677,
+          "title": "Marketing & Devlog 009 \u2014 Teaser Storyboard Panel",
+          "done": false
+        },
+        {
+          "id": 678,
+          "title": "Marketing & Devlog 010 \u2014 Community Poll",
+          "done": false
+        },
+        {
+          "id": 679,
+          "title": "Marketing & Devlog 011 \u2014 Devlog Script Day",
+          "done": false
+        },
+        {
+          "id": 680,
+          "title": "Marketing & Devlog 012 \u2014 Trailer Beat",
+          "done": false
+        },
+        {
+          "id": 681,
+          "title": "Marketing & Devlog 013 \u2014 Q&A Talking Point",
+          "done": false
+        },
+        {
+          "id": 682,
+          "title": "Marketing & Devlog 014 \u2014 Screenshot Saturday Post",
+          "done": false
+        },
+        {
+          "id": 683,
+          "title": "Marketing & Devlog 015 \u2014 Announcement Template",
+          "done": false
+        },
+        {
+          "id": 684,
+          "title": "Marketing & Devlog 016 \u2014 Press Kit Section",
+          "done": false
+        },
+        {
+          "id": 685,
+          "title": "Marketing & Devlog 017 \u2014 Wishlist Copy Block",
+          "done": false
+        },
+        {
+          "id": 686,
+          "title": "Marketing & Devlog 018 \u2014 Dev Diary Entry",
+          "done": false
+        },
+        {
+          "id": 687,
+          "title": "Marketing & Devlog 019 \u2014 Teaser Storyboard Panel",
+          "done": false
+        },
+        {
+          "id": 688,
+          "title": "Marketing & Devlog 020 \u2014 Community Poll",
+          "done": false
+        },
+        {
+          "id": 689,
+          "title": "Marketing & Devlog 021 \u2014 Devlog Script Day",
+          "done": false
+        },
+        {
+          "id": 690,
+          "title": "Marketing & Devlog 022 \u2014 Trailer Beat",
+          "done": false
+        },
+        {
+          "id": 691,
+          "title": "Marketing & Devlog 023 \u2014 Q&A Talking Point",
+          "done": false
+        },
+        {
+          "id": 692,
+          "title": "Marketing & Devlog 024 \u2014 Screenshot Saturday Post",
+          "done": false
+        },
+        {
+          "id": 693,
+          "title": "Marketing & Devlog 025 \u2014 Announcement Template",
+          "done": false
+        },
+        {
+          "id": 694,
+          "title": "Marketing & Devlog 026 \u2014 Press Kit Section",
+          "done": false
+        },
+        {
+          "id": 695,
+          "title": "Marketing & Devlog 027 \u2014 Wishlist Copy Block",
+          "done": false
+        },
+        {
+          "id": 696,
+          "title": "Marketing & Devlog 028 \u2014 Dev Diary Entry",
+          "done": false
+        },
+        {
+          "id": 697,
+          "title": "Marketing & Devlog 029 \u2014 Teaser Storyboard Panel",
+          "done": false
+        },
+        {
+          "id": 698,
+          "title": "Marketing & Devlog 030 \u2014 Community Poll",
+          "done": false
+        },
+        {
+          "id": 699,
+          "title": "Marketing & Devlog 031 \u2014 Devlog Script Day",
+          "done": false
+        },
+        {
+          "id": 700,
+          "title": "Marketing & Devlog 032 \u2014 Trailer Beat",
+          "done": false
+        }
+      ]
+    }
+  ]
+}

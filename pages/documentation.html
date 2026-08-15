@@ -57,8 +57,21 @@
 /css/animations.css  Keyframes and motion-only effects
 /js/main.js        All page interactions (nav, reveals, map, gallery, easter eggs)
 /js/particles.js   Canvas particle field used behind the hero
+/data/dev-stages.json  Development stage manifest (see below)
 /assets/           Reserved for audio or downloadable files
 /images/           Reserved for real screenshots and art once available</pre>
+
+  <h2>Development stages bar</h2>
+  <p>The Development section on the homepage renders a "Development Stages" widget: one collapsible bar per workstream (Documentation, Concept Art, World, Lore, Gameplay Systems, Economy, Technical, Music, Factions, Systems & Progression, Marketing & Devlog), and inside each one, a tiny tile for every individual piece of work in that stage — pulled from <code>data/dev-stages.json</code>.</p>
+  <ul>
+    <li>The file is one object with a top-level <code>stages</code> array. Each stage looks like <code>{ "id": "world", "label": "World", "blurb": "...", "items": [ ... ] }</code>.</li>
+    <li>Each item inside a stage's <code>items</code> array looks like <code>{ "id": 101, "title": "World 001 — Region Layout", "done": true }</code>.</li>
+    <li>If <code>done</code> is <code>true</code>, that item renders as a filled gold tile and counts toward both that stage's percentage and the page-wide total. If <code>false</code>, it renders as a hollow tile.</li>
+    <li>Click a stage's header to expand it and reveal its tiles — they're built and animated in the first time you open that stage, so the page stays light even with hundreds of pieces across all stages.</li>
+    <li>To add a piece of work, append a new object to the relevant stage's <code>items</code> array. To add a whole new stage, append a new object to the top-level <code>stages</code> array with its own <code>id</code>, <code>label</code>, <code>blurb</code>, and <code>items</code>. No code changes are required — bars, tiles, and totals rebuild themselves from the JSON.</li>
+    <li>Flip an item's <code>done</code> value to <code>true</code> the moment that piece is actually finished, so the bars stay honest.</li>
+    <li>This fetch requires the page to be served over <code>http(s)</code> (a local server or GitHub Pages) — opening <code>index.html</code> directly as a <code>file://</code> URL will block the request in most browsers.</li>
+  </ul>
 
   <h2>Replacing placeholder art</h2>
   <p>Every image on the site is currently an inline SVG gradient so the project has zero binary dependencies. To swap in real screenshots or concept art:</p>
