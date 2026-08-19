@@ -1067,11 +1067,66 @@
 
     // Random rune clicks on stone dividers → hidden lore snippets
     var loreSnippets = [
+      // The Sundering
       "Some say the Sundering was no accident at all.",
+      "The Sundering began before the first bell of dawn.",
+      "Kaelgorath did not destroy Elysium alone.",
+      "The gods knew the Sundering was coming.",
+      "The oldest records of the Sundering have been deliberately erased.",
+
+      // Factions
       "The Duskward Pact was born from a broken promise.",
+      "The first leaders of the Dawnbound Concord once fought beside the Pact.",
+      "Solmere was not the first capital of the Dawnbound.",
+      "Some Pact soldiers still carry symbols of the Concord.",
+      "The Pact's founding oath has never been translated correctly.",
+
+      // Vethmoor
       "Not every ruin in Vethmoor predates the Sundering.",
+      "Something beneath Vethmoor still answers when its name is spoken.",
+      "The ruins of Vethmoor were once connected by roads that no longer exist.",
+      "Travelers who enter the northern ruins sometimes return speaking an unknown language.",
+      "There are maps of Vethmoor that show places no living cartographer has found.",
+
+      // Sylvaneth
       "Sylvaneth's oldest trees remember the Ancient Age.",
-      "The Void Herald has been seen more than once."
+      "The oldest trees refuse to grow where blood has been spilled.",
+      "Some Sylvaneth roots reach far deeper than the oldest known ruins.",
+      "The druids stopped counting the rings of the First Tree centuries ago.",
+      "The forest remembers people who have been forgotten by history.",
+
+      // Gods
+      "The gods did not always agree on what Elysium should become.",
+      "Solthar's light cannot reach every corner of the world.",
+      "Nyxara knows a name that the other gods have forgotten.",
+      "Terravox sleeps beneath something no mortal has seen.",
+      "Maelithir's storms have followed the same path since before the Sundering.",
+
+      // Void Herald
+      "The Void Herald has been seen more than once.",
+      "The first account of the Void Herald predates the Sundering.",
+      "Witnesses describe the Void Herald differently, yet all remember the same voice.",
+      "The Void Herald does not appear in any surviving records of the Ancient Age.",
+      "Some believe the Void Herald is not a person at all.",
+
+      // Ancient Age
+      "The Ancient Age ended long before the first kingdoms were founded.",
+      "There are ruins older than the gods' oldest temples.",
+      "The Ancient Age was not as peaceful as the songs suggest.",
+      "Someone went to great lengths to erase the history of the Ancient Age.",
+      "The oldest surviving inscription contains a warning, not a name.",
+
+      // Cryptic
+      "Do not trust the statues that face east.",
+      "Seven lights. One shadow.",
+      "The eighth was never meant to be remembered.",
+      "When the moon disappears, listen for the bells.",
+      "The stone remembers what the living forget.",
+      "Some doors were buried for a reason.",
+      "The ruins are not empty.",
+      "You have been here before.",
+      "Something is watching from beneath the world.",
+      "The story you were told is incomplete."
     ];
     $all(".stone-edge").forEach(function (edge) {
       edge.style.pointerEvents = "auto";
