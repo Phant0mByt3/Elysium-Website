@@ -1046,6 +1046,21 @@
       }
     });
 
+    var monoSeq = ["m", "o", "n", "o", "m", "i", "n", "d"];
+    var monoPos = 0;
+    document.addEventListener("keydown", function (e) {
+      var key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      if (key === monoSeq[monoPos]) {
+        monoPos++;
+        if (monoPos === monoSeq.length) {
+          monoPos = 0;
+          showToast("Made by TheMonoMind")
+        }
+      } else {
+        monoPos = key === monoSeq[0] ? 1 : 0;
+      }
+    });
+
     // Random rune clicks on stone dividers → hidden lore snippets
     var loreSnippets = [
       "Some say the Sundering was no accident at all.",
