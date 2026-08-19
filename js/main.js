@@ -1046,22 +1046,22 @@
       }
     });
     // TheMonoMind signature easter egg
-    var monoSeq = ["m", "o", "n", "o", "m", "i", "n", "d"];
-    var monoPos = 0;
+    var elysiumSeq = ["e", "l", "y", "s", "y", "u", "m"];
+    var elysiumPos = 0;
     document.addEventListener("keydown", function (e) {
       var key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-      if (key === monoSeq[monoPos]) {
-        monoPos++;
-        if (monoPos === monoSeq.length) {
-          monoPos = 0;
+      if (key === elysiumSeq[elysiumPos]) {
+        elysiumPos++;
+        if (elysiumPos === elysiumSeq.length) {
+          elysiumPos = 0;
           if (!prefersReducedMotion) {
-            document.body.classList.add("monomind-active");
-            setTimeout(function () { document.body.classList.remove("monomind-active"); }, 1500);
+            document.body.classList.add("elysium-active");
+            setTimeout(function () { document.body.classList.remove("elysium-active"); }, 1500);
           }
           showToast("Made by TheMonoMind")
         }
       } else {
-        monoPos = key === monoSeq[0] ? 1 : 0;
+        elysiumPos = key === elysiumSeq[0] ? 1 : 0;
       }
     });
 
