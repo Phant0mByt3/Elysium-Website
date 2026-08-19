@@ -354,7 +354,7 @@ button:focus-visible,
 
 .loading-rune {
   width: 140px;
-  height: 140px;
+  height: auto;
   margin: 0 auto 1.75rem;
   opacity: 0;
   animation: rune-fade-in 1.6s var(--ease-fantasy) forwards, rune-spin 18s linear infinite;
@@ -437,7 +437,7 @@ button:focus-visible,
 }
 .nav-brand .nav-logo {
     width: 26px;
-    height: 26px;
+    height: auto;
     object-fit: contain;
 }
 
@@ -536,7 +536,7 @@ button:focus-visible,
 
 .hero-crest {
   width: 68px;
-  height: 68px;
+  height: auto;
   margin: 0 auto 1.5rem;
   opacity: 0.9;
   animation: crest-float 5s ease-in-out infinite;
