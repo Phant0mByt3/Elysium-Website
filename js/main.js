@@ -1046,7 +1046,7 @@
       }
     });
     // TheMonoMind signature easter egg
-    var elysiumSeq = ["e", "l", "y", "s", "y", "u", "m"];
+    var elysiumSeq = ["e", "l", "y", "s", "i", "u", "m"];
     var elysiumPos = 0;
     document.addEventListener("keydown", function (e) {
       var key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
