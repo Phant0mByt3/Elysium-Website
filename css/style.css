@@ -169,6 +169,26 @@ button:focus-visible,
   display: inline-block;
   opacity: 0;
   transform: translateY(0.4em);
+
+  /* Each letter gets its OWN gradient-clipped fill rather than inheriting
+     one from .hero-title. Relying on inheritance here is what caused the
+     title to render fully transparent: .hero-title also has `filter:
+     drop-shadow(...)`, and once these spans are individually animated on
+     `opacity` they're promoted to their own compositing layers — Chrome/
+     Blink (and some other engines) can't correctly cut the parent's
+     background-clip:text mask through to child layers in that combination,
+     so nothing paints. Since the gradient is vertical (top-to-bottom), every
+     letter has essentially the same height, so giving each span its own
+     copy of the identical gradient looks indistinguishable from one
+     continuous gradient across the whole word — but is immune to the
+     cross-layer clipping bug because nothing needs to be inherited through
+     an animated, filtered ancestor.
+  */
+  color: var(--gold-bright);
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 45%, var(--bone) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ------------------------------------------------------------------------
