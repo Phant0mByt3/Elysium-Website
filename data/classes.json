@@ -1,0 +1,64 @@
+{
+  "classes": [
+    {
+      "id": "vanguard",
+      "name": "Vanguard",
+      "archetype": "Warrior Archetype",
+      "patron": "Ignareth",
+      "role": "Tank / Damage",
+      "description": "A frontline fighter forged through discipline and raw physical power, wielding heavy weapons in Ignareth's name.",
+      "icon": "M8 32 L28 12 M24 8 L32 16 L28 20 L20 12 Z M6 34 L10 30",
+      "stats": { "power": 80, "defense": 75, "magic": 15, "difficulty": 30 }
+    },
+    {
+      "id": "arcanist",
+      "name": "Arcanist",
+      "archetype": "Mage Archetype",
+      "patron": "Arcane Tradition",
+      "role": "Damage",
+      "description": "A destructive spellcaster channeling elemental and arcane forces through relentless study of the old arcane traditions.",
+      "icon": "M20 6 L20 34 M12 14 L28 14 M20 20 C24 20 26 24 20 28 C14 24 16 20 20 20 Z",
+      "stats": { "power": 35, "defense": 25, "magic": 95, "difficulty": 70 }
+    },
+    {
+      "id": "shade",
+      "name": "Shade",
+      "archetype": "Rogue Archetype",
+      "patron": "Nyxara",
+      "role": "Damage",
+      "description": "A stealth-driven striker built on deception, mobility, and precision, walking the paths favored by Nyxara.",
+      "icon": "M8 8 L32 32 M8 32 L18 22 M32 8 L22 18",
+      "stats": { "power": 70, "defense": 20, "magic": 20, "difficulty": 80 }
+    },
+    {
+      "id": "warden",
+      "name": "Warden",
+      "archetype": "Druid Archetype",
+      "patron": "Aeloria",
+      "role": "Healer / Damage",
+      "description": "A shapeshifting nature-caster balancing restoration and primal power under Aeloria's watch.",
+      "icon": "M20 4 C24 10 28 12 28 18 C28 26 24 32 20 36 C16 32 12 26 12 18 C12 12 16 10 20 4 Z M20 14 L20 30 M14 20 C16 21 18 21.5 20 21.5 C22 21.5 24 21 26 20",
+      "stats": { "power": 55, "defense": 45, "magic": 80, "difficulty": 65 }
+    },
+    {
+      "id": "oathkeeper",
+      "name": "Oathkeeper",
+      "archetype": "Paladin Archetype",
+      "patron": "Solthar",
+      "role": "Tank / Healer",
+      "description": "A sacred warrior bound by protective magic and divine vows, defending allies in Solthar's name.",
+      "icon": "M20 4 L34 12 L34 22 C34 30 28 34 20 36 C12 34 6 30 6 22 L6 12 Z M20 16 L20 26 M15 21 L25 21",
+      "stats": { "power": 60, "defense": 85, "magic": 50, "difficulty": 40 }
+    },
+    {
+      "id": "wayfarer",
+      "name": "Wayfarer",
+      "archetype": "Ranger Archetype",
+      "patron": "Aeloria & Independent Traditions",
+      "role": "Damage",
+      "description": "A ranged specialist built for exploration and survival, trained in traditions tied to Aeloria and the wandering orders beyond her reach.",
+      "icon": "M6 34 L18 10 M18 10 L14 10 M18 10 L18 14 M20 20 L34 6 M34 6 L28 6 M34 6 L34 12",
+      "stats": { "power": 65, "defense": 40, "magic": 30, "difficulty": 45 }
+    }
+  ]
+}

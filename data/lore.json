@@ -1,0 +1,133 @@
+{
+  "title": "The Book of Elysium",
+  "subtitle": "A history of the world, as recovered from the archives of the Dawnbound Concord and the oral records of the Wayfarer's Guild.",
+  "foreword": "No single scholar has ever seen the whole of Elysium's history — the Sundering saw to that. What follows is stitched together from temple ledgers, salvaged pre-Sundering tablets, and the memories of the oldest trees in Sylvaneth. Where sources disagree, both accounts are kept, because a world this old rarely settled on a single truth.",
+  "ages": [
+    {
+      "id": "age-one",
+      "era": "Age One",
+      "title": "The Ancient Age",
+      "summary": "The first civilizations rise, raising cities of stone and forging the earliest pacts between mortals and the old magics of the world.",
+      "chapters": [
+        {
+          "heading": "The First Stones",
+          "body": [
+            "Before kingdoms, before names, Elysium was a wilderness of raw magic — rivers that ran uphill in the wrong season, forests that remembered the footsteps of anything that walked through them. The first mortals did not conquer this world so much as they learned, slowly and at great cost, which parts of it could be reasoned with.",
+            "The earliest cities were not built so much as negotiated. Stonework at the oldest ruins in Aurelia shows foundations laid in spirals and rings rather than straight streets — a design scholars believe was meant to appease something in the ground beneath them, long since gone quiet."
+          ]
+        },
+        {
+          "heading": "The Old Pacts",
+          "body": [
+            "It was in this age that the first pacts were struck between mortals and the beings who would later be called Patrons — Ignareth, Nyxara, Aeloria, and Solthar among them. These were not gods in the way later ages would come to worship them, but forces old enough to remember when the world had no shape at all, willing to lend a fraction of their nature to anyone bold or desperate enough to ask.",
+            "The pacts were unequal, and everyone involved knew it. Mortals gained fire that did not need fuel, blades that did not dull, and roots that would not wither — but every gift carried an echo of the giver's temperament. Warriors who bound themselves to Ignareth grew harder to kill and harder to reason with in the same breath. This is, according to most temple scholars, the true origin of what would later become the class traditions practiced across Elysium today."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age-two",
+      "era": "Age Two",
+      "title": "The Sundering",
+      "summary": "A catastrophic event changes the world forever, tearing open the lands that would one day become Vethmoor and scattering ancient power across the continents.",
+      "chapters": [
+        {
+          "heading": "What Broke",
+          "body": [
+            "No two accounts of the Sundering agree on its cause. Some blame a war between Patrons that mortals were never meant to witness. Others point to a mortal ritual, overreaching, that pulled something through from beyond the world's edge. What every account agrees on is the result: in a span of time no record measures the same way twice, an entire region of the continent tore open, its soil turned to ash and its rivers to something that no longer behaves like water.",
+            "That wound never healed. It became Vethmoor — not simply a harsh land, but a scar the world has never stopped feeling. Even now, centuries later, magic behaves differently near its borders, and the old pacts fray faster the closer they're tested to its edge."
+          ]
+        },
+        {
+          "heading": "The Scattering",
+          "body": [
+            "The Sundering did not destroy the old magic — it scattered it. Power that had once pooled in a handful of sacred sites was flung across every continent, seeding forests with impossible growth, cursing bloodlines, and waking things that had been sleeping since before the first pacts were struck.",
+            "It is this scattering, more than any deliberate design, that scholars credit for the sheer variety of magic practiced across Elysium today — from the ember-rites of the Ashen Circle to the primal shifting taught in Aeloria's oldest groves. Every tradition alive now traces some thread back to power that shouldn't have been loose in the world at all."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age-three",
+      "era": "Age Three",
+      "title": "The Age of Darkness",
+      "summary": "Kingdoms fall and monsters spread across the ruins, forcing survivors into isolated strongholds as the old order collapses.",
+      "chapters": [
+        {
+          "heading": "The Long Fall",
+          "body": [
+            "The generations after the Sundering were not marked by a single collapse, but a slow one. Kingdoms that had stood since the Ancient Age found their borders unrecognizable, their treaties meaningless, their gods — or Patrons — changed by whatever had passed through the world. Some fell to the monstrous things now spreading out of Vethmoor's ruins. Others simply starved, cut off from lands that no longer behaved the way farming and trade required.",
+            "Survivors did not rebuild so much as retreat. Strongholds from this era are almost always defensive first, built into cliffsides, sunk below ground, or ringed with the same kind of ward-stones the earliest cities used to negotiate with the wilderness — a grim echo of how far civilization had fallen back toward its beginnings."
+          ]
+        },
+        {
+          "heading": "Isolation and Its Cost",
+          "body": [
+            "It is from this age that the first fractures between what would become the Dawnbound Concord and the Duskward Pact are believed to originate. Isolated strongholds developed wildly different answers to the same question — how much of the old power was safe to use, and how much should be sealed away and forgotten. Some communities chose faith and order. Others chose whatever worked.",
+            "Neither choice was wrong, and neither was without cost. That disagreement, older than either faction's name, is still the quiet undercurrent beneath every conflict between Concord and Pact today."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age-four",
+      "era": "Age Four",
+      "title": "The Age of Reclamation",
+      "summary": "Heroes return to rebuild civilization, founding the factions and kingdoms that players will encounter across Elysium today.",
+      "chapters": [
+        {
+          "heading": "The Return",
+          "body": [
+            "The Age of Reclamation began not with a single victory, but with enough survivors deciding, independently and almost simultaneously, that hiding had stopped working. Expeditions pushed back out from the old strongholds — some to resettle Aurelia's ruined kingdoms, others to chart what the Sundering had actually done to the world, and a few, driven by faith or ambition, to walk straight into Vethmoor and see what remained.",
+            "It is this age that produced the factions player-characters encounter today. The Dawnbound Concord formed from an alliance of holy orders and resettled kingdoms who saw reclamation as a sacred duty. The Duskward Pact rose from exiles, opportunists, and older powers who had survived the Age of Darkness by other means, and had no intention of answering to the Concord's order now that the world was livable again."
+          ]
+        },
+        {
+          "heading": "A World Still Being Rebuilt",
+          "body": [
+            "Silverwatch, the Wayfarer's Guild, the Ashen Circle, and the Cartographer's League all trace their founding to this same restless period — each one a different answer to a world that needed watching, mapping, understanding, or quietly exploiting, depending on who you asked.",
+            "The Age of Reclamation has no clean ending. By most reckonings, Elysium is still in it — still charting Vethmoor's true borders, still finding ruins in Aurelia nobody has opened since the Sundering, still hearing rumors from the edges of Sylvaneth, the Kharzul Wastes, and Nightreach that suggest the reclamation has barely begun. This is the world a new hero steps into."
+          ]
+        }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "ignareth",
+      "name": "Ignareth",
+      "title": "Patron of the Vanguard",
+      "description": "An old, war-tempered power bound in the Ancient Age's earliest pacts. Ignareth's gifts favor discipline and endurance over subtlety — those who bind themselves to him grow harder to kill, and harder to reason with."
+    },
+    {
+      "id": "nyxara",
+      "name": "Nyxara",
+      "title": "Patron of the Shade",
+      "description": "A power associated with concealment, distance, and precision. Little is recorded of Nyxara directly; most knowledge comes secondhand, through the traditions of those who walk her paths."
+    },
+    {
+      "id": "aeloria",
+      "name": "Aeloria",
+      "title": "Patron of the Warden and the Wayfarer",
+      "description": "A nature-bound power whose influence spread furthest during the Scattering. Aeloria's traditions are the most widely practiced of the old pacts, from Sylvaneth's oldest groves to independent wandering orders far beyond her direct reach."
+    },
+    {
+      "id": "solthar",
+      "name": "Solthar",
+      "title": "Patron of the Oathkeeper",
+      "description": "A power bound to protective vows and sacred oaths. Solthar's traditions emphasize defense of others above personal power, a value that shaped much of the Dawnbound Concord's founding doctrine."
+    },
+    {
+      "id": "forgotten-king",
+      "name": "The Forgotten King",
+      "title": "World Boss — Aurelia",
+      "description": "An ancient dragon corrupted by the Sundering, said to still guard the ruins of his fallen throne. Some accounts claim he was a mortal king before the Sundering changed him; none can confirm it."
+    },
+    {
+      "id": "void-herald",
+      "name": "The Void Herald",
+      "title": "Unknown Entity",
+      "description": "A mysterious creature first sighted at the edges of the Sundering's scars, and by every account, not native to Elysium at all. What it heralds, and from where, remains the subject of the Ashen Circle's most guarded research."
+    }
+  ]
+}

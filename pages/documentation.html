@@ -42,6 +42,7 @@
   <nav class="nav-links">
     <a href="../index.html">Home</a>
     <a href="../index.html#development">Development</a>
+    <a href="lore.html">Lore</a>
   </nav>
 </header>
 
@@ -57,28 +58,62 @@
 /css/animations.css  Keyframes and motion-only effects
 /js/main.js        All page interactions (nav, reveals, map, gallery, easter eggs)
 /js/particles.js   Canvas particle field used behind the hero
-/data/dev-stages.json  Development stage manifest (see below)
+/data/dev-stages.json   Development stage manifest (see below)
+/data/classes.json      Playable classes shown in the Classes section
+/data/factions.json     Major + joinable factions, reputation copy
+/data/professions.json  Crafting/gathering professions list
+/data/features.json     Core feature grid + world boss showcase
+/data/expansions.json   Player-facing "Expansion Roadmap" cards
+/data/continents.json   Launch continents, future expansion territories, and world-map marker coordinates — one file, since the World section, the mini expansion strip, and the interactive map all describe the same regions
+/data/gallery.json      Gallery tiles (label, category, placeholder gradient)
+/data/lore.json         The full lore "book" — ages, chapters, notable figures. Powers both the homepage timeline summary and pages/lore.html
+/pages/lore.html   Full lore book, rendered from data/lore.json
 /assets/           Reserved for audio or downloadable files
 /images/           Reserved for real screenshots and art once available</pre>
 
-  <h2>Development stages bar</h2>
-  <p>The Development section on the homepage renders a "Development Stages" widget: one collapsible bar per workstream (Documentation, Concept Art, World, Lore, Gameplay Systems, Economy, Technical, Music, Factions, Systems & Progression, Marketing & Devlog), and inside each one, a tiny tile for every individual piece of work in that stage — pulled from <code>data/dev-stages.json</code>.</p>
+  <h2>Everything is JSON-driven</h2>
+  <p>Every section listed above under <code>/data/</code> works the same way: <code>index.html</code> contains an empty container with an id (e.g. <code>#class-grid</code>) and a <code>data-loading="…"</code> hint, and the matching function in <code>js/main.js</code> fetches the JSON file and builds the markup at runtime. This means updating game content — adding a class, renaming a faction, adding a continent — is a JSON edit, not an HTML edit. If a fetch fails (most commonly because the page was opened as a local <code>file://</code> file instead of being served), the container shows a short explanation instead of staying silently blank.</p>
+  <ul>
+    <li><strong>Classes</strong> — edit <code>data/classes.json</code>. Each entry needs <code>id, name, archetype, patron, role, description, icon</code> (an SVG path string) and a <code>stats</code> object with <code>power, defense, magic, difficulty</code> (0–100).</li>
+    <li><strong>Factions</strong> — edit <code>data/factions.json</code>. Split into <code>major</code> and <code>joinable</code> arrays, plus <code>reputationScale</code>, <code>reputationNote</code>, and <code>allianceNote</code> for the copy beneath the cards.</li>
+    <li><strong>Professions</strong> — edit <code>data/professions.json</code>: a flat <code>professions</code> array of <code>id, name, description, icon</code>.</li>
+    <li><strong>Core features &amp; world bosses</strong> — edit <code>data/features.json</code>: a <code>features</code> array (the numbered grid) and a <code>worldBosses</code> array (set <code>"variant": "void"</code> for the purple/void styling).</li>
+    <li><strong>Expansion roadmap cards</strong> — edit <code>data/expansions.json</code>.</li>
+    <li><strong>Continents &amp; expansion territories</strong> — edit <code>data/continents.json</code>. <code>launch</code> entries render as the big continent cards <em>and</em> a map marker; <code>expansionTerritories</code> entries render as the mini "Future Expansion Territories" strip <em>and</em> a "future" map marker. Each needs a <code>map: { x, y }</code> coordinate pair (SVG viewBox is 900×420) and a <code>modalBody</code>/<code>modalTitle</code> shown when its map marker is clicked.</li>
+    <li><strong>Gallery</strong> — edit <code>data/gallery.json</code>. Each item needs <code>id, label, type</code> (must match one of the filter tabs' <code>data-filter</code> values) and a two-color <code>gradient</code> used to generate its placeholder art.</li>
+    <li><strong>Lore</strong> — edit <code>data/lore.json</code>. See the dedicated section below.</li>
+  </ul>
+
+  <h2>Development stages + roadmap (combined)</h2>
+  <p>The Development section used to show three overlapping progress indicators — a "Development Status" summary of four hand-set percentages, a detailed "Development Stages" checklist, and a separate Phase 1–4 roadmap bar hard-coded to 50%. The summary block has been removed, and the other two are now one panel: the Phase roadmap's fill line is driven by the same real completion percentage computed from <code>data/dev-stages.json</code>, instead of a number someone has to remember to update by hand.</p>
   <ul>
     <li>The file is one object with a top-level <code>stages</code> array. Each stage looks like <code>{ "id": "world", "label": "World", "blurb": "...", "items": [ ... ] }</code>.</li>
     <li>Each item inside a stage's <code>items</code> array looks like <code>{ "id": 101, "title": "World 001 — Region Layout", "done": true }</code>.</li>
-    <li>If <code>done</code> is <code>true</code>, that item renders as a filled gold tile and counts toward both that stage's percentage and the page-wide total. If <code>false</code>, it renders as a hollow tile.</li>
-    <li>Click a stage's header to expand it and reveal its tiles — they're built and animated in the first time you open that stage, so the page stays light even with hundreds of pieces across all stages.</li>
-    <li>To add a piece of work, append a new object to the relevant stage's <code>items</code> array. To add a whole new stage, append a new object to the top-level <code>stages</code> array with its own <code>id</code>, <code>label</code>, <code>blurb</code>, and <code>items</code>. No code changes are required — bars, tiles, and totals rebuild themselves from the JSON.</li>
-    <li>Flip an item's <code>done</code> value to <code>true</code> the moment that piece is actually finished, so the bars stay honest.</li>
+    <li>If <code>done</code> is <code>true</code>, that item renders as a filled gold tile and counts toward both that stage's percentage, the page-wide total, and the roadmap fill line beneath the checklist. If <code>false</code>, it renders as a hollow tile.</li>
+    <li>Click a stage's header to expand it and reveal its tiles — they're built and animated the first time you open that stage, so the page stays light even with hundreds of pieces across all stages.</li>
+    <li>To add a piece of work, append a new object to the relevant stage's <code>items</code> array. To add a whole new stage, append a new object to the top-level <code>stages</code> array with its own <code>id</code>, <code>label</code>, <code>blurb</code>, and <code>items</code>. No code changes are required.</li>
+    <li>Flip an item's <code>done</code> value to <code>true</code> the moment that piece is actually finished, so the bars — and now the roadmap line too — stay honest.</li>
     <li>This fetch requires the page to be served over <code>http(s)</code> (a local server or GitHub Pages) — opening <code>index.html</code> directly as a <code>file://</code> URL will block the request in most browsers.</li>
   </ul>
+
+  <h2>The hero title fix</h2>
+  <p>The hero title's letter-by-letter reveal used to fire almost immediately on page load, which meant the entire animation ran and finished <em>behind</em> the still-opaque loading screen — by the time the loading screen faded, the title either popped in fully formed with no visible animation, or (if any earlier script threw) never got its reveal class added at all. The reveal is now triggered from the same callback that hides the loading screen, so it only plays once it's actually visible. If JavaScript never runs at all, the title still displays normally: it's the letter-splitting step (not the base markup) that the animation depends on, so an unsplit title just renders as plain gradient-filled text with no animation, rather than staying invisible.</p>
 
   <h2>Replacing placeholder art</h2>
   <p>Every image on the site is currently an inline SVG gradient so the project has zero binary dependencies. To swap in real screenshots or concept art:</p>
   <ul>
     <li>Drop files into <code>/images/</code> using descriptive names, e.g. <code>images/screenshots/aurelia-dawn.jpg</code>.</li>
-    <li>In <code>js/main.js</code>, the <code>gallery()</code> block builds each tile from the <code>items</code> array — replace the generated SVG with an <code>&lt;img&gt;</code> tag pointing at your file.</li>
-    <li>For the world map and continent cards, swap the inline <code>&lt;svg&gt;</code> blocks in <code>index.html</code> for background images or <code>&lt;img&gt;</code> elements using the same relative paths.</li>
+    <li>In <code>js/main.js</code>, the <code>gallery()</code> block builds each tile from <code>data/gallery.json</code> — replace the generated SVG with an <code>&lt;img&gt;</code> tag pointing at your file, or add an <code>image</code> field to the JSON and branch on its presence.</li>
+    <li>For the world map and continent cards, the same applies to <code>data/continents.json</code> and the <code>worldContinents()</code> block.</li>
+  </ul>
+
+  <h2>Lore book (pages/lore.html)</h2>
+  <p>The homepage's Lore section is a short scroll-driven summary of the four ages. <code>pages/lore.html</code> is the full book, rendered entirely from <code>data/lore.json</code>:</p>
+  <ul>
+    <li><code>title</code>, <code>subtitle</code>, and <code>foreword</code> — the page header and italic intro paragraph.</li>
+    <li><code>ages</code> — an array of eras. Each needs <code>id</code> (used as the anchor/table-of-contents target), <code>era</code>, <code>title</code>, <code>summary</code>, and a <code>chapters</code> array of <code>{ heading, body }</code>, where <code>body</code> is an array of paragraph strings.</li>
+    <li><code>figures</code> — an appendix grid of notable characters, patrons, and bosses: <code>{ id, name, title, description }</code>.</li>
+    <li>Add a new age, chapter, or figure by editing the JSON — the table of contents, headings, and figure grid all rebuild automatically.</li>
   </ul>
 
   <h2>Adding ambient audio</h2>

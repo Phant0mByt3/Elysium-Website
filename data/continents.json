@@ -1,0 +1,54 @@
+{
+  "launch": [
+    {
+      "id": "aurelia",
+      "name": "Aurelia",
+      "tag": "Starting Continent",
+      "description": "A prosperous land of kingdoms, forests, ancient ruins, and forgotten secrets.",
+      "levelRange": "Recommended Level 1–30",
+      "climate": "Temperate",
+      "danger": "low",
+      "gradient": ["#16273f", "#131217"],
+      "map": { "x": 220, "y": 180 },
+      "modalBody": "A prosperous land of kingdoms, forests, ancient ruins, and forgotten secrets. Recommended for characters level 1–30."
+    },
+    {
+      "id": "vethmoor",
+      "name": "Vethmoor",
+      "tag": "Endgame Territory",
+      "description": "A harsh continent shaped by war, corruption, and ancient conflicts.",
+      "levelRange": "Recommended Level 30–60",
+      "climate": "Hostile",
+      "danger": "high",
+      "gradient": ["#7d2b2b", "#131217"],
+      "map": { "x": 430, "y": 270 },
+      "modalBody": "A harsh continent shaped by war, corruption, and ancient conflicts. Dangers here scale sharply — recommended for level 30–60 adventurers."
+    }
+  ],
+  "expansionTerritories": [
+    {
+      "id": "sylvaneth",
+      "name": "Sylvaneth",
+      "shortDescription": "A mystical forest expansion.",
+      "map": { "x": 620, "y": 150 },
+      "modalTitle": "Sylvaneth — Expansion Preview",
+      "modalBody": "A mystical forest expansion built around ancient nature magic and the secrets kept by its oldest trees. Coming in a future update."
+    },
+    {
+      "id": "kharzul",
+      "name": "Kharzul Wastes",
+      "shortDescription": "A dangerous desert and forgotten civilization.",
+      "map": { "x": 700, "y": 320 },
+      "modalTitle": "Kharzul Wastes — Expansion Preview",
+      "modalBody": "A dangerous desert region hiding a forgotten civilization beneath its dunes. Coming in a future update."
+    },
+    {
+      "id": "nightreach",
+      "name": "Nightreach",
+      "shortDescription": "A dark endgame region.",
+      "map": { "x": 120, "y": 90 },
+      "modalTitle": "Nightreach — Endgame Preview",
+      "modalBody": "A dark endgame region shrouded in corruption from the Sundering. Reserved for Elysium's most seasoned heroes. Coming in a future update."
+    }
+  ]
+}

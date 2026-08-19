@@ -530,12 +530,20 @@ button:focus-visible,
   font-family: var(--font-display);
   font-size: clamp(3rem, 10vw, 7rem);
   letter-spacing: 0.06em;
-  color: var(--bone);
   margin: 0;
-  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 45%, var(--bone) 100%);
+
+  color: var(--gold-bright);
+  background: linear-gradient(
+    180deg,
+    var(--gold-bright) 0%,
+    var(--gold) 45%,
+    var(--bone) 100%
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+
   filter: drop-shadow(0 0 40px rgba(201,168,106,0.25));
 }
 
@@ -1035,31 +1043,6 @@ button:focus-visible,
   margin-bottom: 3rem;
 }
 
-.progress-block { margin-bottom: 0.9rem; }
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  color: var(--bone-dim);
-  margin-bottom: 0.4rem;
-}
-.progress-track {
-  height: 8px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--deep-blue), var(--gold));
-  border-radius: 5px;
-  transition: width 1.4s var(--ease-fantasy);
-}
-
 /* Development stages — one collapsible bar per workstream, each broken into many tiny pieces */
 .dev-stages {
   margin-top: 3.5rem;
@@ -1093,6 +1076,32 @@ button:focus-visible,
   color: var(--gold-bright);
 }
 .dev-stages-stat { text-align: right; flex-shrink: 0; }
+
+/* Lightweight loading hint: shows automatically for any empty container
+   carrying a data-loading attribute, and disappears the moment JS fills it
+   with real content (since :empty no longer matches). */
+[data-loading]:empty::before {
+  content: attr(data-loading);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 1.5rem 0.25rem;
+  opacity: 0.7;
+}
+
+/* Shared fallback shown inside any data-driven container whose JSON fetch fails
+   (e.g. the page was opened as a local file:// instead of served over http). */
+.data-error-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+}
 .dev-stages-pct {
   display: block;
   font-family: var(--font-heading);
@@ -1289,6 +1298,14 @@ button:focus-visible,
 .roadmap-step .phase { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; }
 .roadmap-step h4 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--bone); margin: 0.4rem 0 0.5rem; }
 .roadmap-step p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* Nested variant: roadmap sits inside the .dev-stages panel, combined with the
+   detailed stage checklist above it instead of standing as its own block. */
+.roadmap--nested {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
 
 /* Boss showcase (within Development / Features narrative) */
 .boss-grid { margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
@@ -1608,3 +1625,5 @@ body.has-fine-pointer a, body.has-fine-pointer button { cursor: none; }
   .doc-segment { width: 10px; height: 10px; }
   .docs-tooltip { display: none; }
 }
+
+

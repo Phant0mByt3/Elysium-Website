@@ -1,0 +1,45 @@
+{
+  "major": [
+    {
+      "id": "dawnbound-concord",
+      "name": "The Dawnbound Concord",
+      "sub": "Alliance of Light & Order",
+      "description": "A concord of kingdoms and holy orders united beneath the dawn, sworn to hold back whatever survived the Sundering."
+    },
+    {
+      "id": "duskward-pact",
+      "name": "The Duskward Pact",
+      "sub": "Alliance of Shadow & Ambition",
+      "description": "A pact of exiles, opportunists, and old powers who found common cause in the dusk — and common enemies in the Concord."
+    }
+  ],
+  "joinable": [
+    {
+      "id": "silverwatch",
+      "name": "Silverwatch",
+      "sub": "Militant Order",
+      "description": "A disciplined order of sentinels standing watch over Elysium's borders, open to any who can prove their steel."
+    },
+    {
+      "id": "wayfarers-guild",
+      "name": "The Wayfarer's Guild",
+      "sub": "Scouts & Traders",
+      "description": "A guild of scouts, traders, and pathfinders who chart the roads between danger and opportunity."
+    },
+    {
+      "id": "ashen-circle",
+      "name": "The Ashen Circle",
+      "sub": "Occult Order",
+      "description": "A secretive circle devoted to the ember-magic left behind by the Sundering, walking a line between ritual and heresy."
+    },
+    {
+      "id": "cartographers-league",
+      "name": "The Cartographer's League",
+      "sub": "Mapmakers & Surveyors",
+      "description": "A league of surveyors and mapmakers racing to chart Elysium's unclaimed regions before rival powers do."
+    }
+  ],
+  "reputationScale": ["Hostile", "Unfriendly", "Neutral", "Friendly", "Honored", "Exalted"],
+  "reputationNote": "Actions across the world raise or lower your standing with each faction, from Hostile to Exalted. Higher standing unlocks unique quests, gear, and dialogue.",
+  "allianceNote": "Factions are interconnected. Aiding Silverwatch may raise suspicion with the Ashen Circle, while standing with the Dawnbound Concord can open doors — or close them — with the Duskward Pact."
+}

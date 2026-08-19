@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Book of Elysium — Lore</title>
+<meta name="description" content="The full history of Elysium, from the Ancient Age through the Age of Reclamation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0908'/%3E%3Cpath d='M16 4 L26 16 L16 28 L6 16 Z' fill='none' stroke='%23c9a86a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23c9a86a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Page-specific tweaks: a plain reading page, so it skips the cinematic
+     hero/loading treatment used on index.html. */
+  body { padding-top: 88px; }
+  .lore-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 0 6rem; }
+  .back-link { display: inline-block; margin-bottom: 2rem; color: var(--gold); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; }
+  .lore-wrap h1 { font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3rem); color: var(--gold-bright); margin-bottom: 0.6rem; }
+  .lore-subtitle { color: var(--muted); font-size: 0.95rem; max-width: 58ch; margin-bottom: 2rem; }
+  .lore-foreword {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--bone-dim);
+    border-left: 2px solid var(--gold);
+    padding-left: 1.25rem;
+    margin: 0 0 3rem;
+    line-height: 1.75;
+  }
+  .lore-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 3.5rem;
+  }
+  .lore-toc a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--bone-dim);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.8rem;
+  }
+  .lore-toc a:hover { color: var(--gold-bright); border-color: var(--gold); }
+  .lore-age { margin-bottom: 4rem; scroll-margin-top: 100px; }
+  .lore-age-era { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; }
+  .lore-age h2 { font-family: var(--font-heading); color: var(--bone); font-size: 1.9rem; margin: 0.35rem 0 0.75rem; }
+  .lore-age-summary { color: var(--muted); font-size: 0.95rem; max-width: 60ch; margin-bottom: 1.75rem; }
+  .lore-chapter { margin-bottom: 1.75rem; padding-left: 1.25rem; border-left: 1px solid var(--line); }
+  .lore-chapter h3 { font-family: var(--font-heading); color: var(--gold-bright); font-size: 1.15rem; margin-bottom: 0.6rem; }
+  .lore-chapter p { color: var(--bone-dim); line-height: 1.8; margin-bottom: 0.9rem; font-size: 0.98rem; }
+  .lore-figures { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+  .lore-figures h2 { font-family: var(--font-heading); color: var(--bone); font-size: 1.6rem; margin-bottom: 1.5rem; }
+  .figure-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+  .figure-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+  .figure-card h3 { font-family: var(--font-heading); color: var(--gold-bright); font-size: 1.05rem; margin-bottom: 0.15rem; }
+  .figure-card .title { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.6rem; }
+  .figure-card p { color: var(--bone-dim); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+</style>
+</head>
+<body>
+
+<header id="site-nav" class="is-scrolled">
+  <a href="../index.html" class="nav-brand">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 3 L29 16 L16 29 L3 16 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
+    Elysium
+  </a>
+  <nav class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#lore">Lore Summary</a>
+    <a href="documentation.html">Documentation</a>
+  </nav>
+</header>
+
+<main class="container lore-wrap">
+  <a class="back-link" href="../index.html">&larr; Back to Elysium</a>
+  <h1 id="lore-title">The Book of Elysium</h1>
+  <p class="lore-subtitle" id="lore-subtitle">Loading…</p>
+  <p class="lore-foreword" id="lore-foreword"></p>
+
+  <nav class="lore-toc" id="lore-toc" aria-label="Ages of Elysium"></nav>
+
+  <div id="lore-ages" data-loading="Loading the chronicle…"></div>
+
+  <section class="lore-figures" id="lore-figures" data-loading="">
+    <h2>Notable Figures</h2>
+    <div class="figure-grid" id="figure-grid" data-loading="Loading…"></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  function $(sel) { return document.querySelector(sel); }
+  function escapeHtml(str) {
+    return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  fetch("../data/lore.json")
+    .then(function (res) {
+      if (!res.ok) throw new Error("Request failed: " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      document.title = data.title + " — Elysium";
+      $("#lore-title").textContent = data.title;
+      $("#lore-subtitle").textContent = data.subtitle || "";
+      $("#lore-foreword").textContent = data.foreword || "";
+
+      var toc = $("#lore-toc");
+      var agesWrap = $("#lore-ages");
+      toc.innerHTML = "";
+      agesWrap.innerHTML = "";
+
+      (data.ages || []).forEach(function (age) {
+        var link = document.createElement("a");
+        link.href = "#" + age.id;
+        link.textContent = age.era + ": " + age.title;
+        toc.appendChild(link);
+
+        var section = document.createElement("section");
+        section.className = "lore-age";
+        section.id = age.id;
+
+        var chaptersHtml = (age.chapters || []).map(function (ch) {
+          var paras = (ch.body || []).map(function (p) { return "<p>" + escapeHtml(p) + "</p>"; }).join("");
+          return '<div class="lore-chapter"><h3>' + escapeHtml(ch.heading) + "</h3>" + paras + "</div>";
+        }).join("");
+
+        section.innerHTML =
+          '<span class="lore-age-era">' + escapeHtml(age.era) + "</span>" +
+          "<h2>" + escapeHtml(age.title) + "</h2>" +
+          '<p class="lore-age-summary">' + escapeHtml(age.summary) + "</p>" +
+          chaptersHtml;
+
+        agesWrap.appendChild(section);
+      });
+
+      var figureGrid = $("#figure-grid");
+      figureGrid.innerHTML = "";
+      (data.figures || []).forEach(function (f) {
+        var card = document.createElement("div");
+        card.className = "figure-card";
+        card.innerHTML =
+          "<h3>" + escapeHtml(f.name) + "</h3>" +
+          '<span class="title">' + escapeHtml(f.title) + "</span>" +
+          "<p>" + escapeHtml(f.description) + "</p>";
+        figureGrid.appendChild(card);
+      });
+    })
+    .catch(function (err) {
+      $("#lore-subtitle").textContent = "";
+      $("#lore-ages").innerHTML =
+        '<p style="font-family:var(--font-mono); font-size:0.85rem; color:var(--muted); border:1px dashed var(--line); border-radius:var(--radius); padding:1rem 1.25rem;">' +
+        "Couldn't load data/lore.json (" + escapeHtml(err.message) + "). Serve this page over http(s) — a local server or GitHub Pages — rather than opening it as a local file." +
+        "</p>";
+      $("#figure-grid").innerHTML = "";
+    });
+})();
+</script>
+</body>
+</html>

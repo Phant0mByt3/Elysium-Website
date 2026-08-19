@@ -1,0 +1,26 @@
+{
+  "features": [
+    { "id": "exploration", "num": "01", "name": "Open World Exploration", "description": "Travel through forests, cities, ruins, mountains, and forgotten lands." },
+    { "id": "quests", "num": "02", "name": "Quest System", "description": "Complete story quests, faction quests, and hidden discoveries." },
+    { "id": "dungeons", "num": "03", "name": "Dungeons", "description": "Fight through dangerous locations with unique bosses." },
+    { "id": "bosses", "num": "04", "name": "Boss Encounters", "description": "Challenge powerful enemies requiring strategy." },
+    { "id": "progression", "num": "05", "name": "Character Progression", "description": "Level up, improve skills, and customize your build." },
+    { "id": "economy", "num": "06", "name": "Economy", "description": "Trade resources, craft items, and build your wealth." }
+  ],
+  "worldBosses": [
+    {
+      "id": "forgotten-king",
+      "name": "The Forgotten King",
+      "warning": "World Boss",
+      "variant": "default",
+      "description": "An ancient dragon corrupted by the Sundering, said to still guard the ruins of his fallen throne."
+    },
+    {
+      "id": "void-herald",
+      "name": "The Void Herald",
+      "warning": "Unknown Entity",
+      "variant": "void",
+      "description": "A mysterious creature from beyond Elysium, first sighted at the edges of the Sundering's scars."
+    }
+  ]
+}

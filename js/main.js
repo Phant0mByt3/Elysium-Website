@@ -5,22 +5,24 @@
    headers to jump to a feature.
 
    1. Utilities
-   2. Cinematic loading sequence
+   2. Cinematic loading sequence + hero title reveal
    3. Navigation (scroll spy, mobile menu, smooth scroll, transition sweep)
    4. Custom cursor
    5. Hero particle field
-   6. Letter-by-letter title reveal
-   7. Scroll reveal (Intersection Observer)
-   8. Class card stat bars
-   9. Timeline (Lore)
-   10. Interactive world map
-   11. Gallery + lightbox
-   12. Development progress bars + roadmap
-   12.5 Development stages (data/dev-stages.json driven)
-   13. Typewriter text
-   14. Back to top
-   15. Ambient audio controls
-   16. Easter eggs (logo clicks, Konami code, rune clicks, dev journal)
+   6. Scroll reveal (Intersection Observer)
+   7. World: continents, expansion territories & interactive map (data/continents.json)
+   8. Classes (data/classes.json)
+   9. Factions (data/factions.json)
+   10. Features + world bosses (data/features.json)
+   11. Professions (data/professions.json)
+   12. Expansion roadmap (data/expansions.json)
+   13. Timeline (Lore)
+   14. Gallery + lightbox (data/gallery.json)
+   15. Development stages + roadmap, combined (data/dev-stages.json)
+   16. Typewriter text
+   17. Back to top
+   18. Ambient audio controls
+   19. Easter eggs (logo clicks, Konami code, rune clicks, dev journal)
    ========================================================================== */
 
 (function () {
@@ -35,15 +37,50 @@
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
   function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+  function escapeHtml(str) {
+    return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // Shared JSON fetch helper used by every data-driven section below.
+  function fetchJSON(url) {
+    return fetch(url).then(function (res) {
+      if (!res.ok) throw new Error("Request failed: " + res.status);
+      return res.json();
+    });
+  }
+
+  // Shared error state for a data-driven container, so a failed fetch never
+  // leaves a section silently blank with no explanation.
+  function showFetchError(container, err) {
+    if (!container) return;
+    container.innerHTML = "";
+    var note = document.createElement("p");
+    note.className = "data-error-note";
+    note.textContent =
+      "Couldn't load this section's data (" + err.message + "). Serve this page over http(s) " +
+      "— a local server or GitHub Pages — rather than opening it as a local file.";
+    container.appendChild(note);
+  }
+
+  // Shared reveal-on-scroll observer (assigned in section 6), reused by every
+  // section below that injects markup after an async fetch resolves.
+  var revealIO = null;
+  function observeReveal(el) {
+    if (!el) return;
+    if (revealIO) { revealIO.observe(el); }
+    else { el.classList.add("is-visible"); }
+  }
 
   /* ------------------------------------------------------------------ *
-   * 2. Cinematic loading sequence
+   * 2. Cinematic loading sequence + hero title reveal
    * ------------------------------------------------------------------ */
   (function loadingSequence() {
     var screen = $("#loading-screen");
     var statusEl = $("#loading-status");
     var barFill = $("#loading-bar-fill");
-    if (!screen) return;
+    if (!screen) { revealHeroTitle(); return; }
 
     document.body.classList.add("no-scroll");
 
@@ -54,6 +91,7 @@
     ];
     var msgIndex = 0;
     var progress = 0;
+    var done = false;
 
     var msgTimer = setInterval(function () {
       msgIndex = (msgIndex + 1) % messages.length;
@@ -72,23 +110,54 @@
     }, 260);
 
     function finishLoading() {
+      if (done) return;
+      done = true;
+      clearInterval(progressTimer);
+      clearInterval(msgTimer);
       setTimeout(function () {
         screen.classList.add("is-hidden");
         document.body.classList.remove("no-scroll");
         screen.setAttribute("aria-hidden", "true");
-        revealHeroOnLoad();
+        // The hero title only starts its letter-by-letter reveal once the
+        // loading screen has actually finished fading, so the animation is
+        // something the player can see rather than something that already
+        // finished behind an opaque overlay.
+        revealHeroTitle();
       }, 350);
     }
 
-    // Absolute safety net: never trap the user behind the loading screen
+    // Absolute safety net: never trap the user behind the loading screen,
+    // and never leave the hero title unrevealed if something above throws.
     setTimeout(function () {
-      if (!screen.classList.contains("is-hidden")) finishLoading();
+      if (!done) finishLoading();
     }, 4000);
   })();
 
-  function revealHeroOnLoad() {
-    var letters = $("#hero-title");
-    if (letters) letters.classList.add("is-revealed");
+  // Splits the hero title into per-letter <span> elements and triggers the
+  // CSS letter-rise animation. Guarded so it only ever runs once. If this
+  // never runs at all (script blocked, JS disabled), the title still shows:
+  // it stays as plain gradient-filled text, since `.letters span { opacity:0 }`
+  // in style.css only matches spans that this function creates.
+  var heroRevealed = false;
+  function revealHeroTitle() {
+    if (heroRevealed) return;
+    var target = $("#hero-title");
+    if (!target) return;
+    heroRevealed = true;
+
+    var text = target.textContent.trim();
+    target.textContent = "";
+
+    text.split("").forEach(function (ch, i) {
+      var span = document.createElement("span");
+      span.textContent = ch === " " ? "\u00A0" : ch;
+      span.style.animationDelay = (i * 0.055) + "s";
+      target.appendChild(span);
+    });
+
+    requestAnimationFrame(function () {
+      target.classList.add("is-revealed");
+    });
   }
 
   /* ------------------------------------------------------------------ *
@@ -168,9 +237,17 @@
       gx = e.clientX; gy = e.clientY;
     });
 
-    $all("a, button, .map-marker, .gallery-item").forEach(function (el) {
-      el.addEventListener("mouseenter", function () { dot.classList.add("is-active"); });
-      el.addEventListener("mouseleave", function () { dot.classList.remove("is-active"); });
+    // Delegated so cursor highlight still works on elements injected later
+    // by the data-driven sections below.
+    document.addEventListener("mouseover", function (e) {
+      if (e.target.closest && e.target.closest("a, button, .map-marker, .gallery-item")) {
+        dot.classList.add("is-active");
+      }
+    });
+    document.addEventListener("mouseout", function (e) {
+      if (e.target.closest && e.target.closest("a, button, .map-marker, .gallery-item")) {
+        dot.classList.remove("is-active");
+      }
     });
 
     function raf() {
@@ -194,67 +271,359 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 6. Letter-by-letter title reveal
-   * ------------------------------------------------------------------ */
-  (function letterReveal() {
-    var target = $("#hero-title");
-    if (!target) return;
-    var text = target.textContent.trim();
-    target.textContent = "";
-    text.split("").forEach(function (ch, i) {
-      var span = document.createElement("span");
-      span.textContent = ch === " " ? "\u00A0" : ch;
-      span.style.animationDelay = (i * 0.055) + "s";
-      target.appendChild(span);
-    });
-  })();
-
-  /* ------------------------------------------------------------------ *
-   * 7. Scroll reveal (Intersection Observer)
+   * 6. Scroll reveal (Intersection Observer)
    * ------------------------------------------------------------------ */
   (function scrollReveal() {
-    var targets = $all(".reveal");
-    if (!targets.length) return;
-
     if (!("IntersectionObserver" in window) || prefersReducedMotion) {
-      targets.forEach(function (t) { t.classList.add("is-visible"); });
-      return;
+      revealIO = null;
+    } else {
+      revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
     }
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-
-    targets.forEach(function (t) { io.observe(t); });
+    $all(".reveal").forEach(function (t) { observeReveal(t); });
   })();
 
   /* ------------------------------------------------------------------ *
-   * 8. Class card stat bars
+   * 7. World: continents, expansion territories & interactive map
+   *    (data/continents.json)
    * ------------------------------------------------------------------ */
-  (function classStats() {
-    var cards = $all(".class-card");
-    if (!cards.length || !("IntersectionObserver" in window)) {
-      cards.forEach(function (c) { c.classList.add("is-visible"); });
-      return;
+  (function worldContinents() {
+    var continentGrid = $("#continent-grid");
+    var territoryGrid = $("#expansion-territory-grid");
+    var markersGroup = $("#map-markers");
+    var modal = $("#map-modal");
+    var modalTitle = $("#map-modal-title");
+    var modalBody = $("#map-modal-body");
+    var closeBtn = $("#map-modal-close");
+    if (!continentGrid && !territoryGrid && !markersGroup) return;
+
+    function continentArt(c, gradId) {
+      var extra = c.danger === "high"
+        ? '<path d="M20 90 L120 210 L200 70 L300 220 L380 100" stroke="#b34a3a" stroke-width="1" fill="none" opacity="0.55"/>'
+        : '<path d="M40 200 Q100 120 160 160 T280 140 T380 190" stroke="#c9a86a" stroke-width="1" fill="none" opacity="0.5"/>' +
+          '<circle cx="120" cy="150" r="2" fill="#e8cd8a"/><circle cx="220" cy="120" r="2" fill="#e8cd8a"/><circle cx="300" cy="170" r="2" fill="#e8cd8a"/>';
+      return (
+        '<svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
+        '<rect width="400" height="260" fill="url(#' + gradId + ')"/>' +
+        '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="' + c.gradient[0] + '"/><stop offset="1" stop-color="' + c.gradient[1] + '"/>' +
+        '</linearGradient></defs>' + extra + '</svg>'
+      );
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
+
+    function renderContinents(list) {
+      if (!continentGrid) return;
+      continentGrid.innerHTML = "";
+      list.forEach(function (c, i) {
+        var card = document.createElement("div");
+        card.className = "panel continent-card reveal" + (c.danger === "high" ? " is-danger" : "");
+        card.style.setProperty("--i", i);
+        card.innerHTML =
+          '<div class="art">' + continentArt(c, "grad-" + c.id) + '</div>' +
+          '<div class="body">' +
+          '<span class="tag">' + escapeHtml(c.tag) + '</span>' +
+          '<h3>' + escapeHtml(c.name) + '</h3>' +
+          '<p>' + escapeHtml(c.description) + '</p>' +
+          '<div class="continent-meta">' +
+          '<span class="tag">' + escapeHtml(c.levelRange) + '</span>' +
+          '<span class="tag">' + escapeHtml(c.climate) + '</span>' +
+          '</div></div>';
+        continentGrid.appendChild(card);
+        observeReveal(card);
       });
-    }, { threshold: 0.3 });
-    cards.forEach(function (c) { io.observe(c); });
+    }
+
+    function renderTerritoryStrip(list) {
+      if (!territoryGrid) return;
+      territoryGrid.innerHTML = "";
+      list.forEach(function (t) {
+        var card = document.createElement("div");
+        card.className = "panel mini-card";
+        card.innerHTML =
+          '<span class="dot"></span><div><strong>' + escapeHtml(t.name) + '</strong>' +
+          '<span>' + escapeHtml(t.shortDescription) + '</span></div>';
+        territoryGrid.appendChild(card);
+      });
+    }
+
+    function renderMarkers(launch, territories) {
+      if (!markersGroup) return;
+      markersGroup.innerHTML = "";
+
+      function addMarker(id, name, x, y, extraClass, ariaSuffix) {
+        var ns = "http://www.w3.org/2000/svg";
+        var g = document.createElementNS(ns, "g");
+        g.setAttribute("class", "map-marker" + (extraClass ? " " + extraClass : ""));
+        g.setAttribute("data-location", id);
+        g.setAttribute("tabindex", "0");
+        g.setAttribute("role", "button");
+        g.setAttribute("aria-label", name + " — " + ariaSuffix);
+
+        var pulse = document.createElementNS(ns, "circle");
+        pulse.setAttribute("class", "pulse"); pulse.setAttribute("cx", x); pulse.setAttribute("cy", y); pulse.setAttribute("r", "6");
+        var core = document.createElementNS(ns, "circle");
+        core.setAttribute("class", "core"); core.setAttribute("cx", x); core.setAttribute("cy", y); core.setAttribute("r", "5");
+        var text = document.createElementNS(ns, "text");
+        text.setAttribute("x", x + 12); text.setAttribute("y", y + 4);
+        text.textContent = name.toUpperCase();
+
+        g.appendChild(pulse); g.appendChild(core); g.appendChild(text);
+        markersGroup.appendChild(g);
+      }
+
+      launch.forEach(function (c) {
+        addMarker(c.id, c.name, c.map.x, c.map.y, c.danger === "high" ? "is-danger" : "", c.danger === "high" ? "view dangers and lore" : "view description");
+      });
+      territories.forEach(function (t) {
+        addMarker(t.id, t.name, t.map.x, t.map.y, "is-future", "expansion preview");
+      });
+    }
+
+    function wireMap(regionInfo) {
+      if (!markersGroup || !modal) return;
+
+      function openModal(key) {
+        var info = regionInfo[key];
+        if (!info) return;
+        modalTitle.textContent = info.title;
+        modalBody.textContent = info.body;
+        modal.classList.add("is-open");
+      }
+      function closeModal() { modal.classList.remove("is-open"); }
+
+      $all(".map-marker", markersGroup).forEach(function (m) {
+        m.addEventListener("click", function () { openModal(m.getAttribute("data-location")); });
+        m.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(m.getAttribute("data-location")); }
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+    }
+
+    fetchJSON("data/continents.json")
+      .then(function (data) {
+        var launch = data.launch || [];
+        var territories = data.expansionTerritories || [];
+
+        renderContinents(launch);
+        renderTerritoryStrip(territories);
+        renderMarkers(launch, territories);
+
+        var regionInfo = {};
+        launch.forEach(function (c) { regionInfo[c.id] = { title: c.name, body: c.modalBody }; });
+        territories.forEach(function (t) { regionInfo[t.id] = { title: t.modalTitle, body: t.modalBody }; });
+        wireMap(regionInfo);
+      })
+      .catch(function (err) {
+        showFetchError(continentGrid, err);
+        showFetchError(territoryGrid, err);
+      });
   })();
 
   /* ------------------------------------------------------------------ *
-   * 9. Timeline (Lore)
+   * 8. Classes (data/classes.json)
+   * ------------------------------------------------------------------ */
+  (function classes() {
+    var grid = $("#class-grid");
+    if (!grid) return;
+
+    function statRow(label, val) {
+      return (
+        '<div class="stat-row"><span>' + label + '</span>' +
+        '<div class="stat-track"><div class="stat-fill" style="--val:' + val + '%"></div></div>' +
+        '<span class="stat-num">' + val + '</span></div>'
+      );
+    }
+
+    fetchJSON("data/classes.json")
+      .then(function (data) {
+        grid.innerHTML = "";
+        (data.classes || []).forEach(function (c, i) {
+          var card = document.createElement("article");
+          card.className = "panel class-card reveal";
+          card.style.setProperty("--i", i);
+          card.innerHTML =
+            '<svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="' + c.icon + '"/></svg>' +
+            '<span class="role">' + escapeHtml(c.role) + '</span>' +
+            '<h3>' + escapeHtml(c.name) + '</h3>' +
+            '<span class="sub">' + escapeHtml(c.archetype) + ' &middot; Patron: ' + escapeHtml(c.patron) + '</span>' +
+            '<p class="desc">' + escapeHtml(c.description) + '</p>' +
+            statRow("Power", c.stats.power) + statRow("Defense", c.stats.defense) +
+            statRow("Magic", c.stats.magic) + statRow("Difficulty", c.stats.difficulty);
+          grid.appendChild(card);
+          observeReveal(card);
+        });
+
+        // Stat bars animate in once each card scrolls into view
+        var cards = $all(".class-card", grid);
+        if ("IntersectionObserver" in window && cards.length) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+            });
+          }, { threshold: 0.3 });
+          cards.forEach(function (c) { io.observe(c); });
+        } else {
+          cards.forEach(function (c) { c.classList.add("is-visible"); });
+        }
+      })
+      .catch(function (err) { showFetchError(grid, err); });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 9. Factions (data/factions.json)
+   * ------------------------------------------------------------------ */
+  (function factions() {
+    var majorGrid = $("#faction-major-grid");
+    var joinableGrid = $("#faction-joinable-grid");
+    var repNote = $("#reputation-note");
+    var allianceNote = $("#alliance-note");
+    var repScale = $("#rep-scale");
+    if (!majorGrid && !joinableGrid) return;
+
+    function card(f, i, compact) {
+      var el = document.createElement("div");
+      el.className = "panel faction-card reveal" + (compact ? " faction-card--compact" : "");
+      el.style.setProperty("--i", i);
+      el.innerHTML =
+        '<h3>' + escapeHtml(f.name) + '</h3>' +
+        '<span class="sub">' + escapeHtml(f.sub) + '</span>' +
+        '<p>' + escapeHtml(f.description) + '</p>';
+      return el;
+    }
+
+    fetchJSON("data/factions.json")
+      .then(function (data) {
+        if (majorGrid) {
+          majorGrid.innerHTML = "";
+          (data.major || []).forEach(function (f, i) {
+            var el = card(f, i, false);
+            majorGrid.appendChild(el);
+            observeReveal(el);
+          });
+        }
+        if (joinableGrid) {
+          joinableGrid.innerHTML = "";
+          (data.joinable || []).forEach(function (f, i) {
+            var el = card(f, i, true);
+            joinableGrid.appendChild(el);
+            observeReveal(el);
+          });
+        }
+        if (repNote && data.reputationNote) repNote.textContent = data.reputationNote;
+        if (allianceNote && data.allianceNote) allianceNote.textContent = data.allianceNote;
+        if (repScale && data.reputationScale) {
+          repScale.innerHTML = "";
+          data.reputationScale.forEach(function (label) {
+            var span = document.createElement("span");
+            span.className = label.toLowerCase();
+            repScale.appendChild(span);
+          });
+        }
+      })
+      .catch(function (err) { showFetchError(majorGrid, err); showFetchError(joinableGrid, err); });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 10. Features + world bosses (data/features.json)
+   * ------------------------------------------------------------------ */
+  (function features() {
+    var featureGrid = $("#feature-grid");
+    var bossGrid = $("#boss-grid");
+    if (!featureGrid && !bossGrid) return;
+
+    fetchJSON("data/features.json")
+      .then(function (data) {
+        if (featureGrid) {
+          featureGrid.innerHTML = "";
+          (data.features || []).forEach(function (f, i) {
+            var el = document.createElement("div");
+            el.className = "panel feature-card reveal";
+            el.style.setProperty("--i", i);
+            el.innerHTML =
+              '<span class="num">' + escapeHtml(f.num) + '</span>' +
+              '<h3>' + escapeHtml(f.name) + '</h3><p>' + escapeHtml(f.description) + '</p>';
+            featureGrid.appendChild(el);
+            observeReveal(el);
+          });
+        }
+        if (bossGrid) {
+          bossGrid.innerHTML = "";
+          (data.worldBosses || []).forEach(function (b) {
+            var el = document.createElement("div");
+            el.className = "panel boss-card reveal" + (b.variant === "void" ? " is-void" : "");
+            el.innerHTML =
+              '<div class="boss-eyes"><span></span><span></span></div>' +
+              '<span class="warning">&#9888; ' + escapeHtml(b.warning) + '</span>' +
+              '<h3>' + escapeHtml(b.name) + '</h3><p>' + escapeHtml(b.description) + '</p>';
+            bossGrid.appendChild(el);
+            observeReveal(el);
+          });
+        }
+      })
+      .catch(function (err) { showFetchError(featureGrid, err); showFetchError(bossGrid, err); });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 11. Professions (data/professions.json)
+   * ------------------------------------------------------------------ */
+  (function professions() {
+    var list = $("#profession-list");
+    if (!list) return;
+
+    fetchJSON("data/professions.json")
+      .then(function (data) {
+        list.innerHTML = "";
+        (data.professions || []).forEach(function (p) {
+          var row = document.createElement("div");
+          row.className = "profession-row";
+          row.innerHTML =
+            '<svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="' + p.icon + '"/></svg>' +
+            '<div><h3>' + escapeHtml(p.name) + '</h3><p>' + escapeHtml(p.description) + '</p></div>';
+          list.appendChild(row);
+        });
+      })
+      .catch(function (err) { showFetchError(list, err); });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 12. Expansion roadmap (data/expansions.json)
+   * ------------------------------------------------------------------ */
+  (function expansions() {
+    var grid = $("#expansion-grid");
+    if (!grid) return;
+
+    fetchJSON("data/expansions.json")
+      .then(function (data) {
+        grid.innerHTML = "";
+        (data.expansions || []).forEach(function (e, i) {
+          var card = document.createElement("div");
+          card.className = "panel expansion-card reveal";
+          card.style.setProperty("--i", i);
+          card.innerHTML =
+            '<div class="head" data-index="' + escapeHtml(e.index) + '">' +
+            '<span class="badge-soon">' + escapeHtml(e.status) + '</span>' +
+            '<h3>' + escapeHtml(e.name) + '</h3></div>' +
+            '<p class="theme">' + escapeHtml(e.theme) + '</p>';
+          grid.appendChild(card);
+          observeReveal(card);
+        });
+      })
+      .catch(function (err) { showFetchError(grid, err); });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 13. Timeline (Lore)
    * ------------------------------------------------------------------ */
   (function timeline() {
     var wrap = $("#timeline");
@@ -289,62 +658,7 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 10. Interactive world map
-   * ------------------------------------------------------------------ */
-  (function worldMap() {
-    var markers = $all(".map-marker");
-    var modal = $("#map-modal");
-    var modalTitle = $("#map-modal-title");
-    var modalBody = $("#map-modal-body");
-    var closeBtn = $("#map-modal-close");
-    if (!markers.length || !modal) return;
-
-    var regionInfo = {
-      aurelia: {
-        title: "Aurelia",
-        body: "A prosperous land of kingdoms, forests, ancient ruins, and forgotten secrets. Recommended for characters level 1–30."
-      },
-      vethmoor: {
-        title: "Vethmoor",
-        body: "A harsh continent shaped by war, corruption, and ancient conflicts. Dangers here scale sharply — recommended for level 30–60 adventurers."
-      },
-      sylvaneth: {
-        title: "Sylvaneth — Expansion Preview",
-        body: "A mystical forest expansion built around ancient nature magic and the secrets kept by its oldest trees. Coming in a future update."
-      },
-      kharzul: {
-        title: "Kharzul Wastes — Expansion Preview",
-        body: "A dangerous desert region hiding a forgotten civilization beneath its dunes. Coming in a future update."
-      },
-      nightreach: {
-        title: "Nightreach — Endgame Preview",
-        body: "A dark endgame region shrouded in corruption from the Sundering. Reserved for Elysium's most seasoned heroes. Coming in a future update."
-      }
-    };
-
-    function openModal(key) {
-      var info = regionInfo[key];
-      if (!info) return;
-      modalTitle.textContent = info.title;
-      modalBody.textContent = info.body;
-      modal.classList.add("is-open");
-    }
-    function closeModal() { modal.classList.remove("is-open"); }
-
-    markers.forEach(function (m) {
-      m.addEventListener("click", function () { openModal(m.getAttribute("data-location")); });
-      m.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(m.getAttribute("data-location")); }
-      });
-    });
-
-    if (closeBtn) closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
-  })();
-
-  /* ------------------------------------------------------------------ *
-   * 11. Gallery + lightbox
+   * 14. Gallery + lightbox (data/gallery.json)
    * ------------------------------------------------------------------ */
   (function gallery() {
     var grid = $("#gallery-grid");
@@ -355,76 +669,60 @@
     var lightboxClose = $("#lightbox-close");
     if (!grid) return;
 
-    // Placeholder gallery items — swap `art` for a real <img> once assets exist.
-    var items = [
-      { label: "Aurelia at Dawn", type: "screenshot", grad: ["#16273f", "#131217"] },
-      { label: "The Forgotten King — Concept", type: "concept", grad: ["#7d2b2b", "#131217"] },
-      { label: "Continental Map, Pre-Sundering", type: "map", grad: ["#0d1b2e", "#1c1a20"] },
-      { label: "Wayfarer — Character Study", type: "character", grad: ["#26232b", "#16273f"] },
-      { label: "Vethmoor Ridgeline", type: "environment", grad: ["#131217", "#7d2b2b"] },
-      { label: "Sylvaneth Canopy — Concept", type: "concept", grad: ["#1c1a20", "#4c6a4a"] },
-      { label: "Kharzul Ruins", type: "environment", grad: ["#131217", "#8a7038"] },
-      { label: "The Void Herald — Concept", type: "concept", grad: ["#131217", "#6b4a9e"] }
-    ];
-
     function svgFor(item) {
       return (
         '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
-        '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-        '<stop offset="0" stop-color="' + item.grad[0] + '"/><stop offset="1" stop-color="' + item.grad[1] + '"/>' +
+        '<defs><linearGradient id="g-' + item.id + '" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="' + item.gradient[0] + '"/><stop offset="1" stop-color="' + item.gradient[1] + '"/>' +
         '</linearGradient></defs>' +
-        '<rect width="400" height="300" fill="url(#g)"/>' +
+        '<rect width="400" height="300" fill="url(#g-' + item.id + ')"/>' +
         '<path d="M0 220 Q100 180 200 210 T400 190" stroke="#c9a86a" stroke-width="1" fill="none" opacity="0.35"/>' +
         '</svg>'
       );
     }
 
-    items.forEach(function (item, i) {
-      var el = document.createElement("div");
-      el.className = "gallery-item reveal";
-      el.style.setProperty("--i", i);
-      el.setAttribute("data-type", item.type);
-      el.setAttribute("tabindex", "0");
-      el.setAttribute("role", "button");
-      el.setAttribute("aria-label", "View " + item.label);
-      el.innerHTML = svgFor(item) + '<span class="label">' + item.label + '</span>';
-      grid.appendChild(el);
+    fetchJSON("data/gallery.json")
+      .then(function (data) {
+        var items = data.items || [];
+        grid.innerHTML = "";
 
-      function openLightbox() {
-        if (!lightbox) return;
-        lightboxTitle.textContent = item.label;
-        lightboxArt.innerHTML = svgFor(item);
-        lightbox.classList.add("is-open");
-      }
-      el.addEventListener("click", openLightbox);
-      el.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(); }
-      });
-    });
+        items.forEach(function (item, i) {
+          var el = document.createElement("div");
+          el.className = "gallery-item reveal";
+          el.style.setProperty("--i", i);
+          el.setAttribute("data-type", item.type);
+          el.setAttribute("tabindex", "0");
+          el.setAttribute("role", "button");
+          el.setAttribute("aria-label", "View " + item.label);
+          el.innerHTML = svgFor(item) + '<span class="label">' + escapeHtml(item.label) + '</span>';
+          grid.appendChild(el);
+          observeReveal(el);
 
-    // Re-run reveal observer for dynamically added items
-    if ("IntersectionObserver" in window && !prefersReducedMotion) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+          function openLightbox() {
+            if (!lightbox) return;
+            lightboxTitle.textContent = item.label;
+            lightboxArt.innerHTML = svgFor(item);
+            lightbox.classList.add("is-open");
+          }
+          el.addEventListener("click", openLightbox);
+          el.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(); }
+          });
         });
-      }, { threshold: 0.1 });
-      $all(".gallery-item").forEach(function (t) { io.observe(t); });
-    } else {
-      $all(".gallery-item").forEach(function (t) { t.classList.add("is-visible"); });
-    }
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        tabs.forEach(function (t) { t.classList.remove("is-active"); });
-        tab.classList.add("is-active");
-        var filter = tab.getAttribute("data-filter");
-        $all(".gallery-item").forEach(function (el) {
-          var show = filter === "all" || el.getAttribute("data-type") === filter;
-          el.style.display = show ? "" : "none";
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (t) { t.classList.remove("is-active"); });
+            tab.classList.add("is-active");
+            var filter = tab.getAttribute("data-filter");
+            $all(".gallery-item", grid).forEach(function (el) {
+              var show = filter === "all" || el.getAttribute("data-type") === filter;
+              el.style.display = show ? "" : "none";
+            });
+          });
         });
-      });
-    });
+      })
+      .catch(function (err) { showFetchError(grid, err); });
 
     if (lightboxClose) lightboxClose.addEventListener("click", function () { lightbox.classList.remove("is-open"); });
     if (lightbox) {
@@ -436,36 +734,14 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 12. Development progress bars + roadmap
-   * ------------------------------------------------------------------ */
-  (function devProgress() {
-    var bars = $all(".progress-fill");
-    var roadmapFill = $("#roadmap-fill");
-    var roadmapSection = $("#development");
-    if (!roadmapSection) return;
-
-    function trigger() {
-      bars.forEach(function (bar) {
-        var val = bar.getAttribute("data-progress") || "0";
-        bar.style.width = val + "%";
-      });
-      if (roadmapFill) roadmapFill.style.width = "50%"; // two of four phases underway
-    }
-
-    if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { trigger(); io.disconnect(); }
-        });
-      }, { threshold: 0.3 });
-      io.observe(roadmapSection);
-    } else {
-      trigger();
-    }
-  })();
-
-  /* ------------------------------------------------------------------ *
-   * 12.5 Development stages (data/dev-stages.json driven)
+   * 15. Development stages + roadmap, combined (data/dev-stages.json)
+   *
+   *     The detailed per-workstream checklist ("Stages") and the four-phase
+   *     timeline ("Roadmap") used to be three separate, overlapping progress
+   *     indicators (plus a now-removed "Development Status" summary block).
+   *     They're now one panel: the roadmap's fill line is driven by the same
+   *     overall completion percentage computed from the stage data, instead
+   *     of a hand-set number.
    * ------------------------------------------------------------------ */
   (function devStages() {
     var root = $("#dev-stages");
@@ -475,6 +751,7 @@
     var pctEl = $("#dev-stages-pct");
     var countEl = $("#dev-stages-count");
     var tooltipEl = $("#docs-tooltip");
+    var roadmapFill = $("#roadmap-fill");
     var caretSvg =
       '<svg class="stage-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
       'stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>';
@@ -612,11 +889,7 @@
       }
     }
 
-    fetch("data/dev-stages.json")
-      .then(function (res) {
-        if (!res.ok) throw new Error("Manifest request failed: " + res.status);
-        return res.json();
-      })
+    fetchJSON("data/dev-stages.json")
       .then(function (data) {
         data.stages.forEach(buildStageCard);
 
@@ -630,6 +903,7 @@
             entries.forEach(function (entry) {
               if (entry.isIntersecting) {
                 animateNumber(pctEl, 0, pct, "%", 900);
+                if (roadmapFill) roadmapFill.style.width = pct + "%";
                 io.disconnect();
               }
             });
@@ -637,6 +911,7 @@
           io.observe(root);
         } else {
           pctEl.textContent = pct + "%";
+          if (roadmapFill) roadmapFill.style.width = pct + "%";
         }
       })
       .catch(function (err) {
@@ -644,14 +919,14 @@
         countEl.textContent = "Manifest unavailable";
         pctEl.textContent = "—";
         var note = document.createElement("p");
-        note.style.cssText = "font-family:var(--font-mono); font-size:0.72rem; color:var(--muted);";
+        note.className = "data-error-note";
         note.textContent = "Couldn't load data/dev-stages.json (" + err.message + "). Serve this page over http(s) — a local server or GitHub Pages — rather than opening it as a local file.";
         listEl.appendChild(note);
       });
   })();
 
   /* ------------------------------------------------------------------ *
-   * 13. Typewriter text
+   * 16. Typewriter text
    * ------------------------------------------------------------------ */
   (function typewriter() {
     var els = $all("[data-typewriter]");
@@ -668,7 +943,7 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 14. Back to top
+   * 17. Back to top
    * ------------------------------------------------------------------ */
   (function backToTop() {
     var btn = $("#back-to-top");
@@ -682,7 +957,7 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 15. Ambient audio controls
+   * 18. Ambient audio controls
    * ------------------------------------------------------------------ */
   (function audio() {
     var toggle = $("#audio-toggle");
@@ -720,7 +995,7 @@
   })();
 
   /* ------------------------------------------------------------------ *
-   * 16. Easter eggs
+   * 19. Easter eggs
    * ------------------------------------------------------------------ */
   (function easterEggs() {
     var toast = $("#secret-toast");

@@ -1,0 +1,25 @@
+{
+  "expansions": [
+    {
+      "id": "sylvaneth",
+      "index": "01",
+      "name": "Sylvaneth",
+      "status": "Coming Soon",
+      "theme": "Ancient forests and forgotten nature magic."
+    },
+    {
+      "id": "kharzul-wastes",
+      "index": "02",
+      "name": "Kharzul Wastes",
+      "status": "Coming Soon",
+      "theme": "Deserts, ruins, and lost civilizations."
+    },
+    {
+      "id": "nightreach",
+      "index": "03",
+      "name": "Nightreach",
+      "status": "Coming Soon",
+      "theme": "Darkness, corruption, and endgame adventures."
+    }
+  ]
+}

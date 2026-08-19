@@ -164,53 +164,14 @@
     <h2 class="section-title">The World of <span class="accent">Elysium</span></h2>
     <p class="section-intro reveal">Two continents open at launch, each shaped by centuries of history. Three more lie beyond the horizon, waiting in future expansions.</p>
 
-    <div class="grid grid--1" style="grid-template-columns:1fr; gap:1.75rem;">
-      <div class="panel continent-card reveal">
-        <div class="art">
-          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="260" fill="url(#aureliaGrad)"/>
-            <defs><linearGradient id="aureliaGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16273f"/><stop offset="1" stop-color="#131217"/></linearGradient></defs>
-            <path d="M40 200 Q100 120 160 160 T280 140 T380 190" stroke="#c9a86a" stroke-width="1" fill="none" opacity="0.5"/>
-            <circle cx="120" cy="150" r="2" fill="#e8cd8a"/><circle cx="220" cy="120" r="2" fill="#e8cd8a"/><circle cx="300" cy="170" r="2" fill="#e8cd8a"/>
-          </svg>
-        </div>
-        <div class="body">
-          <span class="tag">Starting Continent</span>
-          <h3>Aurelia</h3>
-          <p>A prosperous land of kingdoms, forests, ancient ruins, and forgotten secrets.</p>
-          <div class="continent-meta">
-            <span class="tag">Recommended Level 1&ndash;30</span>
-            <span class="tag">Temperate</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel continent-card is-danger reveal">
-        <div class="art">
-          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="260" fill="url(#vethGrad)"/>
-            <defs><linearGradient id="vethGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d2b2b"/><stop offset="1" stop-color="#131217"/></linearGradient></defs>
-            <path d="M20 90 L120 210 L200 70 L300 220 L380 100" stroke="#b34a3a" stroke-width="1" fill="none" opacity="0.55"/>
-          </svg>
-        </div>
-        <div class="body">
-          <span class="tag">Endgame Territory</span>
-          <h3>Vethmoor</h3>
-          <p>A harsh continent shaped by war, corruption, and ancient conflicts.</p>
-          <div class="continent-meta">
-            <span class="tag">Recommended Level 30&ndash;60</span>
-            <span class="tag">Hostile</span>
-          </div>
-        </div>
-      </div>
+    <div class="grid grid--1" style="grid-template-columns:1fr; gap:1.75rem;" id="continent-grid" data-loading="Loading continents…">
+      <!-- Continent cards rendered from data/continents.json by js/main.js -->
     </div>
 
     <div class="expansion-strip reveal">
       <h3>Future Expansion Territories</h3>
-      <div class="grid grid--3">
-        <div class="panel mini-card"><span class="dot"></span><div><strong>Sylvaneth</strong><span>A mystical forest expansion.</span></div></div>
-        <div class="panel mini-card"><span class="dot"></span><div><strong>Kharzul Wastes</strong><span>A dangerous desert and forgotten civilization.</span></div></div>
-        <div class="panel mini-card"><span class="dot"></span><div><strong>Nightreach</strong><span>A dark endgame region.</span></div></div>
+      <div class="grid grid--3" id="expansion-territory-grid" data-loading="Loading territories…">
+        <!-- Mini territory cards rendered from data/continents.json by js/main.js -->
       </div>
     </div>
 
@@ -227,30 +188,8 @@
         <path d="M60 260 Q160 180 260 220 T460 200" stroke="#c9a86a" stroke-width="0.75" fill="none" opacity="0.25"/>
         <path d="M120 340 Q260 300 380 330 T620 300" stroke="#c9a86a" stroke-width="0.75" fill="none" opacity="0.2"/>
 
-        <g class="map-marker" data-location="aurelia" tabindex="0" role="button" aria-label="Aurelia — view description">
-          <circle class="pulse" cx="220" cy="180" r="6"/>
-          <circle class="core" cx="220" cy="180" r="5"/>
-          <text x="232" y="184">AURELIA</text>
-        </g>
-        <g class="map-marker is-danger" data-location="vethmoor" tabindex="0" role="button" aria-label="Vethmoor — view dangers and lore">
-          <circle class="pulse" cx="430" cy="270" r="6"/>
-          <circle class="core" cx="430" cy="270" r="5"/>
-          <text x="442" y="274">VETHMOOR</text>
-        </g>
-        <g class="map-marker is-future" data-location="sylvaneth" tabindex="0" role="button" aria-label="Sylvaneth — expansion preview">
-          <circle class="pulse" cx="620" cy="150" r="6"/>
-          <circle class="core" cx="620" cy="150" r="5"/>
-          <text x="632" y="154">SYLVANETH</text>
-        </g>
-        <g class="map-marker is-future" data-location="kharzul" tabindex="0" role="button" aria-label="Kharzul Wastes — expansion preview">
-          <circle class="pulse" cx="700" cy="320" r="6"/>
-          <circle class="core" cx="700" cy="320" r="5"/>
-          <text x="712" y="324">KHARZUL WASTES</text>
-        </g>
-        <g class="map-marker is-future" data-location="nightreach" tabindex="0" role="button" aria-label="Nightreach — endgame preview">
-          <circle class="pulse" cx="120" cy="90" r="6"/>
-          <circle class="core" cx="120" cy="90" r="5"/>
-          <text x="132" y="94">NIGHTREACH</text>
+        <g id="map-markers">
+          <!-- Map marker <g> elements rendered from data/continents.json by js/main.js -->
         </g>
       </svg>
       <span class="map-hint">Click a marker to reveal the region</span>
@@ -298,6 +237,10 @@
         <p>Heroes return to rebuild civilization, founding the factions and kingdoms that players will encounter across Elysium today.</p>
       </div>
     </div>
+
+    <div class="reveal" style="margin-top:2.5rem;">
+      <a href="pages/lore.html" class="btn btn--ghost">Read the Full Chronicle &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -317,79 +260,8 @@
     <h2 class="section-title">Classes of <span class="accent">Elysium</span></h2>
     <p class="section-intro reveal">Six paths, six ways to shape a legend. Hover a card to see it come alive.</p>
 
-    <div class="grid grid--3 reveal-stagger" id="class-grid">
-      <!-- Class cards are duplicated in markup for clarity/SEO; stats animate via IntersectionObserver -->
-      <article class="panel class-card reveal" style="--i:0">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 32 L28 12 M24 8 L32 16 L28 20 L20 12 Z M6 34 L10 30"/></svg>
-        <span class="role">Tank / Damage</span>
-        <h3>Vanguard</h3>
-        <span class="sub">Warrior Archetype &middot; Patron: Ignareth</span>
-        <p class="desc">A frontline fighter forged through discipline and raw physical power, wielding heavy weapons in Ignareth's name.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:80%"></div></div><span class="stat-num">80</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:75%"></div></div><span class="stat-num">75</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:15%"></div></div><span class="stat-num">15</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:30%"></div></div><span class="stat-num">30</span></div>
-      </article>
-
-      <article class="panel class-card reveal" style="--i:1">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6 L20 34 M12 14 L28 14 M20 20 C24 20 26 24 20 28 C14 24 16 20 20 20 Z"/></svg>
-        <span class="role">Damage</span>
-        <h3>Arcanist</h3>
-        <span class="sub">Mage Archetype &middot; Patron: Arcane Tradition</span>
-        <p class="desc">A destructive spellcaster channeling elemental and arcane forces through relentless study of the old arcane traditions.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:35%"></div></div><span class="stat-num">35</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:25%"></div></div><span class="stat-num">25</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:95%"></div></div><span class="stat-num">95</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:70%"></div></div><span class="stat-num">70</span></div>
-      </article>
-
-      <article class="panel class-card reveal" style="--i:2">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 8 L32 32 M8 32 L18 22 M32 8 L22 18"/></svg>
-        <span class="role">Damage</span>
-        <h3>Shade</h3>
-        <span class="sub">Rogue Archetype &middot; Patron: Nyxara</span>
-        <p class="desc">A stealth-driven striker built on deception, mobility, and precision, walking the paths favored by Nyxara.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:70%"></div></div><span class="stat-num">70</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:20%"></div></div><span class="stat-num">20</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:20%"></div></div><span class="stat-num">20</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:80%"></div></div><span class="stat-num">80</span></div>
-      </article>
-
-      <article class="panel class-card reveal" style="--i:3">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 4 C24 10 28 12 28 18 C28 26 24 32 20 36 C16 32 12 26 12 18 C12 12 16 10 20 4 Z M20 14 L20 30 M14 20 C16 21 18 21.5 20 21.5 C22 21.5 24 21 26 20"/></svg>
-        <span class="role">Healer / Damage</span>
-        <h3>Warden</h3>
-        <span class="sub">Druid Archetype &middot; Patron: Aeloria</span>
-        <p class="desc">A shapeshifting nature-caster balancing restoration and primal power under Aeloria's watch.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:55%"></div></div><span class="stat-num">55</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:45%"></div></div><span class="stat-num">45</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:80%"></div></div><span class="stat-num">80</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:65%"></div></div><span class="stat-num">65</span></div>
-      </article>
-
-      <article class="panel class-card reveal" style="--i:4">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 4 L34 12 L34 22 C34 30 28 34 20 36 C12 34 6 30 6 22 L6 12 Z M20 16 L20 26 M15 21 L25 21"/></svg>
-        <span class="role">Tank / Healer</span>
-        <h3>Oathkeeper</h3>
-        <span class="sub">Paladin Archetype &middot; Patron: Solthar</span>
-        <p class="desc">A sacred warrior bound by protective magic and divine vows, defending allies in Solthar's name.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:60%"></div></div><span class="stat-num">60</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:85%"></div></div><span class="stat-num">85</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:50%"></div></div><span class="stat-num">50</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:40%"></div></div><span class="stat-num">40</span></div>
-      </article>
-
-      <article class="panel class-card reveal" style="--i:5">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 34 L18 10 M18 10 L14 10 M18 10 L18 14 M20 20 L34 6 M34 6 L28 6 M34 6 L34 12"/></svg>
-        <span class="role">Damage</span>
-        <h3>Wayfarer</h3>
-        <span class="sub">Ranger Archetype &middot; Patron: Aeloria &amp; Independent Traditions</span>
-        <p class="desc">A ranged specialist built for exploration and survival, trained in traditions tied to Aeloria and the wandering orders beyond her reach.</p>
-        <div class="stat-row"><span>Power</span><div class="stat-track"><div class="stat-fill" style="--val:65%"></div></div><span class="stat-num">65</span></div>
-        <div class="stat-row"><span>Defense</span><div class="stat-track"><div class="stat-fill" style="--val:40%"></div></div><span class="stat-num">40</span></div>
-        <div class="stat-row"><span>Magic</span><div class="stat-track"><div class="stat-fill" style="--val:30%"></div></div><span class="stat-num">30</span></div>
-        <div class="stat-row"><span>Difficulty</span><div class="stat-track"><div class="stat-fill" style="--val:45%"></div></div><span class="stat-num">45</span></div>
-      </article>
+    <div class="grid grid--3 reveal-stagger" id="class-grid" data-loading="Loading classes…">
+      <!-- Class cards rendered from data/classes.json by js/main.js -->
     </div>
   </div>
 </section>
@@ -412,54 +284,26 @@
     <p class="section-intro reveal">Every faction remembers who stood beside them, and who didn't.</p>
 
     <h3 class="faction-subhead reveal">Major Factions</h3>
-    <div class="grid grid--2 reveal-stagger">
-      <div class="panel faction-card reveal" style="--i:0">
-        <h3>The Dawnbound Concord</h3>
-        <span class="sub">Alliance of Light &amp; Order</span>
-        <p>A concord of kingdoms and holy orders united beneath the dawn, sworn to hold back whatever survived the Sundering.</p>
-      </div>
-      <div class="panel faction-card reveal" style="--i:1">
-        <h3>The Duskward Pact</h3>
-        <span class="sub">Alliance of Shadow &amp; Ambition</span>
-        <p>A pact of exiles, opportunists, and old powers who found common cause in the dusk — and common enemies in the Concord.</p>
-      </div>
+    <div class="grid grid--2 reveal-stagger" id="faction-major-grid" data-loading="Loading factions…">
+      <!-- Major faction cards rendered from data/factions.json by js/main.js -->
     </div>
 
     <h3 class="faction-subhead reveal">Joinable Factions</h3>
-    <div class="grid grid--4 reveal-stagger">
-      <div class="panel faction-card faction-card--compact reveal" style="--i:0">
-        <h3>Silverwatch</h3>
-        <span class="sub">Militant Order</span>
-        <p>A disciplined order of sentinels standing watch over Elysium's borders, open to any who can prove their steel.</p>
-      </div>
-      <div class="panel faction-card faction-card--compact reveal" style="--i:1">
-        <h3>The Wayfarer's Guild</h3>
-        <span class="sub">Scouts &amp; Traders</span>
-        <p>A guild of scouts, traders, and pathfinders who chart the roads between danger and opportunity.</p>
-      </div>
-      <div class="panel faction-card faction-card--compact reveal" style="--i:2">
-        <h3>The Ashen Circle</h3>
-        <span class="sub">Occult Order</span>
-        <p>A secretive circle devoted to the ember-magic left behind by the Sundering, walking a line between ritual and heresy.</p>
-      </div>
-      <div class="panel faction-card faction-card--compact reveal" style="--i:3">
-        <h3>The Cartographer's League</h3>
-        <span class="sub">Mapmakers &amp; Surveyors</span>
-        <p>A league of surveyors and mapmakers racing to chart Elysium's unclaimed regions before rival powers do.</p>
-      </div>
+    <div class="grid grid--4 reveal-stagger" id="faction-joinable-grid" data-loading="Loading factions…">
+      <!-- Joinable faction cards rendered from data/factions.json by js/main.js -->
     </div>
 
     <div class="reputation-block reveal">
       <div>
         <h3>Reputation System</h3>
-        <p>Actions across the world raise or lower your standing with each faction, from Hostile to Exalted. Higher standing unlocks unique quests, gear, and dialogue.</p>
-        <div class="rep-scale" aria-hidden="true">
+        <p id="reputation-note">Actions across the world raise or lower your standing with each faction, from Hostile to Exalted. Higher standing unlocks unique quests, gear, and dialogue.</p>
+        <div class="rep-scale" aria-hidden="true" id="rep-scale">
           <span class="hostile"></span><span class="unfriendly"></span><span class="neutral"></span><span class="friendly"></span><span class="honored"></span><span class="exalted"></span>
         </div>
       </div>
       <div>
         <h3>Alliances &amp; Rivalries</h3>
-        <p>Factions are interconnected. Aiding Silverwatch may raise suspicion with the Ashen Circle, while standing with the Dawnbound Concord can open doors — or close them — with the Duskward Pact.</p>
+        <p id="alliance-note">Factions are interconnected. Aiding Silverwatch may raise suspicion with the Ashen Circle, while standing with the Dawnbound Concord can open doors — or close them — with the Duskward Pact.</p>
       </div>
     </div>
   </div>
@@ -481,29 +325,13 @@
     <h2 class="section-title">Core <span class="accent">Features</span></h2>
     <p class="section-intro reveal">Everything you need for a living, breathing fantasy world.</p>
 
-    <div class="grid grid--3 reveal-stagger">
-      <div class="panel feature-card reveal" style="--i:0"><span class="num">01</span><h3>Open World Exploration</h3><p>Travel through forests, cities, ruins, mountains, and forgotten lands.</p></div>
-      <div class="panel feature-card reveal" style="--i:1"><span class="num">02</span><h3>Quest System</h3><p>Complete story quests, faction quests, and hidden discoveries.</p></div>
-      <div class="panel feature-card reveal" style="--i:2"><span class="num">03</span><h3>Dungeons</h3><p>Fight through dangerous locations with unique bosses.</p></div>
-      <div class="panel feature-card reveal" style="--i:3"><span class="num">04</span><h3>Boss Encounters</h3><p>Challenge powerful enemies requiring strategy.</p></div>
-      <div class="panel feature-card reveal" style="--i:4"><span class="num">05</span><h3>Character Progression</h3><p>Level up, improve skills, and customize your build.</p></div>
-      <div class="panel feature-card reveal" style="--i:5"><span class="num">06</span><h3>Economy</h3><p>Trade resources, craft items, and build your wealth.</p></div>
+    <div class="grid grid--3 reveal-stagger" id="feature-grid" data-loading="Loading features…">
+      <!-- Feature cards rendered from data/features.json by js/main.js -->
     </div>
 
     <!-- Boss showcase -->
-    <div class="boss-grid">
-      <div class="panel boss-card reveal">
-        <div class="boss-eyes"><span></span><span></span></div>
-        <span class="warning">&#9888; World Boss</span>
-        <h3>The Forgotten King</h3>
-        <p>An ancient dragon corrupted by the Sundering, said to still guard the ruins of his fallen throne.</p>
-      </div>
-      <div class="panel boss-card is-void reveal">
-        <div class="boss-eyes"><span></span><span></span></div>
-        <span class="warning">&#9888; Unknown Entity</span>
-        <h3>The Void Herald</h3>
-        <p>A mysterious creature from beyond Elysium, first sighted at the edges of the Sundering's scars.</p>
-      </div>
+    <div class="boss-grid" id="boss-grid" data-loading="Loading…">
+      <!-- World boss cards rendered from data/features.json by js/main.js -->
     </div>
   </div>
 </section>
@@ -524,27 +352,8 @@
     <h2 class="section-title">Professions of <span class="accent">Elysium</span></h2>
     <p class="section-intro reveal">Five trades to fund your journey and equip your allies.</p>
 
-    <div class="panel reveal" style="padding: 0.5rem 2rem;">
-      <div class="profession-row">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 34 L18 22 M18 22 L14 22 M18 22 L18 26 M22 18 L34 6 M28 6 L34 6 L34 12"/></svg>
-        <div><h3>Mining</h3><p>Gather rare resources from the depths of Elysium's mountains and caves.</p></div>
-      </div>
-      <div class="profession-row">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 32 L28 12 M24 8 L32 16 L28 20 L20 12 Z"/></svg>
-        <div><h3>Blacksmithing</h3><p>Create weapons and armor from the resources you gather.</p></div>
-      </div>
-      <div class="profession-row">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 6 L16 16 L8 32 L32 32 L24 16 L24 6" /><path d="M14 6 L26 6"/></svg>
-        <div><h3>Alchemy</h3><p>Create potions and magical items from rare reagents.</p></div>
-      </div>
-      <div class="profession-row">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 8 C12 8 8 20 8 26 C8 31 13 34 20 34 C27 34 32 31 32 26 C32 20 28 8 28 8"/></svg>
-        <div><h3>Cooking</h3><p>Prepare useful food that fuels long expeditions.</p></div>
-      </div>
-      <div class="profession-row">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 4 L23 16 L35 16 L25 23 L29 35 L20 27 L11 35 L15 23 L5 16 L17 16 Z"/></svg>
-        <div><h3>Enchanting</h3><p>Improve equipment with magic drawn from the world's ancient energies.</p></div>
-      </div>
+    <div class="panel reveal" style="padding: 0.5rem 2rem;" id="profession-list" data-loading="Loading professions…">
+      <!-- Profession rows rendered from data/professions.json by js/main.js -->
     </div>
   </div>
 </section>
@@ -565,28 +374,8 @@
     <h2 class="section-title">Expansion <span class="accent">Roadmap</span></h2>
     <p class="section-intro reveal">Elysium launches with two continents. Three more will follow.</p>
 
-    <div class="grid grid--3 reveal-stagger">
-      <div class="panel expansion-card reveal" style="--i:0">
-        <div class="head" data-index="01">
-          <span class="badge-soon">Coming Soon</span>
-          <h3>Sylvaneth</h3>
-        </div>
-        <p class="theme">Ancient forests and forgotten nature magic.</p>
-      </div>
-      <div class="panel expansion-card reveal" style="--i:1">
-        <div class="head" data-index="02">
-          <span class="badge-soon">Coming Soon</span>
-          <h3>Kharzul Wastes</h3>
-        </div>
-        <p class="theme">Deserts, ruins, and lost civilizations.</p>
-      </div>
-      <div class="panel expansion-card reveal" style="--i:2">
-        <div class="head" data-index="03">
-          <span class="badge-soon">Coming Soon</span>
-          <h3>Nightreach</h3>
-        </div>
-        <p class="theme">Darkness, corruption, and endgame adventures.</p>
-      </div>
+    <div class="grid grid--3 reveal-stagger" id="expansion-grid" data-loading="Loading expansions…">
+      <!-- Expansion cards rendered from data/expansions.json by js/main.js -->
     </div>
   </div>
 </section>
@@ -616,8 +405,8 @@
       <button class="gallery-tab" data-filter="environment">Environment Art</button>
     </div>
 
-    <div class="gallery-grid reveal-stagger" id="gallery-grid">
-      <!-- Placeholder tiles rendered as SVG so the folder needs no binary images -->
+    <div class="gallery-grid reveal-stagger" id="gallery-grid" data-loading="Loading gallery…">
+      <!-- Placeholder tiles rendered from data/gallery.json as SVG so the folder needs no binary images -->
     </div>
   </div>
 </section>
@@ -641,26 +430,6 @@
       <div>
         <h3 style="font-family:var(--font-heading); color:var(--gold-bright); font-size:1.2rem; margin-bottom:0.75rem;">Vision</h3>
         <p class="dev-vision reveal">Elysium is being built by a small team who wanted a fantasy world that feels handcrafted rather than generated — a place with real history, real factions, and real reasons to explore every corner of the map. Every system in this document exists to serve that goal.</p>
-
-        <h3 style="font-family:var(--font-heading); color:var(--gold-bright); font-size:1.2rem; margin-bottom:1rem;">Development Status</h3>
-        <div class="reveal">
-          <div class="progress-block">
-            <div class="progress-label"><span>World Building</span><span>80%</span></div>
-            <div class="progress-track"><div class="progress-fill" data-progress="80"></div></div>
-          </div>
-          <div class="progress-block">
-            <div class="progress-label"><span>Lore</span><span>90%</span></div>
-            <div class="progress-track"><div class="progress-fill" data-progress="90"></div></div>
-          </div>
-          <div class="progress-block">
-            <div class="progress-label"><span>Gameplay Systems</span><span>60%</span></div>
-            <div class="progress-track"><div class="progress-fill" data-progress="60"></div></div>
-          </div>
-          <div class="progress-block">
-            <div class="progress-label"><span>Art Direction</span><span>50%</span></div>
-            <div class="progress-track"><div class="progress-fill" data-progress="50"></div></div>
-          </div>
-        </div>
       </div>
 
       <div>
@@ -680,8 +449,8 @@
     <div class="dev-stages reveal" id="dev-stages">
       <div class="dev-stages-head">
         <div>
-          <h3 style="font-family:var(--font-heading); color:var(--gold-bright); font-size:1.2rem; margin-bottom:0.3rem;">Development Stages</h3>
-          <p class="dev-stages-sub">Every workstream on Elysium, broken into its smallest pieces. Filled tiles are finished; hollow tiles are still queued. Loaded live from <code>data/dev-stages.json</code>.</p>
+          <h3 style="font-family:var(--font-heading); color:var(--gold-bright); font-size:1.2rem; margin-bottom:0.3rem;">Development Progress</h3>
+          <p class="dev-stages-sub">Every workstream on Elysium, broken into its smallest pieces. Filled tiles are finished; hollow tiles are still queued. Loaded live from <code>data/dev-stages.json</code> — the same completion count also drives the phase roadmap below.</p>
         </div>
         <div class="dev-stages-stat">
           <span class="dev-stages-pct" id="dev-stages-pct">0%</span>
@@ -692,14 +461,14 @@
       <div class="stage-list" id="stage-list"></div>
 
       <div class="docs-tooltip" id="docs-tooltip" aria-hidden="true"></div>
-    </div>
 
-    <div class="roadmap reveal">
-      <div class="roadmap-fill" id="roadmap-fill"></div>
-      <div class="roadmap-step is-active"><span class="phase">Phase 1</span><h4>World Design</h4><p>Continents, regions, and the foundations of Elysium's geography.</p></div>
-      <div class="roadmap-step is-active"><span class="phase">Phase 2</span><h4>Core Gameplay Systems</h4><p>Classes, professions, factions, and combat fundamentals.</p></div>
-      <div class="roadmap-step"><span class="phase">Phase 3</span><h4>Playable Prototype</h4><p>A vertical slice covering Aurelia's early questlines.</p></div>
-      <div class="roadmap-step"><span class="phase">Phase 4</span><h4>Expansion Development</h4><p>Sylvaneth, Kharzul Wastes, and Nightreach.</p></div>
+      <div class="roadmap roadmap--nested">
+        <div class="roadmap-fill" id="roadmap-fill"></div>
+        <div class="roadmap-step is-active"><span class="phase">Phase 1</span><h4>World Design</h4><p>Continents, regions, and the foundations of Elysium's geography.</p></div>
+        <div class="roadmap-step is-active"><span class="phase">Phase 2</span><h4>Core Gameplay Systems</h4><p>Classes, professions, factions, and combat fundamentals.</p></div>
+        <div class="roadmap-step"><span class="phase">Phase 3</span><h4>Playable Prototype</h4><p>A vertical slice covering Aurelia's early questlines.</p></div>
+        <div class="roadmap-step"><span class="phase">Phase 4</span><h4>Expansion Development</h4><p>Sylvaneth, Kharzul Wastes, and Nightreach.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -730,6 +499,7 @@
           <h4>Explore</h4>
           <a href="#world" data-nav>World</a>
           <a href="#lore" data-nav>Lore</a>
+          <a href="pages/lore.html">Full Chronicle</a>
           <a href="#classes" data-nav>Classes</a>
           <a href="#factions" data-nav>Factions</a>
         </div>

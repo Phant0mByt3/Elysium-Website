@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "id": "aurelia-dawn", "label": "Aurelia at Dawn", "type": "screenshot", "gradient": ["#16273f", "#131217"] },
+    { "id": "forgotten-king-concept", "label": "The Forgotten King — Concept", "type": "concept", "gradient": ["#7d2b2b", "#131217"] },
+    { "id": "continental-map-pre-sundering", "label": "Continental Map, Pre-Sundering", "type": "map", "gradient": ["#0d1b2e", "#1c1a20"] },
+    { "id": "wayfarer-character-study", "label": "Wayfarer — Character Study", "type": "character", "gradient": ["#26232b", "#16273f"] },
+    { "id": "vethmoor-ridgeline", "label": "Vethmoor Ridgeline", "type": "environment", "gradient": ["#131217", "#7d2b2b"] },
+    { "id": "sylvaneth-canopy-concept", "label": "Sylvaneth Canopy — Concept", "type": "concept", "gradient": ["#1c1a20", "#4c6a4a"] },
+    { "id": "kharzul-ruins", "label": "Kharzul Ruins", "type": "environment", "gradient": ["#131217", "#8a7038"] },
+    { "id": "void-herald-concept", "label": "The Void Herald — Concept", "type": "concept", "gradient": ["#131217", "#6b4a9e"] }
+  ]
+}
