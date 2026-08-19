@@ -22,7 +22,7 @@
    16. Typewriter text
    17. Back to top
    18. Ambient audio controls
-   19. Easter eggs (logo clicks, Konami code, rune clicks, dev journal)
+   19. Easter eggs (logo clicks, Konami code, TheMonoMind signature easter egg, rune clicks, dev journal)
    ========================================================================== */
 
 (function () {
@@ -1045,7 +1045,7 @@
         konamiPos = key === konamiSeq[0] ? 1 : 0;
       }
     });
-
+    // TheMonoMind signature easter egg
     var monoSeq = ["m", "o", "n", "o", "m", "i", "n", "d"];
     var monoPos = 0;
     document.addEventListener("keydown", function (e) {
@@ -1054,6 +1054,10 @@
         monoPos++;
         if (monoPos === monoSeq.length) {
           monoPos = 0;
+          if (!prefersReducedMotion) {
+            document.body.classList.add("monomind-active");
+            setTimeout(function () { document.body.classList.remove("monomind-active"); }, 1500);
+          }
           showToast("Made by TheMonoMind")
         }
       } else {
