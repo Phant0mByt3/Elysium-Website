@@ -1,26 +1,66 @@
+```json
 {
   "title": "The Book of Elysium",
   "subtitle": "A history of the world, as recovered from the archives of the Dawnbound Concord and the oral records of the Wayfarer's Guild.",
-  "foreword": "No single scholar has ever seen the whole of Elysium's history — the Sundering saw to that. What follows is stitched together from temple ledgers, salvaged pre-Sundering tablets, and the memories of the oldest trees in Sylvaneth. Where sources disagree, both accounts are kept, because a world this old rarely settled on a single truth.",
+  "foreword": "No single scholar has ever seen the whole of Elysium's history — the Sundering saw to that. What follows is stitched together from temple ledgers, salvaged pre-Sundering tablets, and the memories of the oldest trees in Sylvaneth. Where sources disagree, both accounts are kept, because a world this old rarely settled on a single truth. The reader will find no single narrative here, only the closest approximation one chronicler could manage. History is not a straight line. It is a wound that keeps reopening.",
   "ages": [
     {
       "id": "age-one",
       "era": "Age One",
       "title": "The Ancient Age",
-      "summary": "The first civilizations rise, raising cities of stone and forging the earliest pacts between mortals and the old magics of the world.",
+      "summary": "Before the Sundering, civilizations far older than modern kingdoms rose, flourished, and vanished, leaving behind ruins that contradict everything we believe about the world's origins.",
       "chapters": [
         {
-          "heading": "The First Stones",
+          "heading": "The Last Silence",
           "body": [
-            "Before kingdoms, before names, Elysium was a wilderness of raw magic — rivers that ran uphill in the wrong season, forests that remembered the footsteps of anything that walked through them. The first mortals did not conquer this world so much as they learned, slowly and at great cost, which parts of it could be reasoned with.",
-            "The earliest cities were not built so much as negotiated. Stonework at the oldest ruins in Aurelia shows foundations laid in spirals and rings rather than straight streets — a design scholars believe was meant to appease something in the ground beneath them, long since gone quiet."
+            "The wind above the city of Aelindra carried the scent of salt and something else — something metallic and wrong, like the taste of a word on the tip of a tongue that refused to be spoken. On the highest terrace of the Obsidian Spire, Arch-Scribe Lyrianne pressed her palms against the cool stone and felt the city's heartbeat stutter. The thrum that had been constant for seven thousand years — the pulse that every mage born in Aelindra learned to feel before they learned to speak — was faltering.",
+            "Below, in the laboring district, a mother held her child close and sang a lullaby that her grandmother had taught her. She did not know it was one of the ancient songs of Aeloria, a melody older than her civilization. In the military barracks, Captain Dravos of the Aelindran Legionary sharpened his sword. He had served for twenty years. He had never seen the fear in his soldiers' eyes like this. In the catacombs beneath the city, a child named Edric explored places he should not have been. He found a chamber older than anything he had seen, with symbols carved into stone that seemed to shift when he wasn't looking. There was a crystal sphere on a shelf. It pulsed with a faint, sickly light. He reached for it.",
+            "On the terrace, Lyrianne watched the seven divine spires flicker in unison. For the first time in recorded history, all seven lights dimmed simultaneously. The darkness between them expanded. She heard a voice — not with her ears, but with something deeper, something in the marrow of her bones. It was not speaking to her. It was speaking to something else, something vast and ancient that existed below the foundation of the world. She understood one word: Enough."
           ]
         },
         {
-          "heading": "The Old Pacts",
+          "heading": "The Builders and the Silent Ones",
           "body": [
-            "It was in this age that the first pacts were struck between mortals and the beings who would later be called Patrons — Ignareth, Nyxara, Aeloria, and Solthar among them. These were not gods in the way later ages would come to worship them, but forces old enough to remember when the world had no shape at all, willing to lend a fraction of their nature to anyone bold or desperate enough to ask.",
-            "The pacts were unequal, and everyone involved knew it. Mortals gained fire that did not need fuel, blades that did not dull, and roots that would not wither — but every gift carried an echo of the giver's temperament. Warriors who bound themselves to Ignareth grew harder to kill and harder to reason with in the same breath. This is, according to most temple scholars, the true origin of what would later become the class traditions practiced across Elysium today."
+            "What is certain is that before the Sundering, before the rise of the great kingdoms, there were others. The evidence is scattered across the continents. In the deep jungles of Sylvaneth, beneath the roots of the Worldheart Tree, archaeologists have uncovered stonework of impossible precision — blocks fitted so perfectly that not even a knife blade can be inserted between them. In the Kharzul Wastes, deep within abandoned strongholds, there are chambers that the dwarves themselves do not build and cannot explain — spaces where the stone is not stone at all, but something harder, smoother, and slightly warm to the touch.",
+            "In the coastal regions of Aurelia, divers have found structures submerged in waters so deep that no natural explanation can account for their presence. Some appear to have been cities. Others seem to have been something else entirely — monuments, perhaps, or machines, or temples to gods that no longer exist.",
+            "The most unsettling discovery was made in the Year of the Silent Moon, 847, by an expedition sponsored by the Solmere Academy of Historical Inquiry. Deep beneath the ruins of what would later become the city of Thornwall, they found a sealed chamber. The seal was not locked. It was not barred. It was built to be opened from the inside. Inside, they found a library — thousands of tablets, carved from a material that resembled obsidian but was somehow more durable, covered in a script that no living scholar could read. Several scholars who handled the tablets reported vivid dreams of cities that burned with silver fire and skies that were not blue but a deep, impossible violet.",
+            "The most disturbing detail was this: the chamber showed no signs of the Sundering. No fractures, no scorch marks. It had been sealed calmly, deliberately, by someone who expected to return. But no one returned. Master Historian Cael Vorthan noted in his report: 'This chamber was abandoned long before the Sundering. Whoever built it chose to leave, sealing their knowledge behind them, and never came back. The question is not what happened to them. The question is why they left.'"
+          ]
+        },
+        {
+          "heading": "The Aelindran Dominion",
+          "body": [
+            "The Aelindran Dominion did not begin as an empire. It began as a village. In the Age of Settling, approximately nine thousand years before the present day, a group of humans migrated north from the warmer southern coasts of Aurelia, drawn by a fertile river valley where the Oren River met the sea. The village was called Aelindra, meaning 'first dawn.' Nothing about it suggested it would become the center of a civilization that would endure for three thousand years.",
+            "But the founders of Aelindra had something other tribes did not: a memory. Their oral traditions, preserved by a caste of storytellers known as the Remembrancers, contained detailed accounts of the civilizations that had come before. They spoke of the Builders and the Silent Ones with reverence and caution. They knew the locations of ancient wells that still functioned, ancient granaries that still held grain. While other tribes built from scratch, the Aelindrans built upon what they found.",
+            "By the end of the first millennium, the Aelindran Dominion had expanded to encompass most of western Aurelia. Its greatest achievement was the Academy of the Eternal Flame, founded in the year 412 by a coalition of mages, priests, and scholars who believed that knowledge itself was sacred. The Academy was built atop the ruins of a Silent One structure — a vast, open chamber that seemed to amplify magical resonance.",
+            "But the Academy's most important contribution was not a spell or a scripture. It was a question. The Academy's founder, the mage Thessaly Vorn, proposed that the seven gods of the Elysian Circle were not the first divine beings to exist. She argued, based on her study of ancient ruins and magical artifacts, that there had been others — gods whose names had been forgotten, whose aspects had been absorbed into the seven, whose followers had been erased from history. The proposal was denounced as heresy. Thessaly was stripped of her position and exiled. She died three years later. But the idea had taken root."
+          ]
+        },
+        {
+          "heading": "The Aspect Seekers and the Eighth God",
+          "body": [
+            "In the years that followed, a secret society formed within the Academy — scholars, mages, and priests who believed Thessaly had been right. They called themselves the Aspect Seekers, and they dedicated themselves to finding evidence of the eighth god. They studied ancient ruins, decoded fragmentary texts, and performed experiments that pushed the boundaries of accepted magical theory.",
+            "For centuries they worked. They found inconsistencies in the official histories. They discovered that certain ancient artifacts contained magical signatures that did not correspond to any of the seven known divine aspects. They found a symbol — a circle with eight points instead of seven — carved into the foundations of structures that predated the Dominion by millennia.",
+            "And they found a name. Buried in a text so old that the script had to be reconstructed from fragments, they found a word: Kaelgorath. In the oldest Elven texts, it was translated as 'the unremembered.' In the dwarven runic systems, it was rendered as 'the broken seal.' In the beastkin oral traditions, it was 'the one who waits.'",
+            "In the year 1,302 of the Dominion, a scholar named Orin Thale discovered a fragment of text that had been overlooked for centuries — a single tablet, cracked and worn, containing a prayer in a script combining Aelindran writing with the older symbols of the Silent Ones. Over the next decade, eleven tablets were found, each containing a portion of the same prayer. When assembled, they read: 'We remember the eighth, who is not lost but hidden. We remember the voice that speaks in the spaces between. The circle was never complete without the eighth. The world was never meant to be divided. When the silence is broken, remember: what was taken must be returned. What was forgotten must be remembered. What was sealed must be opened.'",
+            "In the year 1,319, a mage named Solara Venn discovered a crystal sphere in a sealed chamber beneath Aelindra — a resonance core that amplified a frequency no one recognized. When activated, the mages heard a voice: 'I am the space between. I am the understanding that connects all things. I am the silence that gives meaning to sound. I am Kaelgorath.' Within a decade, the worship of Kaelgorath had moved from secret societies to open congregations. Temples were built. A new faith emerged, one that worshipped not a god of destruction but a god of unity — a god who would restore the circle."
+          ]
+        },
+        {
+          "heading": "The Weight of the Incomplete Circle",
+          "body": [
+            "To understand the Sundering, one must understand the Elysian Circle — or rather, the many ways in which the gods have been understood. The official doctrine holds that seven gods created the world together, each contributing their aspect: Solthar brought light and justice. Nyxara brought shadow and freedom. Terravox brought earth and endurance. Maelithir brought sea and storm. Ignareth brought war and courage. Aeloria brought nature and life. Arcane brought the fundamental laws of magic.",
+            "The druids of Sylvaneth tell a different story. They believe the world was not created by the gods but shaped by them from a pre-existing foundation — the work of the Silent Ones, or perhaps of the world itself. The dwarven clans believe Terravox was the first god, the foundation upon which all others were built. The orcish clans hold that the gods are not separate beings but aspects of a single divine consciousness — a consciousness that is itself part of the world rather than separate from it.",
+            "The beastkin tribes hold yet another view: the gods are not cosmic beings but local ones, spirits of specific places and phenomena elevated to divine status by human worship. This view suggests that the Sundering may have damaged not just the world but the gods themselves.",
+            "The most disturbing theological question was this: what was the aspect of Kaelgorath? The texts were contradictory. Some described him as a god of entropy. Others described a god of memory — the keeper of everything that has been forgotten. Still others described a god of change itself. But the oldest texts described not a force but a perspective — the divine viewpoint that observes the other seven, that sees the world not as separate aspects but as a unified whole. If this was true, then Kaelgorath was not a god of entropy or memory. He was the god of understanding — the being who saw the complete picture. And someone had decided that this understanding was too dangerous to exist."
+          ]
+        },
+        {
+          "heading": "The Inquiry and the Letter",
+          "body": [
+            "In the year 1,347, the High Council commissioned a formal theological inquiry into the nature of Kaelgorath. The inquiry lasted three years. Its findings were never published. The records were sealed, and the members of the committee were placed under an oath of silence that, according to some accounts, was magically enforced. Several members died within a year of the inquiry's conclusion.",
+            "One member survived long enough to leave a record. His name was Aldric Voss, a priest of Solthar. In a letter to his brother, written in the year 1,350, he described what the committee had found: 'He is not a false god. He is not an imposter. He is the eighth. He has always been the eighth. The circle was designed with eight aspects, not seven. Something happened — something so terrible that the records have been deliberately destroyed — and the eighth aspect was sealed away. I do not know who did this, or why. But I know this: the world is not as it was meant to be. Kaelgorath is not trying to destroy the world. He is trying to restore it. And the seven gods are terrified of what will happen if he succeeds.'",
+            "Aldric Voss died three months after writing this letter. His brother burned it. But not before showing it to a friend, who showed it to another, who eventually showed it to a member of the Aspect Seekers. The letter was copied. The copy was hidden. The hidden copy was discovered centuries later, in a sealed alcove beneath the ruins of what would become Ashka Vor. It is now held in the restricted archives of the Duskward Pact."
           ]
         }
       ]
@@ -29,20 +69,36 @@
       "id": "age-two",
       "era": "Age Two",
       "title": "The Sundering",
-      "summary": "A catastrophic event changes the world forever, tearing open the lands that would one day become Vethmoor and scattering ancient power across the continents.",
+      "summary": "The eighth god returns. The circle attempts to heal itself. The world tears apart. Millions die. Continents are reshaped. The age of certainty ends.",
       "chapters": [
         {
-          "heading": "What Broke",
+          "heading": "The First Signs of Disaster",
           "body": [
-            "No two accounts of the Sundering agree on its cause. Some blame a war between Patrons that mortals were never meant to witness. Others point to a mortal ritual, overreaching, that pulled something through from beyond the world's edge. What every account agrees on is the result: in a span of time no record measures the same way twice, an entire region of the continent tore open, its soil turned to ash and its rivers to something that no longer behaves like water.",
-            "That wound never healed. It became Vethmoor — not simply a harsh land, but a scar the world has never stopped feeling. Even now, centuries later, magic behaves differently near its borders, and the old pacts fray faster the closer they're tested to its edge."
+            "The years leading up to the Sundering were not marked by a single dramatic event but by a slow accumulation of wrongness. The priests of Maelithir noticed the tides shifting — not dramatically, but unmistakably. Brother Caelum, stationed on the island monastery of Deepwater, wrote: 'The tide is hesitating. It moves forward, then pauses, as if uncertain of itself. I have studied the tides for forty years. The sea does not hesitate. The sea does not doubt.'",
+            "The priests of Aeloria reported that migration patterns were shifting, that animals were restless and agitated, that the great forests were showing signs of stress. The mages who studied magical currents detected that ambient magic was becoming erratic — spells that had been reliable for centuries began to fail unpredictably. And then there were the dreams. Across the continent, people began dreaming of a vast, dark space — a void that was not empty but full. A voice calling from the darkness. A city of crystal and shadow. A presence on a throne, waiting — patiently, eternally — for something.",
+            "The dreams were not limited to mages or priests. They affected everyone — farmers, merchants, soldiers, children. The Aspect Seekers recognized the dreams as a resonance, spreading through the magical currents. The High Council convened an emergency session. All seven high priests gathered in the Chamber of Echoes. The priest of Solthar, Elara Dawnmantle, argued the crystal must be destroyed. The priest of Nyxara, Vael Shadowmantle, argued they should listen. 'I propose we open the crystal and hear what Kaelgorath has to say. I propose we treat this as a dialogue rather than a crisis.' The chamber erupted.",
+            "In the end, the crystal was brought to the Obsidian Spire. The seven high priests surrounded it, channeling the power of their respective gods. The crystal shattered — but not the way they intended. A wave of energy erupted, overwhelming everyone present. The lights of the divine spires flickered violently. And then, silence. The dreams stopped. The anomalies ceased. For a moment, it seemed the crisis had been averted. But the priests who had been present reported something troubling: in the instant of the shattering, each had felt not seven presences in the divine currents, but eight. The eighth had been there all along. They had simply been unable to perceive it. Until now."
           ]
         },
         {
-          "heading": "The Scattering",
+          "heading": "The War of the Eighth Aspect",
           "body": [
-            "The Sundering did not destroy the old magic — it scattered it. Power that had once pooled in a handful of sacred sites was flung across every continent, seeding forests with impossible growth, cursing bloodlines, and waking things that had been sleeping since before the first pacts were struck.",
-            "It is this scattering, more than any deliberate design, that scholars credit for the sheer variety of magic practiced across Elysium today — from the ember-rites of the Ashen Circle to the primal shifting taught in Aeloria's oldest groves. Every tradition alive now traces some thread back to power that shouldn't have been loose in the world at all."
+            "The revelation of the eighth god shattered the Dominion's political order. The city of Marrowpoint, which had always been sympathetic to Kaelgorath's worship, withdrew from the confederation. Thornwall followed. The High Council found itself reduced to a coalition of three cities.",
+            "In the year 1,364, the ruler of Marrowpoint, Lady Seraphine Blackthorn, issued a proclamation: 'The gods of the Elysian Circle have deceived us. They have stolen the eighth aspect and hidden it from the world. Kaelgorath is not a threat. Kaelgorath is a cure. I call upon all people of good conscience to join me in demanding that the Elysian Circle restore the eighth aspect. If they refuse, I will restore the circle myself.'",
+            "The priest of Ignareth, Kael Ironhand, raised an army and marched on Marrowpoint. The War of the Eighth Aspect lasted three years and ended in a stalemate. The High Council, exhausted, proposed a compromise: a formal debate between the representatives of the seven gods and the worshippers of Kaelgorath, to be held in the Chamber of Echoes. The debate was scheduled for the year 1,370. It never took place."
+          ]
+        },
+        {
+          "heading": "The Seven Days",
+          "body": [
+            "On the morning of the fifteenth day of the Month of Long Shadows, in the year 1,370 of the Aelindran Dominion, the world ended. Not all at once. The Sundering unfolded over seven days.",
+            "The first day was the quietest. Tremors began beneath the surface — a steady, rhythmic vibration felt in the bones. The priests of Terravox recognized it: the god of earth was in distress. High Priest Granite reported: 'Something is moving below the surface — something massive. I do not know what it is, but it is not natural.'",
+            "The second day brought the storms — not ordinary storms but storms of magical energy, crackling with arcs of light that were not lightning. The storms swept across Aurelia, carrying a sound survivors would later describe as 'the sky screaming.' They did not produce rain. They produced silence — a silence so complete it was physically painful.",
+            "The third day, the earth opened. A crack appeared in the valley where Aelindra stood. It grew — from crack to fissure to canyon, a wound in the world that glowed with pale light and emitted a pressure that pushed against the mind.",
+            "The fourth day, the gods appeared. Not in person, but as presences — forces of reality that became visible to the naked eye. The seven divine spires blazed. And between them, a darkness gathered. Kaelgorath. He did not speak. He did not announce himself. He simply was — a presence that filled the spaces between the seven, a voice that resonated in the silence between words.",
+            "The seventh day was the worst. The fissure reached Aelindra. The Obsidian Spire split down the middle. In the heart of the city, Arch-Scribe Lyrianne stood in the ruins of the Chamber of Echoes and understood everything and nothing simultaneously. The balance was real. The seven gods had maintained it for millennia. But it had never been complete. Kaelgorath was not trying to destroy the world. He was trying to heal it. But the healing was killing it. The world was not designed to be split into seven pieces. It was designed to be whole. And when the eighth aspect returned, the force of restoration was so powerful that it tore the world apart.",
+            "In the catacombs, Edric clutched the warm crystal sphere and felt the ground shake. The ancient chamber was holding — the stone cut by the Silent Ones was not cracking. He did not know if his family was alive. He knew only that the chamber was safe, and that the symbols on the walls were telling him a story he could not understand but that felt, somehow, like home.",
+            "In Marrowpoint, Lady Seraphine Blackthorn watched the destruction and felt cold certainty: she had been wrong. Not about Kaelgorath. About the cost. She turned to her lieutenant, Dravos — the same Captain Dravos who had sharpened his sword in Aelindra's barracks years ago. 'Is this what he wanted?' she asked. Dravos looked at the destruction and said nothing."
           ]
         }
       ]
@@ -50,21 +106,34 @@
     {
       "id": "age-three",
       "era": "Age Three",
-      "title": "The Age of Darkness",
-      "summary": "Kingdoms fall and monsters spread across the ruins, forcing survivors into isolated strongholds as the old order collapses.",
+      "title": "The Age of Silence",
+      "summary": "The immediate aftermath. Civilizations collapse. Knowledge is lost. The survivors tell stories in the ruins, trying to make sense of a world that has lost its sense.",
       "chapters": [
         {
-          "heading": "The Long Fall",
+          "heading": "The Seven Days After",
           "body": [
-            "The generations after the Sundering were not marked by a single collapse, but a slow one. Kingdoms that had stood since the Ancient Age found their borders unrecognizable, their treaties meaningless, their gods — or Patrons — changed by whatever had passed through the world. Some fell to the monstrous things now spreading out of Vethmoor's ruins. Others simply starved, cut off from lands that no longer behaved the way farming and trade required.",
-            "Survivors did not rebuild so much as retreat. Strongholds from this era are almost always defensive first, built into cliffsides, sunk below ground, or ringed with the same kind of ward-stones the earliest cities used to negotiate with the wilderness — a grim echo of how far civilization had fallen back toward its beginnings."
+            "The immediate aftermath of the Sundering was silence. Not the violent silence of the storms, but a deep, hollow silence — the silence of a world that has lost something fundamental. The magical currents were disrupted. The divine presences were dimmed, confused, uncertain. The seven gods did not speak. Kaelgorath did not speak. The world simply lay still.",
+            "The geography of Elysium had been transformed. The continent of Aurelia was split by a massive chasm. The coastline had shifted. Mountains had risen where there had been plains. Rivers had changed course. New islands had appeared in the sea. Vethmoor had been rent by earthquakes that collapsed entire mountain ranges. Sylvaneth had seen its ancient trees burn in magical fires. The Kharzul Wastes had been buried under additional layers of sand and ash. Nightreach had simply vanished from some maps.",
+            "The civilizations of the Ancient Age were destroyed. Not all at once — some cities survived the initial cataclysm. But the infrastructure that had sustained them — trade networks, agricultural systems, knowledge networks, magical institutions — was shattered. The Academy of the Eternal Flame, which had stood for three thousand years, collapsed into the fissure. Its library, one of the greatest in the world, was lost.",
+            "The survivors told stories. Of the scholar who tried to save the library and was consumed by the collapsing building. Of the priest who prayed to his god and heard nothing. Of the soldier who tried to hold the line and was swept away. Of the child separated from her family, wandering the ruins alone. Some of these stories became legends. Some became myths. Some were forgotten."
           ]
         },
         {
-          "heading": "Isolation and Its Cost",
+          "heading": "The Last Scribe",
           "body": [
-            "It is from this age that the first fractures between what would become the Dawnbound Concord and the Duskward Pact are believed to originate. Isolated strongholds developed wildly different answers to the same question — how much of the old power was safe to use, and how much should be sealed away and forgotten. Some communities chose faith and order. Others chose whatever worked.",
-            "Neither choice was wrong, and neither was without cost. That disagreement, older than either faction's name, is still the quiet undercurrent beneath every conflict between Concord and Pact today."
+            "The most enduring story from the immediate aftermath is the tale of the Last Scribe of Aelindra. According to the most common version, he was a young scholar who had been studying in the Academy when the Sundering began. As the city collapsed, he gathered as many texts as he could carry and fled into the catacombs. He spent three days underground, copying the most important passages onto stone walls, wooden planks, his own clothing.",
+            "When he emerged, the city was gone. But he had the copies. He carried them as he wandered the shattered landscape, searching for other survivors. He found them — small groups, scattered and lost. The Last Scribe shared his copies, and the survivors read them and argued about them. In those first years, the act of reading and interpreting texts became a form of survival.",
+            "He eventually settled in the ruins of Solmere and established a small school. He taught his students that history was not a fixed narrative but a living conversation, that the same event could be understood in multiple ways, that the truth was often more complicated than any single account suggested. He died in the Year of the Quiet Earth, at the age of thirty-two.",
+            "The most famous passage from his unfinished history reads: 'We built a world that we believed would last forever. We believed this because the gods told us so, or because we told ourselves so, or because we could not imagine any alternative. We were wrong. The world did not last. It was not destroyed by an enemy or a disaster or a god's wrath. It was destroyed by a wound that we inflicted on ourselves and then refused to heal. We are the inheritors of a broken world. It is our responsibility to decide whether we will continue to break it, or whether we will begin to heal it.'"
+          ]
+        },
+        {
+          "heading": "The Sealed Chambers",
+          "body": [
+            "The most disturbing discovery of the post-Sundering period was not about the Sundering at all. It was about what came before. Across the continents, explorers began finding chambers that had been sealed not during the Sundering but long before it — chambers that showed no signs of the catastrophe, as if their builders had known it was coming and had calmly locked the doors behind them.",
+            "In the deep mines of the Kharzul Wastes, the dwarven clans found a sealed chamber filled with personal belongings — clothing, jewelry, children's toys, cooking utensils — arranged neatly, as if their owners had intended to return for them. They never came back. A mural depicted a family standing in a doorway, a city burning behind them, their expressions not fearful but resigned. Beneath the mural, a single word in the script of the Silent Ones: Remember.",
+            "These findings raised a question that the survivors were not prepared to answer: had there been another catastrophe before the Sundering? The texts were inconclusive. Some described a catastrophe of similar magnitude. Others described a different kind of event — not a rupture of the divine circle but a failure of some other system, something the Silent Ones had built and that had broken down. Still others described a gradual decline rather than a sudden catastrophe.",
+            "The question was filed away, catalogued, and added to the growing list of mysteries. But the answer, when it came, would change everything."
           ]
         }
       ]
@@ -73,20 +142,59 @@
       "id": "age-four",
       "era": "Age Four",
       "title": "The Age of Reclamation",
-      "summary": "Heroes return to rebuild civilization, founding the factions and kingdoms that players will encounter across Elysium today.",
+      "summary": "Civilizations slowly rebuild. New kingdoms form. Old rivalries return. The factions that players will encounter are forged in the fires of theological debate, political ambition, and the slow, painful process of making something new from the ruins of something old.",
       "chapters": [
         {
-          "heading": "The Return",
+          "heading": "The Reclamation Begins",
           "body": [
-            "The Age of Reclamation began not with a single victory, but with enough survivors deciding, independently and almost simultaneously, that hiding had stopped working. Expeditions pushed back out from the old strongholds — some to resettle Aurelia's ruined kingdoms, others to chart what the Sundering had actually done to the world, and a few, driven by faith or ambition, to walk straight into Vethmoor and see what remained.",
-            "It is this age that produced the factions player-characters encounter today. The Dawnbound Concord formed from an alliance of holy orders and resettled kingdoms who saw reclamation as a sacred duty. The Duskward Pact rose from exiles, opportunists, and older powers who had survived the Age of Darkness by other means, and had no intention of answering to the Concord's order now that the world was livable again."
+            "The Age of Reclamation did not begin with a declaration or a celebration. It began with a funeral. In the Year of the Quiet Earth, the survivors who had gathered in the ruins of Solmere held a memorial for the dead. A woman named Aelith Stormborn — a priest of Maelithir who had survived the Sundering at sea — stood before three thousand huddled survivors and spoke: 'We are alive. That is not a small thing. The world before the Sundering is gone. We cannot rebuild it. We should not try. We must build something new. We must remember the eighth.'",
+            "The memorial marked the beginning of something. Across the shattered continents, survivors began to organize. In the forests of Sylvaneth, Elven clans regrouped, their ancient knowledge proving invaluable. In the mountains of the Kharzul Wastes, dwarven clans emerged from their strongholds with tools and techniques that had allowed them to survive underground. In the eastern forests, orcish clans gathered their scattered members.",
+            "The Age of Reclamation was not peaceful. Wars were fought over clean water, arable land, access to ancient ruins. Religious disputes erupted as different interpretations of the Sundering competed for followers. The most significant conflict was the War of the Shattered Throne, fought between survivors in the ruins of Aelindra who had developed competing visions for the future."
           ]
         },
         {
-          "heading": "A World Still Being Rebuilt",
+          "heading": "The Forging of the Concord",
           "body": [
-            "Silverwatch, the Wayfarer's Guild, the Ashen Circle, and the Cartographer's League all trace their founding to this same restless period — each one a different answer to a world that needed watching, mapping, understanding, or quietly exploiting, depending on who you asked.",
-            "The Age of Reclamation has no clean ending. By most reckonings, Elysium is still in it — still charting Vethmoor's true borders, still finding ruins in Aurelia nobody has opened since the Sundering, still hearing rumors from the edges of Sylvaneth, the Kharzul Wastes, and Nightreach that suggest the reclamation has barely begun. This is the world a new hero steps into."
+            "The Kingdom of Solmere was founded by Marcus Dawnmantle, a former soldier who governed initially as a military dictator but established a council of advisors drawn from guilds, religious orders, and academic institutions — a deliberate echo of the old Dominion's High Council. The Kingdom of Thornwall was founded by Lady Blackthorn's descendants, built on the opposite side of the great chasm from Solmere.",
+            "Thornwall's relationship with Kaelgorath is complicated. Its founders carried the heritage of Kaelgorath's worshippers, but the Sundering had destroyed the world he was supposed to have healed. The city's theologians spent centuries debating: was Kaelgorath a savior betrayed by the other gods? A destroyer disguised as a healer? The answer that emerged held that Kaelgorath was a necessary part of the divine order, but his return had been premature — the world had been broken not by the act of restoration but by the fact that the seven gods had not been prepared to accept it.",
+            "In the Year of the United Flame, approximately eight hundred years after the Sundering, the Dawnbound Concord was formed as a formal alliance between Solmere, Thornwall, and smaller states sharing their theological orientation. The Concord's official theology holds that the Elysian Circle remains the legitimate authority, and that Kaelgorath's return was a 'catastrophic miscalculation.' The eighth aspect is acknowledged but its restoration is deemed too dangerous to attempt.",
+            "The Concord is governed by a council of seven representatives, headed by a Dawnkeeper elected for ten-year terms. Its military, the Order of the Dawnsworn, is the most powerful on Aurelia. The Temple of Solthar, the largest religious organization in the world, maintains temples in every major city. But beneath this impressive edifice, cracks are visible: the worship of Kaelgorath is forbidden, the study of ancient texts is discouraged, and Revenants are forced to submit to regular spiritual evaluations."
+          ]
+        },
+        {
+          "heading": "The Rising of the Pact",
+          "body": [
+            "The Free Cities of the East had a different origin. They were not founded by a single leader or ideology but by a diverse collection of survivors who rejected the authority of both Solmere and Thornwall. Some were disillusioned citizens of the Dominion. Others were followers of Kaelgorath driven from their homes. Still others were members of minority races — orcish clans, beastkin tribes, Revenants — who had been marginalized by the human-dominated kingdoms.",
+            "The formation of the Duskward Pact was a gradual process — treaties, alliances, and agreements binding the Free Cities into a loose coalition. The Pact had no monarch, no parliament, no centralized government. It was a network of mutual defense agreements, trade pacts, and shared theological commitments, held together by conviction that the old world's authorities were fundamentally untrustworthy.",
+            "The Pact's capital, Ashka Vor, was not built but discovered — an ancient ruin of the Silent Ones, buried beneath the earth. The city's architecture was unlike anything the explorers had seen: towers of twisted stone, bridges spanning chasms without visible supports, chambers humming with resonance. The city's foundations are laced with chambers and passages never fully explored, some containing artifacts still active despite the collapse of the civilizations that created them.",
+            "The Duskward Pact's theology is as diverse as its politics. The most common orientation is Nyxarism — the worship of Nyxara, goddess of shadows, secrets, and freedom. But the Pact also includes worshippers of Ignareth, followers of Aeloria, devotees of Arcane, and those who worship Kaelgorath openly, defiantly, in defiance of both the Concord's prohibition and the theological uncertainties surrounding the eighth god."
+          ]
+        },
+        {
+          "heading": "The Forgotten Ruins and the Secrets Beneath",
+          "body": [
+            "The ruins of the Ancient Age are everywhere. In the forests of Sylvaneth, towers of white stone rise above the canopy. In the mountains of the Kharzul Wastes, abandoned strongholds sprawl like the bones of dead giants. In the coastal regions of Aurelia, submerged structures lie beneath the waves. What the ruins share is a sense of age — even the most recently built structures of the Ancient Age feel ancient, but the older structures feel something else entirely: timeless, as if they were not built but simply are.",
+            "The most famous ruins include the Spire of Echoes — a tower of black stone in the heart of the great chasm that produces sounds not heard but felt in the bones and mind — and the Hollow Throne, a chair of light-absorbing stone in an abandoned stronghold that the dwarven clans refuse to enter. Most disturbing are the ruins that show no signs of the Sundering — chambers sealed from the inside, corridors bricked up, entrances blocked with mechanisms that can only be opened from within.",
+            "Beneath the surface, there are things that should not exist. The dwarven clans call the deepest layer the Vaeth-Core — the Breath Beneath. The stone there is too hard to mine, the air carries a resonance that causes hallucinations, and there are sounds — deep, rhythmic vibrations like the beating of an immense heart. The Elven druids call it the Vaeth-Orin — the Breath Before. The beastkin tribes describe similar phenomena in their sacred caves.",
+            "A scholar named Lyria Voss, descendant of Aldric Voss, found an object in the deep catacombs beneath Aelindra: a seed, no larger than a fist, pulsing with a faint, rhythmic light. The light pulsed in the pattern of the Elysian Circle, but with an eighth pulse — fainter but unmistakable. Her notes end with: 'The seed is not a device. It is a seed — something planted, something growing, something that will one day bloom. If the world is older than the gods, then the gods are not the architects of the world. They are the gardeners. And the seed is the garden itself.' The seed was lost during the Sundering. Its current location is unknown."
+          ]
+        },
+        {
+          "heading": "The Void Herald",
+          "body": [
+            "The Void Herald has appeared in Elysium at least three times in recorded history, and possibly more. The first appearance was in the Year of the Divided Moon, in the city of Thornwall — a tall, robed figure whose face was obscured by shadow, standing on the city walls for three hours before vanishing. The second was in the Year of the Fading Light, in the forests of Sylvaneth, where hunters followed a figure that always remained at the same distance regardless of how fast they moved.",
+            "The third appearance was in Ashka Vor, in the sealed chamber with the mural of the family fleeing a burning city. A construction worker saw the figure standing before the mural, hand raised as if touching the painted surface. The worker shouted. The figure turned toward him. He described the face as 'not a face' — a blank surface that absorbed light like the surface of a dark pool. The figure vanished. The sealed chamber locked itself again.",
+            "The Dawnbound Concord officially regards the Void Herald as a 'spiritual phenomenon' associated with the Sundering's disruption. The Duskward Pact's interpretations vary: a servant of Kaelgorath, Kaelgorath himself in diminished form, or an entirely separate entity. The orcish clans call it Vaeth'Kor — the Watcher Before — a principle of observation, witnessing, remembering. They believe it has existed since before the gods.",
+            "Ancient texts from the Silent Ones reference a matching figure, with a single repeated phrase: 'The Watcher remembers what the world forgets.' If the Void Herald existed before the Sundering, it may possess knowledge no living person holds — what happened to the Silent Ones, why the world has been broken before, what is coming next. But the Void Herald does not speak. It simply appears, watches, and vanishes. Unless, of course, it has been trying to communicate, and no one has been able to understand."
+          ]
+        },
+        {
+          "heading": "The World Now",
+          "body": [
+            "The year is 1142 of the Age of Reclamation. The world of Elysium is changing. In the Dawnbound Concord, High Paladin Edric Dawnsworn has consolidated unprecedented power, his aggressive policies alienating allies and emboldening enemies. The Kingdom of Thornwall debates withdrawal. Border skirmishes increase. In the Duskward Pact, the Veiled Mother's Silent Watch has become increasingly active, conducting expeditions into remote ruins and returning with artifacts the Pact's leadership is not always comfortable with.",
+            "The ancient ruins are becoming active. In Sylvaneth, towers silent for millennia emit a faint, pulsing light. In the Kharzul Wastes, sealed strongholds are found with doors open, interiors empty, as if unlocked from within. Coastal structures risen from waters, surfaces clean and unweathered. Religious leaders on both sides have received contradictory visions — some of great light, others of great darkness, others of change so profound the world will be unrecognizable.",
+            "The Void Herald has been seen again. This time, the sightings are not isolated — on the walls of Solmere, in the forests of Sylvaneth, in the ruins of Ashka Vor, in the deep mines of the Kharzul Wastes. The beastkin tribes call it Vaeth'Kor's Return, and say the Void Herald appears only when something important is about to happen. They say the last time it appeared with such frequency was just before the Sundering.",
+            "And somewhere beneath the world, the pulse continues. It has been growing stronger. Those sensitive to the deep resonance — the druids, the mages, the clerics who channel divine power — can feel it. The heartbeat of the world is quickening. The seed is growing. Whatever was planted in the deep places of the earth, before the gods, before the civilizations, before recorded history — it is approaching the moment of its blooming. No one knows what will happen when it blooms. But the world remembers. The Void Herald watches. The Breath Before has ended. And the Silence has begun."
           ]
         }
       ]
@@ -94,40 +202,77 @@
   ],
   "figures": [
     {
-      "id": "ignareth",
-      "name": "Ignareth",
-      "title": "Patron of the Vanguard",
-      "description": "An old, war-tempered power bound in the Ancient Age's earliest pacts. Ignareth's gifts favor discipline and endurance over subtlety — those who bind themselves to him grow harder to kill, and harder to reason with."
+      "id": "solthar",
+      "name": "Solthar",
+      "title": "God of Light, Justice, and Order",
+      "description": "Associated with justice, protection, hope, and civilization. Solthar's temples are the largest religious institutions in the world, and his Paladins wield significant political influence. But his followers disagree on what justice requires — some see him as a protector of the innocent, others as a enforcer of conformity. Ancient texts suggest that Solthar's aspect was not always associated with order, and that his modern interpretation may be a political construction rather than a divine truth."
     },
     {
       "id": "nyxara",
       "name": "Nyxara",
-      "title": "Patron of the Shade",
-      "description": "A power associated with concealment, distance, and precision. Little is recorded of Nyxara directly; most knowledge comes secondhand, through the traditions of those who walk her paths."
+      "title": "Goddess of Night, Shadows, and Secrets",
+      "description": "Associated with shadows, secrets, freedom, silence, and the unknown. Nyxara's temples are found throughout the Duskward Pact, and her clergy serve as keepers of knowledge. But her worship is controversial — the Dawnbound Concord views her as a patron of subversion and heresy. Ancient texts suggest that Nyxara's aspect was not always associated with deception, and that her modern interpretation reflects mortal fears rather than divine truth."
+    },
+    {
+      "id": "terravox",
+      "name": "Terravox",
+      "title": "God of Earth, Stone, and Endurance",
+      "description": "Associated with stone, endurance, mountains, dwarven traditions, and the foundations of civilization. The dwarven clans hold Terravox as the first of the gods, the foundation upon which all others were built. His temples are found in every dwarven stronghold, and his priests are also engineers and architects. But other traditions dispute this primacy, and some ancient texts suggest that Terravox's aspect was once understood differently — not as a foundation but as a boundary, a limit that the other gods were not meant to cross."
+    },
+    {
+      "id": "maelithir",
+      "name": "Maelithir",
+      "title": "God of Sea and Storm",
+      "description": "Associated with oceans, storms, sailors, exploration, and the unpredictable nature of the world. Maelithir's priests are among the most superstitious in the world, and his temples are always built near water. But his worship is not limited to coastal communities — inland communities often venerate him as a god of change and transition. Ancient texts suggest that Maelithir's aspect was once associated with something more fundamental than the sea: the fluid, ever-changing nature of reality itself."
+    },
+    {
+      "id": "ignareth",
+      "name": "Ignareth",
+      "title": "God of War, Strength, and Courage",
+      "description": "Associated with war, strength, courage, and warriors. Ignareth's traditions emphasize discipline and endurance over subtlety — those who bind themselves to him grow harder to kill and harder to reason with in the same breath. His temples double as military academies, and his priests are also soldiers. But Ignareth's aspect is not limited to violence — ancient texts associate him with the courage to face difficult truths, not just the strength to win battles."
     },
     {
       "id": "aeloria",
       "name": "Aeloria",
-      "title": "Patron of the Warden and the Wayfarer",
-      "description": "A nature-bound power whose influence spread furthest during the Scattering. Aeloria's traditions are the most widely practiced of the old pacts, from Sylvaneth's oldest groves to independent wandering orders far beyond her direct reach."
+      "title": "Goddess of Nature, Wilderness, and the Natural World",
+      "description": "Associated with nature, wilderness, hunting, and the natural world. Aeloria's traditions are the most widely practiced of the old pacts, from Sylvaneth's oldest groves to independent wandering orders far beyond her direct reach. Her druids possess knowledge of the world that modern civilizations have forgotten — including, some say, knowledge of what existed before the gods. The ancient trees of Sylvaneth are said to remember events that happened before recorded history, and Aeloria's druids claim to listen to their memories."
     },
     {
-      "id": "solthar",
-      "name": "Solthar",
-      "title": "Patron of the Oathkeeper",
-      "description": "A power bound to protective vows and sacred oaths. Solthar's traditions emphasize defense of others above personal power, a value that shaped much of the Dawnbound Concord's founding doctrine."
+      "id": "arcane",
+      "name": "Arcane",
+      "title": "The Divine Force of Magic",
+      "description": "Associated with magic and the mysterious laws that govern magical power. Unlike the other gods, Arcane is not typically personified — Arcane is understood as a fundamental force, like gravity or time. Mages who study Arcane's aspect are not priests but scholars, and their temples are libraries and laboratories. But the question of whether Arcane is a god or a force remains unresolved. Some traditions hold that Arcane is the oldest of the divine aspects, the framework within which all others operate. Others hold that Arcane is not divine at all but merely natural."
+    },
+    {
+      "id": "kaelgorath",
+      "name": "Kaelgorath",
+      "title": "The Eighth God — The Unremembered",
+      "description": "The eighth god, whose return caused the Sundering. Worship is forbidden in the Dawnbound Concord but practiced openly in the Duskward Pact. Kaelgorath's aspect is disputed: some texts describe him as a god of entropy, others of memory, others of change. The oldest texts describe a perspective — the divine viewpoint that observes the other seven, that sees the world as a unified whole. If true, Kaelgorath was not a god of any single force but the god of understanding itself. Whether he was a savior, a destroyer, or something else entirely remains the central theological question of Elysium."
+    },
+    {
+      "id": "void-herald",
+      "name": "The Void Herald",
+      "title": "Unknown Entity — The Watcher Before",
+      "description": "A mysterious figure who has appeared at least three times in recorded history, and possibly more. Always tall, always robed, always faceless. It does not speak, does not interact with the physical world, does not leave footprints. It appears, observes, and vanishes. Ancient texts from the Silent Ones describe a matching figure with the phrase: 'The Watcher remembers what the world forgets.' Different cultures interpret the Void Herald differently: a servant of Kaelgorath, Kaelgorath himself, a separate entity, or a principle of observation that has existed since before the gods. The Void Herald has reportedly been seen again, with increasing frequency, in the months before the player's arrival."
+    },
+    {
+      "id": "the-last-scribe",
+      "name": "The Last Scribe of Aelindra",
+      "title": "Historian and Scholar",
+      "description": "A young scholar who survived the Sundering and spent his remaining years preserving knowledge in the ruins of Solmere. His identity is disputed, but his story is universally known. He established a school that taught critical thinking and the interpretation of multiple historical accounts. His unfinished history is the foundational text of modern Elysian historiography. His most famous passage: 'We built a world that we believed would last forever. We were wrong.'"
+    },
+    {
+      "id": "veiled-mother",
+      "name": "The Veiled Mother",
+      "title": "Leader of the Silent Watch",
+      "description": "The mysterious leader of a secretive organization within the Duskward Pact, dedicated to the study of ancient ruins and the recovery of lost knowledge. Her true identity is unknown — she is always seen wearing a veil of dark silk and speaks in a voice devoid of emotion. She is said to be hundreds of years old, though this is likely exaggerated. She has said: 'We are not your enemies. We are not your saviors. We are your witnesses. We watch. We remember. We prepare.'"
     },
     {
       "id": "forgotten-king",
       "name": "The Forgotten King",
       "title": "World Boss — Aurelia",
-      "description": "An ancient dragon corrupted by the Sundering, said to still guard the ruins of his fallen throne. Some accounts claim he was a mortal king before the Sundering changed him; none can confirm it."
-    },
-    {
-      "id": "void-herald",
-      "name": "The Void Herald",
-      "title": "Unknown Entity",
-      "description": "A mysterious creature first sighted at the edges of the Sundering's scars, and by every account, not native to Elysium at all. What it heralds, and from where, remains the subject of the Ashen Circle's most guarded research."
+      "description": "An ancient dragon corrupted by the Sundering, said to still guard the ruins of his fallen throne in the deepest reaches of the chasm that divides Aurelia. Some accounts claim he was a mortal king before the Sundering changed him; none can confirm it. His presence is felt in the tremors that periodically shake the chasm, and in the nightmares that plague those who sleep too close to the edge."
     }
   ]
 }
+```
